@@ -54,8 +54,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerView.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerTowerRotation.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
