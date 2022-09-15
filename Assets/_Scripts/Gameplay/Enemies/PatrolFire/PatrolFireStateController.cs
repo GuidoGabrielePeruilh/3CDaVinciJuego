@@ -19,6 +19,8 @@ namespace Game.Gameplay.Enemies.PatrolFire
             _normal = new NormalState(_normalBehaviour, _visualField, this);
             _attack = new AttackState(_attackBehaviour, _visualField, _move, this);
             _currentState = _normal;
+            _attackBehaviour.enabled = false;
+            _normalBehaviour.enabled = true;
         }
         
         void Start()

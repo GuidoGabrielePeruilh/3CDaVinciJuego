@@ -43,7 +43,7 @@ namespace Game.Gameplay
             if (Vector3.Distance(_target.transform.position, transform.position) > _visualDistance) return false;
             var direction = (_target.transform.position - transform.position).normalized;
             var angle = Vector3.Angle(transform.forward, direction);
-            Debug.Log(angle);
+
             if (angle > _visualAngle / 2) return false;
 
             return true;
