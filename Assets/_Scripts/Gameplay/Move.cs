@@ -6,6 +6,7 @@ namespace Game.Gameplay
     {
         [SerializeField] Rigidbody _rigidbody;
         [Space]
+        [Tooltip("Si ignora el eje del Velocity, tomara el eje del rigidbody")]
         [SerializeField] bool _ignoreX = false;
         [SerializeField] bool _ignoreY = false;
         [SerializeField] bool _ignoreZ = false;

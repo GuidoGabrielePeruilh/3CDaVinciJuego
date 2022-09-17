@@ -13,6 +13,8 @@ namespace Game.Gameplay
         public event Action<GameObject> OnPlayerOverEnter, OnPlayerOverExit;  
         public bool IsPlayerOver { get; private set; } = false;
 
+        public void Reset() => IsPlayerOver = false;
+
         void Awake()
         {
             SetBorders();

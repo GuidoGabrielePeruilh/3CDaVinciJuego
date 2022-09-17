@@ -12,10 +12,13 @@ namespace Game.Gameplay
         [SerializeField, Range(0f, 5f)] float _timeToBreakLayer = 5;
         [SerializeField] int _maxLayers = 3;
         [SerializeField, Range(.1f, 10f)] int _timeToRespawn = 0;
+        [SerializeField] Collider _collider;
         float _time = 0;
         int _currentLayer = 3;
         
         public event Action<int> OnChangeLayer;
+        public int MaxLayers => _maxLayers;
+        public int CurrentLayer => _currentLayer;
 
         void Awake()
         {
@@ -34,6 +37,11 @@ namespace Game.Gameplay
                 _time = 0;
                 _currentLayer--;
                 OnChangeLayer?.Invoke(_currentLayer);
+                if (_currentLayer <= 0)
+                {
+                    _collider.enabled = false;
+                    _onPlayerOver.Reset();
+                }
             }
 
             if (_currentLayer == 0)
@@ -44,6 +52,7 @@ namespace Game.Gameplay
                     _currentLayer = _maxLayers;
                     _time = 0;
                     OnChangeLayer?.Invoke(_currentLayer);
+                    _collider.enabled = true;
                 }
             }
         }

@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 1360242015143116533}
   - component: {fileID: 1360242015143116522}
   - component: {fileID: 1360242015143116532}
+  - component: {fileID: 3486319866869162616}
   m_Layer: 0
   m_Name: Platform_Breaks
   m_TagString: Untagged
@@ -175,6 +176,7 @@ MonoBehaviour:
   _timeToBreakLayer: 1
   _maxLayers: 3
   _timeToRespawn: 5
+  _collider: {fileID: 1360242015143116533}
 --- !u!114 &1360242015143116532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,3 +191,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerTag: Player
   _isStaticObject: 1
+--- !u!114 &3486319866869162616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360242015143116520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b001f920dffabec45b353e63f6065aa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _platformBrain: {fileID: 1360242015143116522}
+  _renderer: {fileID: 1360242013892548697}
+  _layerColors:
+  - {r: 0.990566, g: 0.58406013, b: 0.58406013, a: 0}
+  - {r: 0.9339623, g: 0.9108474, b: 0.44495374, a: 0}
+  - {r: 0.5257654, g: 0.8018868, b: 0.52940243, a: 0}
