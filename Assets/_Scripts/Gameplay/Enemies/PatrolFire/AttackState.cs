@@ -19,7 +19,6 @@ namespace Game.Gameplay.Enemies.PatrolFire
 
         public override void Enter()
         {
-            Debug.Log("Entro a Attack");
             _move.Velocity = Vector3.zero;
             _attackBehaviour.enabled = true;
         }
@@ -33,7 +32,6 @@ namespace Game.Gameplay.Enemies.PatrolFire
 
         public override void Exit()
         {
-            Debug.Log("Salio a Attack");
             _attackBehaviour.enabled = false;
         }
     }

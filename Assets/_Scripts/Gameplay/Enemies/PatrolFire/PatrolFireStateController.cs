@@ -4,8 +4,8 @@ namespace Game.Gameplay.Enemies.PatrolFire
 {
     public class PatrolFireStateController : MonoBehaviour
     {
-        public NormalState _normal;
-        public AttackState _attack;
+        NormalState _normal;
+        AttackState _attack;
 
         [SerializeField] MonoBehaviour _normalBehaviour;
         [SerializeField] VisualField _visualField;
