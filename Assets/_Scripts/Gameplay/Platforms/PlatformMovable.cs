@@ -2,32 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Game
+namespace Game.Gameplay.Platforms
 {
-    public class Platform : MonoBehaviour
+    public class PlatformMovable : MonoBehaviour
     {
-        public Transform pos1;
-        public Transform pos2;
+
+        [SerializeField] Transform _pos1;
+        [SerializeField] Transform _pos2;
 
         float _timer;
         bool _go;
 
-        public AnimationCurve myCurve;
+        [SerializeField] AnimationCurve myCurve;
         float _last;
 
-        private void Start()
+        void Start()
         {
             _last = myCurve.keys[myCurve.keys.Length - 1].time;  
         }
 
-        private void Update()
+        void Update()
         {
             if (_timer < _last)
             {
                 _timer = _timer + 1 * Time.deltaTime;
 
-                Vector3 _pointa = _go ? pos1.position : pos2.position;
-                Vector3 _pointb = _go ? pos2.position : pos1.position;
+                Vector3 _pointa = _go ? _pos1.position : _pos2.position;
+                Vector3 _pointb = _go ? _pos2.position : _pos1.position;
                 transform.position = Vector3.Lerp(_pointa, _pointb, myCurve.Evaluate(_timer / _last));
             }
             else
