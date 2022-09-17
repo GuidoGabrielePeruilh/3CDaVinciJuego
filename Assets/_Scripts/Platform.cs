@@ -9,31 +9,31 @@ namespace Game
         public Transform pos1;
         public Transform pos2;
 
-        float timer;
-        bool go;
+        float _timer;
+        bool _go;
 
         public AnimationCurve myCurve;
-        float last;
+        float _last;
 
         private void Start()
         {
-            last = myCurve.keys[myCurve.keys.Length - 1].time;  
+            _last = myCurve.keys[myCurve.keys.Length - 1].time;  
         }
 
         private void Update()
         {
-            if (timer < last)
+            if (_timer < _last)
             {
-                timer = timer + 1 * Time.deltaTime;
+                _timer = _timer + 1 * Time.deltaTime;
 
-                Vector3 a = go ? pos1.position : pos2.position;
-                Vector3 b = go ? pos2.position : pos1.position;
-                transform.position = Vector3.Lerp(a, b, myCurve.Evaluate(timer / last));
+                Vector3 _pointa = _go ? pos1.position : pos2.position;
+                Vector3 _pointb = _go ? pos2.position : pos1.position;
+                transform.position = Vector3.Lerp(_pointa, _pointb, myCurve.Evaluate(_timer / _last));
             }
             else
             {
-                timer = 0;
-                go = !go;
+                _timer = 0;
+                _go = !_go;
             }
 
 
