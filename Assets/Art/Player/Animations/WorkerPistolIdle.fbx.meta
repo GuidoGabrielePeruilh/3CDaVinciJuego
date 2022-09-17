@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 93fc3e39c442b1347af3778275ed8218
+guid: fbdd02aa1f188504cacb5af688fab05c
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: WorkerJogLeft
+    second: WorkerPistolIdle
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: WorkerJogLeft
+      name: WorkerPistolIdle
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 22
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
