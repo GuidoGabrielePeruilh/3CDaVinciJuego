@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game.Gameplay.Enemies
 {
-    public class MoveMelee : MonoBehaviour
+    public class RandomPatrol : MonoBehaviour
     {
         [SerializeField] List<Transform> positions;
         int _index = 0;
@@ -23,6 +23,7 @@ namespace Game.Gameplay.Enemies
             {
                 _move.Velocity = Vector3.zero;
                 _index = _indexRandom;
+
 
                 NextIndex();
             }

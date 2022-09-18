@@ -5,49 +5,19 @@ using UnityEngine;
 namespace Game.Gameplay.Enemies
 {
     public class FollowPlayer : MonoBehaviour
-    {
-        [SerializeField] int _range = 100;
-        Player _player;
-        float _distanceFromPlayer;
-        [SerializeField, Range(0,5)]  float _speed = 3;
-        Vector3 _direction;
+    {          
+        Player _player;        
+        [SerializeField, Range(0,5)]  float _speed = 3;        
         [SerializeField] Move _move;
         
 
         void Awake()
         {
-            _player = FindObjectOfType<Player>();
-            
+            _player = FindObjectOfType<Player>();          
         }
-
         void Update()
         {
-            MoveEnemyDistance();
-            
+            _move.Velocity = (_player.transform.position - transform.position).normalized * _speed;
         }
-        public void MoveEnemyDistance()
-        {
-            CheckDistanceFromPlayer();
-            if (_distanceFromPlayer >= _range)
-            {
-                _move.Velocity = (_player.transform.position - transform.position).normalized * _speed;
-            }
-            else
-            {
-                _move.Velocity = Vector3.zero;
-
-            }
-
-        }
-        void CheckDistanceFromPlayer()
-        {
-
-            _distanceFromPlayer = Vector3.Distance(transform.position, _player.transform.position);
-            Debug.Log(_distanceFromPlayer);
-
-        }
-        
-
-        
     }
 }
