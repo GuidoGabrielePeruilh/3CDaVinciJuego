@@ -16,12 +16,15 @@ namespace Game
 
         public void TurnOn()
         {
+            gameObject.SetActive(true);
             _particle.Play();
+
         }
 
         public void TurnOff()
         {
             _particle.Stop();
+            gameObject.SetActive(false);
         }
     }
 }
