@@ -11,13 +11,16 @@ namespace Game.Gameplay.Enemies.PatrolFire
         [SerializeField] VisualField _visualField;
         [SerializeField] MonoBehaviour _attackBehaviour;  
         [SerializeField] Move _move;
+        [SerializeField] ActionRepeater _shooterRepeater;
+        [SerializeField] LookAtTarget _lookAtTarget;
+        [SerializeField] ThrowBullet _throwBullet;
 
         State _currentState;
 
         void Awake()
         {
-            _normal = new NormalState(_normalBehaviour, _visualField, this);
-            _attack = new AttackState(_attackBehaviour, _visualField, _move, this);
+            _normal = new NormalState(this);
+            _attack = new AttackState(this);
             _currentState = _normal;
             _attackBehaviour.enabled = false;
             _normalBehaviour.enabled = true;
@@ -44,5 +47,10 @@ namespace Game.Gameplay.Enemies.PatrolFire
         public NormalState Normal => _normal;
         public MonoBehaviour NormalBehaviour => _normalBehaviour;
         public VisualField VisualField => _visualField;
+        public MonoBehaviour AttackBehaviour => _attackBehaviour;
+        public Move Move => _move;
+        public ActionRepeater ShooterRepeater => _shooterRepeater;
+        public LookAtTarget LookAtTarget => _lookAtTarget;
+        public ThrowBullet ThrowBullet => _throwBullet;
     }
 }

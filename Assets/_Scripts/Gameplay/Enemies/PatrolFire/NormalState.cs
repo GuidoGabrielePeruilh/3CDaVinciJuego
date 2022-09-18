@@ -6,13 +6,12 @@ namespace Game.Gameplay.Enemies.PatrolFire
     {
         VisualField _visualField;
         MonoBehaviour _normalBehaviour;
-        State _nextState;
         PatrolFireStateController _controller;
 
-        public NormalState(MonoBehaviour normalBehaviour, VisualField visualField, PatrolFireStateController controller)
+        public NormalState(PatrolFireStateController controller)
         {
-            _normalBehaviour = normalBehaviour;
-            _visualField = visualField;
+            _normalBehaviour = controller.NormalBehaviour;
+            _visualField = controller.VisualField;
             _controller = controller;
         }
 

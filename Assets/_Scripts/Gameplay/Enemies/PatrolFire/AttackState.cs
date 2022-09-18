@@ -8,22 +8,30 @@ namespace Game.Gameplay.Enemies.PatrolFire
         VisualField _visualField;
         PatrolFireStateController _controller;
         Move _move;
+        ActionRepeater _shooterRepeater;
+        LookAtTarget _lookAtTarget;
+        ThrowBullet _throwBullet;
 
-        public AttackState(MonoBehaviour attackBehaviour, VisualField visualField, Move move, PatrolFireStateController controller)
+        public AttackState(PatrolFireStateController controller)
         {
-            _attackBehaviour = attackBehaviour;
-            _visualField = visualField;
             _controller = controller;
-            _move = move;
+            _attackBehaviour = controller.AttackBehaviour;
+            _visualField = controller.VisualField;
+            _move = controller.Move;
+            _shooterRepeater = controller.ShooterRepeater;
+            _lookAtTarget = controller.LookAtTarget;
+            _throwBullet = controller.ThrowBullet;
         }
 
         public override void Enter()
         {
             _move.Velocity = Vector3.zero;
             _attackBehaviour.enabled = true;
+            _lookAtTarget.enabled = true;
+            _shooterRepeater.enabled = true;
+            _throwBullet.Target = _lookAtTarget.Target;
         }
-
-        // ReSharper disable Unity.PerformanceAnalysis
+        
         public override void Update()
         {
             if (!_visualField.IsTargetInView)
@@ -33,6 +41,8 @@ namespace Game.Gameplay.Enemies.PatrolFire
         public override void Exit()
         {
             _attackBehaviour.enabled = false;
+            _shooterRepeater.enabled = false;
+            _lookAtTarget.enabled = false;
         }
     }
 }
