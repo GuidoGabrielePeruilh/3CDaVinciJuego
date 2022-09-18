@@ -6,6 +6,8 @@ namespace Game
 {
     public class Player : MonoBehaviour
     {
+
+        [SerializeField, Range(0, 200)] int maxLife = 100;
         // Start is called before the first frame update
         void Start()
         {

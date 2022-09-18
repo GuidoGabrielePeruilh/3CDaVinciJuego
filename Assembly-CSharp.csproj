@@ -53,9 +53,18 @@
     <UnityVersion>2020.3.25f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\_Scripts\Platform.cs" />
-    <Compile Include="Assets\_Scripts\EnemyMelee\MoveMelee.cs" />
-    <Compile Include="Assets\_Scripts\EnemyMelee\patrullaje.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowMeleeStateController.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Move.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Enemies\RandomPatrolState.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowPlayer.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Enemies\RandomPatrol.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Enemies\State.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Platforms\PlatformMovable.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Enemies\MetalEnemyAC.cs" />
+    <Compile Include="Assets\_Scripts\Player\Player.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowState.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Enemies\MeleeAttack.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Enemies\MeleeAttackState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

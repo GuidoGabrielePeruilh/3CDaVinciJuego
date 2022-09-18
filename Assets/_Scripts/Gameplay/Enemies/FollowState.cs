@@ -27,9 +27,6 @@ namespace Game.Gameplay
             {
                 _stateController.SwitchState(_stateController.MeleeState);
             }
-
-            //verificar si sigue en rango el player.
-            //si esta encima del player
         }
         public override void Exit()
         {
