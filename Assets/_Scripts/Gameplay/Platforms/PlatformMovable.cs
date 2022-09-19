@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,8 +7,8 @@ namespace Game.Gameplay.Platforms
     public class PlatformMovable : MonoBehaviour
     {
 
-        [SerializeField] Transform _pos1;
-        [SerializeField] Transform _pos2;
+        [SerializeField] Transform _point1;
+        [SerializeField] Transform _point2;
 
         float _timer;
         bool _go;
@@ -27,18 +27,30 @@ namespace Game.Gameplay.Platforms
             {
                 _timer = _timer + 1 * Time.deltaTime;
 
-                Vector3 _pointa = _go ? _pos1.position : _pos2.position;
-                Vector3 _pointb = _go ? _pos2.position : _pos1.position;
+                Vector3 _pointa = _go ? _point1.position : _point2.position;
+                Vector3 _pointb = _go ? _point2.position : _point1.position;
                 transform.position = Vector3.Lerp(_pointa, _pointb, myCurve.Evaluate(_timer / _last));
             }
             else
             {
                 _timer = 0;
                 _go = !_go;
+            }                       
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                collision.gameObject.transform.SetParent(transform);
             }
-
-
-
+        }
+        private void OnCollisionExit(Collision collision)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                collision.gameObject.transform.SetParent(null);
+            }
         }
     }
 }

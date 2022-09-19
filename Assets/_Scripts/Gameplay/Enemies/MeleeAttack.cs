@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Game
+namespace Game.Gameplay.Enemies
 {
     public class MeleeAttack : MonoBehaviour
     {
@@ -13,15 +13,18 @@ namespace Game
          */
         [SerializeField] Transform _attackPoint;
         [SerializeField] GameObject _sensorDamage;
-
+        [SerializeField] MetalEnemyAC _aniController;
+        [SerializeField] Move _move;
         private void Start()
         {
             
         }
-
-        void Attack()
+        private void Update()
         {
+            
+            _aniController.Attack();
 
+           
         }
     }
 }

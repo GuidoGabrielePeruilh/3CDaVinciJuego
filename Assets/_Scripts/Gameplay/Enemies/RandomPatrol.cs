@@ -7,7 +7,6 @@ namespace Game.Gameplay.Enemies
     public class RandomPatrol : MonoBehaviour
     {
         [SerializeField] List<Transform> positions;
-        int _index = 0;
         int _indexRandom = 0;
         [SerializeField] Move _move;
         int _speed = 5;
@@ -22,7 +21,7 @@ namespace Game.Gameplay.Enemies
             else
             {
                 _move.Velocity = Vector3.zero;
-                _index = _indexRandom;
+                
 
 
                 NextIndex();
@@ -38,7 +37,7 @@ namespace Game.Gameplay.Enemies
                 newIndex = Random.Range(0, positions.Count);
 
             }
-            while (newIndex == _index);
+            while (newIndex == _indexRandom);
             _indexRandom = newIndex;
         }
 

@@ -7,14 +7,23 @@ namespace Game.Gameplay
     {
 
         private MeleeAttack _meleeAttack;
-        private FollowMeleeStateController _stateController;
+        private Move _move;
+
+
+        public MeleeAttackState(FollowMeleeStateController stateController)
+        {
+            _meleeAttack = stateController.MeleeAttack;
+            _move = stateController.Move;
+        }
         public override void Enter()
         {
+            _move.Velocity = Vector3.zero;
             _meleeAttack.enabled = true;
+
         }
         public override void Update()
         {
-            
+           
         }
         public override void Exit()
         {

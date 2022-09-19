@@ -7,14 +7,17 @@ namespace Game.Gameplay
     {
         FollowMeleeStateController _stateController;
         FollowPlayer _followPlayer;
-        public FollowState(FollowMeleeStateController stateController, FollowPlayer followPlayer)
+        
+        public FollowState(FollowMeleeStateController stateController)
         {
             _stateController = stateController;
-            _followPlayer = followPlayer;
+            _followPlayer = stateController.FollowPlayer;
+            
         }
         public override void Enter()
         {
             _followPlayer.enabled = true;
+            
         }
         public override void Update()
         {

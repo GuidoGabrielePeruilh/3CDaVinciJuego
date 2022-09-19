@@ -6,10 +6,15 @@ namespace Game.Gameplay.Enemies
     {
         [SerializeField] Animator _animator;
         [SerializeField] Move _move;
-
-        void Update()
+       
+        private void Update()
         {
             _animator.SetFloat("Speed", _move.Velocity.magnitude);
-        }      
+        }
+        public void Attack()
+        {
+            _animator.SetTrigger("Attack");
+        }
+
     }
 }
