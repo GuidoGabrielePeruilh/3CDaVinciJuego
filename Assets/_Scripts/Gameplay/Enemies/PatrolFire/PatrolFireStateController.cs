@@ -6,7 +6,6 @@ namespace Game.Gameplay.Enemies.PatrolFire
     {
         NormalState _normal;
         AttackState _attack;
-
         [SerializeField] MonoBehaviour _normalBehaviour;
         [SerializeField] VisualField _visualField;
         [SerializeField] MonoBehaviour _attackBehaviour;  
@@ -16,9 +15,11 @@ namespace Game.Gameplay.Enemies.PatrolFire
         [SerializeField] ThrowBullet _throwBullet;
 
         State _currentState;
+        GameObject _player;
 
         void Awake()
         {
+            _player = FindObjectOfType<Player>()?.gameObject;
             _normal = new NormalState(this);
             _attack = new AttackState(this);
             _currentState = _normal;
@@ -52,5 +53,6 @@ namespace Game.Gameplay.Enemies.PatrolFire
         public ActionRepeater ShooterRepeater => _shooterRepeater;
         public LookAtTarget LookAtTarget => _lookAtTarget;
         public ThrowBullet ThrowBullet => _throwBullet;
+        public GameObject Target => _player;
     }
 }

@@ -61,6 +61,10 @@ GameObject:
   - component: {fileID: 564365771632663803}
   - component: {fileID: 564365771632663802}
   - component: {fileID: 564365771632663809}
+  - component: {fileID: 5174428835015603740}
+  - component: {fileID: 4140093129540077214}
+  - component: {fileID: 7170227535695364372}
+  - component: {fileID: 2071058080219038129}
   m_Layer: 0
   m_Name: Enemy_PatrolFire
   m_TagString: Untagged
@@ -129,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
-  _visualAngle: 45
+  _visualAngle: 80
   _visualDistance: 10
 --- !u!114 &564365771632663803
 MonoBehaviour:
@@ -144,11 +148,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _move: {fileID: 564365771632663812}
-  _speed: 10
-  _waypoints: []
+  _speed: 2.1
+  _waitBetweenPointInSeconds: 1
+  _waitOnEnable: 2.5
+  _waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _minimumDistanceNearPoint: 1.05
   _cycle: 0
-  _pointRadiusGizmos: 2
+  _pointRadiusGizmos: 0.08
   _sphereColor: {r: 1, g: 0, b: 0, a: 1}
   _lineColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!114 &564365771632663802
@@ -167,6 +176,9 @@ MonoBehaviour:
   _visualField: {fileID: 564365771632663813}
   _attackBehaviour: {fileID: 564365771632663809}
   _move: {fileID: 564365771632663812}
+  _shooterRepeater: {fileID: 0}
+  _lookAtTarget: {fileID: 564365771632663809}
+  _throwBullet: {fileID: 0}
 --- !u!114 &564365771632663809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,12 +193,79 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
   _speedRotation: 10
-  animController: {fileID: 0}
-  OnShoot:
+--- !u!114 &5174428835015603740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564365771632663800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b7322997020460087ceb47ef875c062, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _move: {fileID: 564365771632663812}
+  _animator: {fileID: 6083880829189906263}
+--- !u!114 &4140093129540077214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564365771632663800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a3b5ea029694d2ea504a8bb475dea3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _firePoint: {fileID: 0}
+  _bulletPooler: {fileID: 0}
+  _throwForce: 2
+--- !u!114 &7170227535695364372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564365771632663800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e3613be9a542bca23fdc5646be0244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pooledObject: {fileID: 7482271976142420044, guid: 7d420d93b71ae38458f8666ba9d557b9, type: 3}
+  _pooledAmount: 1
+  _willGrow: 1
+  _pooledObjects: []
+--- !u!114 &2071058080219038129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564365771632663800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 562dd7dc3678486a8c8d54d1e2d59c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnAction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6083880829189906263}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Attack
+          m_BoolArgument: 0
+        m_CallState: 2
   _waitForShootInSeconds: 2
-  _time: 0
 --- !u!1001 &5155231518037084479
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -244,8 +323,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b5f8753827b529408da03480473b3a8, type: 3}
+--- !u!1 &704168036812316567 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5642652827653133992, guid: 1b5f8753827b529408da03480473b3a8, type: 3}
+  m_PrefabInstance: {fileID: 5155231518037084479}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &184196466503419181 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4973498415815986194, guid: 1b5f8753827b529408da03480473b3a8, type: 3}
   m_PrefabInstance: {fileID: 5155231518037084479}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &6083880829189906263 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1433629717328811624, guid: 1b5f8753827b529408da03480473b3a8, type: 3}
+  m_PrefabInstance: {fileID: 5155231518037084479}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5799681829895096085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704168036812316567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6c8efd630d78541adcb0ccf57b5d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnGrabBullet:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4140093129540077214}
+        m_TargetAssemblyTypeName: Game.Gameplay.FireBullet, Assembly-CSharp
+        m_MethodName: GrabBullet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnShootBullet:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4140093129540077214}
+        m_TargetAssemblyTypeName: Game.Gameplay.FireBullet, Assembly-CSharp
+        m_MethodName: ShootBullet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

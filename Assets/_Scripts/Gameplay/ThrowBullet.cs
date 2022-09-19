@@ -10,6 +10,8 @@ namespace Game.Gameplay
         [SerializeField] ObjectPooler _bulletPooler;
         GameObject _currentBullet;
         GameObject _target;
+        [SerializeField] float _addHighToTarget = 1.5f;
+
         public GameObject Target
         {
             set => _target = value;
@@ -23,10 +25,12 @@ namespace Game.Gameplay
         public void ShootBullet()
         {
             _currentBullet.transform.parent = null;
-            Debug.Log("Shoot");
-            //TODO shoot bullet
-            var forwardNormalized = (_target.transform.position - transform.position).normalized;
-            _currentBullet.GetComponent<Rigidbody>()?.AddForce(forwardNormalized, ForceMode.VelocityChange);
+            var component = _currentBullet.GetComponent<Bullet>();
+            var transformPosition = _target.transform.position;
+            if (_addHighToTarget > 0)
+                transformPosition.y = _addHighToTarget;
+            var forwardNormalized = (transformPosition - _firePoint.transform.position).normalized;
+            component.Shoot(forwardNormalized);
             _currentBullet = null;
         }
         IEnumerator CO_GrabBulletAction()
@@ -35,9 +39,7 @@ namespace Game.Gameplay
             {
                 _currentBullet.transform.position = _firePoint.transform.position;
                 yield return null;
-                
             }
         }
-
     }
 }

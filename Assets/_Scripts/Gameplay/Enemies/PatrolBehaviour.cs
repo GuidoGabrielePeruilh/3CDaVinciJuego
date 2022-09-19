@@ -9,7 +9,9 @@ namespace Game.Gameplay.Enemies
     public class PatrolBehaviour : MonoBehaviour
     {
         [SerializeField] Move _move;
-        [SerializeField] float _speed;
+        [SerializeField, Range(.1f, 5f)] float _speed = 2f;
+        [SerializeField] float _waitBetweenPointInSeconds = 1f;
+        [SerializeField] float _waitOnEnable = 2.5f;
 
         [Tooltip("The order of the points will be the order in which it is patrolled. ('Has to bi bigger than one')")]
         [SerializeField] private List<GameObject> _waypoints;
@@ -25,6 +27,9 @@ namespace Game.Gameplay.Enemies
         Vector3[] _patrol;
         int _target = 0;
         int _direction = 1;
+        bool _isWaiting = false;
+        WaitForSeconds _waitForSeconds;
+        WaitForSeconds _waitForSecondsOnEnable;
 
         void Awake()
         {
@@ -36,11 +41,19 @@ namespace Game.Gameplay.Enemies
             }
             transform.position = _patrol[0];
             _target = 1;
+            _waitForSeconds = new WaitForSeconds(_waitBetweenPointInSeconds);
+            _waitForSecondsOnEnable = new WaitForSeconds(_waitOnEnable);
+        }
 
+        void OnEnable()
+        {
+            StartCoroutine(CO_StartWaiting(_waitForSecondsOnEnable));
         }
 
         void Update()
         {
+            if (_isWaiting) return;
+
             var targetPosition = _patrol[_target];
             transform.LookAt(targetPosition);
             var transformPosition = new Vector3(transform.position.x, 0, transform.position.z);
@@ -60,10 +73,19 @@ namespace Game.Gameplay.Enemies
                         ChangeDirection();
                 }
                 _target += _direction;
+                StartCoroutine(CO_StartWaiting(_waitForSeconds));
             }
         }
 
-        private void ChangeDirection()
+        IEnumerator CO_StartWaiting(WaitForSeconds waitForSeconds)
+        {
+            _isWaiting = true;
+            _move.Velocity = Vector3.zero;
+            yield return waitForSeconds;
+            _isWaiting = false;
+        }
+
+        void ChangeDirection()
         {
             _direction *= -1;
         }

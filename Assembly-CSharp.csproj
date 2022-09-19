@@ -55,19 +55,21 @@
      <Compile Include="Assets\_Scripts\Gameplay\State.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\PatrolFireAnimatorController.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\BreakPlatformBrain.cs" />
+     <Compile Include="Assets\SandAnimatorEvent.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\LookAtTarget.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\NormalState.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\ObjectPooler.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\OnPlayerOver.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Move.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\Bullet.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\ThrowBullet.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\PatrolFireStateController.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\VisualField.cs" />
      <Compile Include="Assets\BreakPlatformAC.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolBehaviour.cs" />
-     <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\AttackState.cs" />
-     <Compile Include="Assets\_Scripts\Gameplay\ObjectPooler.cs" />
-     <Compile Include="Assets\_Scripts\Gameplay\ThrowBullet.cs" />
-     <Compile Include="Assets\SandAnimatorEvent.cs" />
      <Compile Include="Assets\_Scripts\ActionRepeater.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\AttackState.cs" />
+     <Compile Include="Assets\_Scripts\Player.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.25f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
