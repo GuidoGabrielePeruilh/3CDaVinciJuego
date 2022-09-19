@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace Game
 {
-    [RequireComponent(typeof(ParticleSystem))]
     public class ParciclesController : MonoBehaviour
     {
         [SerializeField] ParticleSystem _particle;
+        [Range(1, 10)][SerializeField] float _delayOff;
 
         private void Start()
         {
@@ -24,7 +24,13 @@ namespace Game
         public void TurnOff()
         {
             _particle.Stop();
+            Invoke("GameObjectOff", _delayOff);
+        }
+
+        private void GameObjectOff()
+        {
             gameObject.SetActive(false);
         }
+
     }
 }
