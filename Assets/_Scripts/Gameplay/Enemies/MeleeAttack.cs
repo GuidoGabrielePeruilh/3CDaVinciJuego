@@ -13,18 +13,17 @@ namespace Game.Gameplay.Enemies
          */
         [SerializeField] Transform _attackPoint;
         [SerializeField] GameObject _sensorDamage;
+        [SerializeField] Player _target;
         [SerializeField] MetalEnemyAC _aniController;
         [SerializeField] Move _move;
+
         private void Start()
         {
             
         }
         private void Update()
-        {
-            
-            _aniController.Attack();
-
-           
+        {           
+           _aniController.Attack();         
         }
     }
 }
