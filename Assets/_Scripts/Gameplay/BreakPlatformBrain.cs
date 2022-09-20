@@ -1,13 +1,12 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Game.Gameplay;
 using UnityEngine;
 
 namespace Game.Gameplay
 {
     public class BreakPlatformBrain : MonoBehaviour
     {
+        public event Action<int> OnChangeLayer;
+
         [SerializeField] OnPlayerOver _onPlayerOver;
         [SerializeField, Range(0f, 5f)] float _timeToBreakLayer = 5;
         [SerializeField] int _maxLayers = 3;
@@ -15,10 +14,6 @@ namespace Game.Gameplay
         [SerializeField] Collider _collider;
         float _time = 0;
         int _currentLayer = 3;
-        
-        public event Action<int> OnChangeLayer;
-        public int MaxLayers => _maxLayers;
-        public int CurrentLayer => _currentLayer;
 
         void Awake()
         {
@@ -56,5 +51,8 @@ namespace Game.Gameplay
                 }
             }
         }
+
+        public int MaxLayers => _maxLayers;
+        public int CurrentLayer => _currentLayer;
     }
 }

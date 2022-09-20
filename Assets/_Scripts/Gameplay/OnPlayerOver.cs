@@ -5,20 +5,17 @@ namespace Game.Gameplay
 {
     public class OnPlayerOver : MonoBehaviour
     {
+        public event Action<GameObject> OnPlayerOverEnter, OnPlayerOverExit;  
         [SerializeField] string _playerTag = "";
         [Tooltip("it calculate base on the scale and position. If it grows or move set it to false")]
         [SerializeField] bool _isStaticObject = true;
         float _localScaleX, _localScaleZ, _borderX1, _borderX2, _borderZ1, _borderZ2;
 
-        public event Action<GameObject> OnPlayerOverEnter, OnPlayerOverExit;  
-        public bool IsPlayerOver { get; private set; } = false;
-
-        public void Reset() => IsPlayerOver = false;
-
         void Awake()
         {
             SetBorders();
         }
+
         void OnCollisionEnter(Collision other)
         {
             if (!other.gameObject.CompareTag(_playerTag)) return;
@@ -39,6 +36,9 @@ namespace Game.Gameplay
             IsPlayerOver = false;
             OnPlayerOverExit?.Invoke(other.gameObject);
         }
+
+        public bool IsPlayerOver { get; private set; } = false;
+        public void Reset() => IsPlayerOver = false;
 
         bool IsInAreaXZ(Transform other)
         {

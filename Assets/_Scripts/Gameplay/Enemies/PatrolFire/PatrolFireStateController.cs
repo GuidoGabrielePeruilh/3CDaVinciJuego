@@ -4,8 +4,6 @@ namespace Game.Gameplay.Enemies.PatrolFire
 {
     public class PatrolFireStateController : MonoBehaviour
     {
-        NormalState _normal;
-        AttackState _attack;
         [SerializeField] MonoBehaviour _normalBehaviour;
         [SerializeField] VisualField _visualField;
         [SerializeField] MonoBehaviour _attackBehaviour;  
@@ -14,12 +12,16 @@ namespace Game.Gameplay.Enemies.PatrolFire
         [SerializeField] LookAtTarget _lookAtTarget;
         [SerializeField] ThrowBullet _throwBullet;
 
+        NormalState _normal;
+        AttackState _attack;
         State _currentState;
         GameObject _player;
 
         void Awake()
         {
             _player = FindObjectOfType<Player>()?.gameObject;
+            _throwBullet.Target = _lookAtTarget.Target = _visualField.Target = _player;
+            
             _normal = new NormalState(this);
             _attack = new AttackState(this);
             _currentState = _normal;

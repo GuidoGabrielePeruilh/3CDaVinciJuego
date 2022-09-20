@@ -1,9 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Game.Gameplay
 {
@@ -37,6 +34,7 @@ namespace Game.Gameplay
         }
 
         public bool IsTargetInView => _isTargetInView;
+        public GameObject Target { set => _target = value; }
         
         bool CanSeeTarget()
         {
@@ -55,17 +53,11 @@ namespace Game.Gameplay
             var transformPosition = transform.position;
             Handles.DrawWireArc(transformPosition, Vector3.up, Vector3.forward, 360, _visualDistance);
             // Handles.DrawWireArc(transformPosition, Vector3.up, Vector3.forward, -_visualAngle / 2, _visualDistance);
-            var viewAngleLeft = DirectionFromAngle(transform.eulerAngles.y, -_visualAngle / 2);
-            var viewAngleRight = DirectionFromAngle(transform.eulerAngles.y, _visualAngle / 2);
+            var viewAngleLeft = Utils.DirectionFromAngle(transform.eulerAngles.y, -_visualAngle / 2);
+            var viewAngleRight = Utils.DirectionFromAngle(transform.eulerAngles.y, _visualAngle / 2);
             Handles.color = Color.yellow;
             Handles.DrawLine(transformPosition, transformPosition + viewAngleLeft * _visualDistance);
             Handles.DrawLine(transformPosition, transformPosition + viewAngleRight * _visualDistance);
-        }
-        Vector3 DirectionFromAngle(float eulerY, float angleInDegrees)
-        {
-            angleInDegrees += eulerY;
-        
-            return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
         }
     }
 }

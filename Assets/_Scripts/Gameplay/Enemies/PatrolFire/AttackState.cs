@@ -29,7 +29,6 @@ namespace Game.Gameplay.Enemies.PatrolFire
             _attackBehaviour.enabled = true;
             _lookAtTarget.enabled = true;
             _shooterRepeater.enabled = true;
-            _throwBullet.Target = _lookAtTarget.Target;
         }
         
         public override void Update()

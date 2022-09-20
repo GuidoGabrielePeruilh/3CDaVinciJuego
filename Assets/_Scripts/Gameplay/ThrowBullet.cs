@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -8,20 +7,18 @@ namespace Game.Gameplay
     {
         [SerializeField] Transform _firePoint;
         [SerializeField] ObjectPooler _bulletPooler;
+        [SerializeField] float _addHighToTarget = 1.5f;
         GameObject _currentBullet;
         GameObject _target;
-        [SerializeField] float _addHighToTarget = 1.5f;
 
-        public GameObject Target
-        {
-            set => _target = value;
-        }
+        public GameObject Target { set => _target = value; }
         public void GrabBullet()
         {
             _currentBullet = _bulletPooler.GetPooledObject();
             _currentBullet.SetActive(true);
             StartCoroutine(CO_GrabBulletAction());
         }
+
         public void ShootBullet()
         {
             _currentBullet.transform.parent = null;
@@ -33,6 +30,7 @@ namespace Game.Gameplay
             component.Shoot(forwardNormalized);
             _currentBullet = null;
         }
+
         IEnumerator CO_GrabBulletAction()
         {
             while (_currentBullet != null)
