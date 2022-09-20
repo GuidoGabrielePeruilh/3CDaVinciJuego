@@ -19,7 +19,7 @@ namespace Game
                  _ignoreY ? _myRg.velocity.y : Velocity.y,
                  _ignoreZ ? _myRg.velocity.z : Velocity.z
                 );
-
+            transform.forward = _myRg.velocity;
         }
 
     }

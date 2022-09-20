@@ -26,7 +26,7 @@ namespace Game.Gameplay
             {
                 _stateController.SwitchState(_stateController.RandomPatrolState);
             }
-            else if( _distanceFromPlayer < _stateController.RangeMelee)
+            if( _distanceFromPlayer < _stateController.RangeMelee)
             {
                 _stateController.SwitchState(_stateController.MeleeState);
             }
