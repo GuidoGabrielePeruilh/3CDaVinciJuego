@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Game.Gameplay.Enemies
+namespace Game.Gameplay.Enemies.FollowMelee
 {
     public class MetalEnemyAC : MonoBehaviour
     {

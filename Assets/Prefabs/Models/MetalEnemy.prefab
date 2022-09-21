@@ -1221,10 +1221,11 @@ GameObject:
   - component: {fileID: 3249759806439037928}
   - component: {fileID: 6996228280856177534}
   - component: {fileID: 4135611207406061986}
-  - component: {fileID: 7239321111052090265}
   - component: {fileID: 8703605369664066519}
   - component: {fileID: 5418343819868341163}
   - component: {fileID: 7164961074197545700}
+  - component: {fileID: 8870111864966902023}
+  - component: {fileID: 1883407161896857838}
   m_Layer: 0
   m_Name: MetalEnemy
   m_TagString: Untagged
@@ -1276,14 +1277,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4442084298689999045}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45dc5d7e53422944daa103f8b405176a, type: 3}
+  m_Script: {fileID: 11500000, guid: 6fc9bf45c39ccc942becd811339218e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Velocity>k__BackingField: {x: 0, y: 0, z: 0}
-  _myRg: {fileID: 3249759806439037928}
-  _ignoreX: 0
-  _ignoreY: 1
-  _ignoreZ: 0
+  _animator: {fileID: 6921619599356882949}
+  _move: {fileID: 8870111864966902023}
 --- !u!54 &3249759806439037928
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1333,22 +1331,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  _move: {fileID: 7782596305944296343}
+  _move: {fileID: 8870111864966902023}
   _distance: 1
---- !u!114 &7239321111052090265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4442084298689999045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 030380b8153a8a240bf2b4dec7203f0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animator: {fileID: 6921619599356882949}
-  _move: {fileID: 7782596305944296343}
 --- !u!114 &8703605369664066519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1362,7 +1346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 3
-  _move: {fileID: 7782596305944296343}
+  _move: {fileID: 8870111864966902023}
 --- !u!114 &5418343819868341163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1379,8 +1363,9 @@ MonoBehaviour:
   _rangeFollow: 5
   _rangeMelee: 1.5
   _followPlayer: {fileID: 8703605369664066519}
-  _meleeAttack: {fileID: 0}
-  _move: {fileID: 0}
+  _meleeAttack: {fileID: 7164961074197545700}
+  _move: {fileID: 8870111864966902023}
+  _lookAtTarget: {fileID: 1883407161896857838}
 --- !u!114 &7164961074197545700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1393,8 +1378,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d0a1df79044bf54e8e9e6d4d0816da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _heatBox: {fileID: 8995214659107477640}
-  _aniController: {fileID: 7239321111052090265}
+  _aniController: {fileID: 7782596305944296343}
+--- !u!114 &8870111864966902023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4442084298689999045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48fe5a77961d7844ebc1d494eb701aa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 3249759806439037928}
+  _ignoreX: 0
+  _ignoreY: 0
+  _ignoreZ: 0
+  <Velocity>k__BackingField: {x: 0, y: 0, z: 0}
+--- !u!114 &1883407161896857838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4442084298689999045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc2d2ea0d20a6c4f88f7e54f3a4fe86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 0}
+  _speedRotation: 10
 --- !u!1 &4494906266503615390
 GameObject:
   m_ObjectHideFlags: 0

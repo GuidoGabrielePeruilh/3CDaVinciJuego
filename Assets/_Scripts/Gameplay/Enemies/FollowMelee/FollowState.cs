@@ -1,22 +1,25 @@
 ﻿using Game.Gameplay.Enemies;
 using UnityEngine;
 
-namespace Game.Gameplay
+namespace Game.Gameplay.Enemies.FollowMelee
 {
     public class FollowState : State
     {
         FollowMeleeStateController _stateController;
         FollowPlayer _followPlayer;
-        
+        private LookAtTarget _lookAtTarget;
+
         public FollowState(FollowMeleeStateController stateController)
         {
             _stateController = stateController;
             _followPlayer = stateController.FollowPlayer;
+            _lookAtTarget = stateController.LookAtTarget;
             
         }
         public override void Enter()
         {
             _followPlayer.enabled = true;
+            _lookAtTarget.enabled = true;
             
         }
         public override void Update()
@@ -34,6 +37,7 @@ namespace Game.Gameplay
         public override void Exit()
         {
             _followPlayer.enabled = false;
+            _lookAtTarget.enabled = false;
         }
     }
 }

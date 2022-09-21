@@ -1,5 +1,5 @@
 
-namespace Game.Gameplay
+namespace Game.Gameplay.Enemies.FollowMelee
 {
     public abstract class State
     {

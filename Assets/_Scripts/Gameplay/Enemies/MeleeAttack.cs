@@ -1,3 +1,4 @@
+using Game.Gameplay.Enemies.FollowMelee;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,12 +9,7 @@ namespace Game.Gameplay.Enemies
     {
            
         [SerializeField] MetalEnemyAC _aniController;
-        
-
-        private void Start()
-        {
-            
-        }
+              
         private void Update()
         {           
            _aniController.Attack();         

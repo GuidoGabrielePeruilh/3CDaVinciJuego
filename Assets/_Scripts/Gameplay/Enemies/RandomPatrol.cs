@@ -9,7 +9,7 @@ namespace Game.Gameplay.Enemies
         [SerializeField] List<Transform> positions;
         int _indexRandom = 0;
         [SerializeField] Move _move;
-        int _speed = 3;
+        [SerializeField, Range(0, 5)] float _speed = 1;
         [SerializeField] float _distance = 1;
 
         void Update()
@@ -26,7 +26,9 @@ namespace Game.Gameplay.Enemies
 
                 NextIndex();
             }
+            transform.forward = _move.Velocity;
         }
+        
 
 
         void NextIndex()

@@ -1,7 +1,7 @@
 ﻿using Game.Gameplay.Enemies;
 using UnityEngine;
 
-namespace Game.Gameplay
+namespace Game.Gameplay.Enemies.FollowMelee
 {
     public class RandomPatrolState : State
     {

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Game.Gameplay
+namespace Game.Gameplay.Enemies.FollowMelee
 {
     public class FollowMeleeStateController : MonoBehaviour
     {
@@ -18,6 +18,7 @@ namespace Game.Gameplay
         [SerializeField] FollowPlayer _followPlayer;
         [SerializeField] MeleeAttack _meleeAttack;
         [SerializeField] Move _move;
+        [SerializeField] LookAtTarget _lookAtTarget;
 
         public RandomPatrolState RandomPatrolState => _randomPatrolState;        
         public FollowState FollowState => _followState;
@@ -25,6 +26,7 @@ namespace Game.Gameplay
         public FollowPlayer FollowPlayer => _followPlayer;
         public MeleeAttack MeleeAttack => _meleeAttack;
         public int RangeFollow => _rangeFollow;
+        public LookAtTarget LookAtTarget => _lookAtTarget;
         public Player Player => _player;
         public Move Move => _move;
         public float RangeMelee => _rangeMelee;
@@ -32,10 +34,19 @@ namespace Game.Gameplay
         private void Awake()
         {
             _player = FindObjectOfType<Player>();
+            _lookAtTarget.Target = _player.gameObject;
             _randomPatrolState = new RandomPatrolState(this, _randomPatrol);
             _followState = new FollowState(this);
             _meleeState = new MeleeAttackState(this);
+            _randomPatrol.enabled = false;
+            _followPlayer.enabled = false;
+            _meleeAttack.enabled = false;
             _currentState = _randomPatrolState;
+            
+        }
+        private void Start()
+        {
+            _currentState.Enter();
         }
         private void Update()
         {

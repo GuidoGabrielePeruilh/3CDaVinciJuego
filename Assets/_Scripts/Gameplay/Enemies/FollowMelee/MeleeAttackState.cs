@@ -1,25 +1,27 @@
 using Game.Gameplay.Enemies;
 using UnityEngine;
 
-namespace Game.Gameplay
+namespace Game.Gameplay.Enemies.FollowMelee
 {
     public class MeleeAttackState : State
     {
         FollowMeleeStateController _stateController;
         private MeleeAttack _meleeAttack;
         private Move _move;
-
+        private LookAtTarget _lookAtTarget;
 
         public MeleeAttackState(FollowMeleeStateController stateController)
         {
             _stateController = stateController;
             _meleeAttack = stateController.MeleeAttack;
             _move = stateController.Move;
+            _lookAtTarget = stateController.LookAtTarget;
         }
         public override void Enter()
         {
             _move.Velocity = Vector3.zero;
             _meleeAttack.enabled = true;
+            _lookAtTarget.enabled = true;
 
         }
         public override void Update()
@@ -37,6 +39,7 @@ namespace Game.Gameplay
         public override void Exit()
         {
             _meleeAttack.enabled = false;
+            _lookAtTarget.enabled = false;
         }
     }
 }
