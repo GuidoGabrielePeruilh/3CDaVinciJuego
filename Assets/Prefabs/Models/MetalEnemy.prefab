@@ -1379,6 +1379,8 @@ MonoBehaviour:
   _rangeFollow: 5
   _rangeMelee: 1.5
   _followPlayer: {fileID: 8703605369664066519}
+  _meleeAttack: {fileID: 0}
+  _move: {fileID: 0}
 --- !u!114 &7164961074197545700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1391,7 +1393,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d0a1df79044bf54e8e9e6d4d0816da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: {fileID: 0}
+  _heatBox: {fileID: 8995214659107477640}
+  _aniController: {fileID: 7239321111052090265}
 --- !u!1 &4494906266503615390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1963,7 +1966,7 @@ GameObject:
   - component: {fileID: 4378383934874915701}
   - component: {fileID: 7350107342693905872}
   m_Layer: 0
-  m_Name: Damageable
+  m_Name: damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
