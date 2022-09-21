@@ -14,21 +14,23 @@ namespace Game.Gameplay.Enemies
 
         void Update()
         {
+            Vector3 target = positions[_indexRandom].position;
+
             if (Vector3.Distance(transform.position, positions[_indexRandom].position) >= _distance)
             {
-                _move.Velocity = (positions[_indexRandom].position - transform.position).normalized * _speed;
+                _move.Velocity = (target - transform.position).normalized * _speed;
             }
             else
             {
                 _move.Velocity = Vector3.zero;
-                
+
 
 
                 NextIndex();
             }
-            transform.forward = _move.Velocity;
+            transform.LookAt(target);
         }
-        
+
 
 
         void NextIndex()
