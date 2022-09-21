@@ -1,26 +1,26 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace Game
+namespace Game.Gameplay
 {
     public class Move : MonoBehaviour
     {
-        [field : SerializeField] public Vector3 Velocity { get; set; } = Vector3.zero;
-
-        [SerializeField] Rigidbody _myRg;
-
+        [SerializeField] Rigidbody _rigidbody;
+        [Space]
+        [Tooltip("Si ignora el eje del Velocity, tomara el eje del rigidbody")]
         [SerializeField] bool _ignoreX = false;
         [SerializeField] bool _ignoreY = false;
         [SerializeField] bool _ignoreZ = false;
 
-        private void FixedUpdate()
+        void FixedUpdate()
         {
-            _myRg.velocity = new Vector3(
-                 _ignoreX ? _myRg.velocity.x : Velocity.x,
-                 _ignoreY ? _myRg.velocity.y : Velocity.y,
-                 _ignoreZ ? _myRg.velocity.z : Velocity.z
+            _rigidbody.velocity = new Vector3(
+                _ignoreX? _rigidbody.velocity.x : Velocity.x,
+                _ignoreY? _rigidbody.velocity.y : Velocity.y,
+                _ignoreZ? _rigidbody.velocity.z : Velocity.z
                 );
-            transform.forward = _myRg.velocity;
         }
-
+        
+        [field: SerializeField]
+        public Vector3 Velocity { get; set; } = Vector3.zero;
     }
 }
