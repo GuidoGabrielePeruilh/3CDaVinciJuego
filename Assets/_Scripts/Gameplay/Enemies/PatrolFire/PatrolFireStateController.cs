@@ -1,3 +1,4 @@
+using Game.Player;
 using UnityEngine;
 
 namespace Game.Gameplay.Enemies.PatrolFire
@@ -19,7 +20,7 @@ namespace Game.Gameplay.Enemies.PatrolFire
 
         void Awake()
         {
-            _player = FindObjectOfType<Player>()?.gameObject;
+            _player = FindObjectOfType<PlayerController>()?.gameObject;
             _throwBullet.Target = _lookAtTarget.Target = _visualField.Target = _player;
             
             _normal = new NormalState(this);
