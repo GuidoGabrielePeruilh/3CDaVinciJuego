@@ -28,10 +28,13 @@ namespace Game.Gameplay.Enemies
 
                 NextIndex();
             }
-            transform.LookAt(target);
+            transform.forward = target - transform.position;
         }
 
-
+        public float Speed
+        {
+            set => _speed = value;
+        }
 
         void NextIndex()
         {

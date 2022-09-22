@@ -9,6 +9,7 @@ namespace Game.Gameplay.Enemies
         Player _player;        
         [SerializeField, Range(0,5)]  float _speed = 3;        
         [SerializeField] Move _move;
+        [SerializeField, Range(0f, 5f)] float _closeRange = 2f;
         
 
         void Awake()
@@ -17,7 +18,20 @@ namespace Game.Gameplay.Enemies
         }
         void Update()
         {
-            _move.Velocity = (_player.transform.position - transform.position).normalized * _speed;
+            if (Vector3.Distance(_player.transform.position, transform.position) <= _closeRange)
+            {
+                _move.Velocity = Vector3.zero;
+            }
+            else
+            {
+                _move.Velocity = (_player.transform.position - transform.position).normalized * _speed;
+            }
+        }
+
+        public float CloseRange => _closeRange;
+        public float Speed
+        {
+            set => _speed = value;
         }
     }
 }

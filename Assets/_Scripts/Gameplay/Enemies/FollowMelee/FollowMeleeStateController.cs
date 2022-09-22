@@ -13,13 +13,14 @@ namespace Game.Gameplay.Enemies.FollowMelee
         FollowState _followState;
         MeleeAttackState _meleeState;
         [SerializeField] RandomPatrol _randomPatrol;
-        [SerializeField] int _rangeFollow = 100;
-        [SerializeField] float _rangeMelee = 0.5f;
+        [SerializeField, Range(0, 10)] int _rangeFollow = 9;
+        float _rangeMelee = 0.5f;
         [SerializeField] FollowPlayer _followPlayer;
         [SerializeField] MeleeAttack _meleeAttack;
         [SerializeField] Move _move;
         [SerializeField] LookAtTarget _lookAtTarget;
-
+        [SerializeField, Range(0f, 5f)] private float _moveSpeed = 5f;
+        
         public RandomPatrolState RandomPatrolState => _randomPatrolState;        
         public FollowState FollowState => _followState;
         public MeleeAttackState MeleeState => _meleeState;
@@ -35,6 +36,8 @@ namespace Game.Gameplay.Enemies.FollowMelee
         {
             _player = FindObjectOfType<Player>();
             _lookAtTarget.Target = _player.gameObject;
+            _rangeMelee = _followPlayer.CloseRange;
+            _randomPatrol.Speed = _followPlayer.Speed = _moveSpeed;
             _randomPatrolState = new RandomPatrolState(this, _randomPatrol);
             _followState = new FollowState(this);
             _meleeState = new MeleeAttackState(this);
