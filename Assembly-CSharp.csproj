@@ -71,9 +71,9 @@
     <Compile Include="Assets\_Scripts\Gameplay\VisualField.cs" />
     <Compile Include="Assets\_Scripts\Gameplay\Platforms\BreakPlatformAC.cs" />
     <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolBehaviour.cs" />
+    <Compile Include="Assets\_Scripts\New Controls.cs" />
     <Compile Include="Assets\_Scripts\ActionRepeater.cs" />
     <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\AttackState.cs" />
-    <Compile Include="Assets\_Scripts\New Controls.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
