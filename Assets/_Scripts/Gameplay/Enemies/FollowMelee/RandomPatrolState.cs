@@ -1,5 +1,4 @@
-﻿using Game.Gameplay.Enemies;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Game.Gameplay.Enemies.FollowMelee
 {
@@ -20,7 +19,9 @@ namespace Game.Gameplay.Enemies.FollowMelee
         }
         public override void Update()
         {
-            var _distanceFromPlayer = Vector3.Distance(_stateController.transform.position, _stateController.Player.transform.position);
+            Vector3 position = _stateController.transform.position;
+            Vector3 playerPosition = _stateController.Player.transform.position;           
+            var _distanceFromPlayer = Vector3.Distance(position, playerPosition);
             if (_distanceFromPlayer <= _stateController.RangeFollow)
             {
                 _stateController.SwitchState(_stateController.FollowState);

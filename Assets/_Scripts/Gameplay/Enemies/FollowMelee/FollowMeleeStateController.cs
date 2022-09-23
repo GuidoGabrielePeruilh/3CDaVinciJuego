@@ -1,4 +1,5 @@
 using Game.Gameplay.Enemies;
+using Game.Player;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +16,7 @@ namespace Game.Gameplay.Enemies.FollowMelee
         [SerializeField] LookAtTarget _lookAtTarget;
         [SerializeField, Range(0f, 5f)] private float _moveSpeed = 5f;
         State _currentState;
-        Player _player;
+        PlayerController _player;
         RandomPatrolState _randomPatrolState;
         FollowState _followState;
         MeleeAttackState _meleeState;
@@ -28,13 +29,13 @@ namespace Game.Gameplay.Enemies.FollowMelee
         public MeleeAttack MeleeAttack => _meleeAttack;
         public int RangeFollow => _rangeFollow;
         public LookAtTarget LookAtTarget => _lookAtTarget;
-        public Player Player => _player;
+        public PlayerController Player => _player;
         public Move Move => _move;
         public float RangeMelee => _rangeMelee;
 
         private void Awake()
         {
-            _player = FindObjectOfType<Player>();
+            _player = FindObjectOfType<PlayerController>();
             _lookAtTarget.Target = _player.gameObject;
             _rangeMelee = _followPlayer.CloseRange;
             _randomPatrol.Speed = _followPlayer.Speed = _moveSpeed;

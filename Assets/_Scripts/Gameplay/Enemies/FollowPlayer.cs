@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Game.Player;
 using UnityEngine;
 
 namespace Game.Gameplay.Enemies
@@ -9,13 +8,13 @@ namespace Game.Gameplay.Enemies
         [SerializeField, Range(0,5)]  float _speed = 3;        
         [SerializeField] Move _move;
         [SerializeField, Range(0f, 5f)] float _closeRange = 2f;
-        Player _player;        
+        PlayerController _player;        
         public float CloseRange => _closeRange;
         
 
         void Awake()
         {
-            _player = FindObjectOfType<Player>();          
+            _player = FindObjectOfType<PlayerController>();          
         }
         void Update()
         {
