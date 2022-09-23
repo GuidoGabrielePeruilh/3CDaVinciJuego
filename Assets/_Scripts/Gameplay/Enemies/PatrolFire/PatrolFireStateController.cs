@@ -22,12 +22,15 @@ namespace Game.Gameplay.Enemies.PatrolFire
         {
             _player = FindObjectOfType<PlayerController>()?.gameObject;
             _throwBullet.Target = _lookAtTarget.Target = _visualField.Target = _player;
-            
+            _visualField.enabled = true;
+            _normalBehaviour.enabled = false;
+            _attackBehaviour.enabled = false;
+            _shooterRepeater.enabled = false;
+            _lookAtTarget.enabled = false;
+            _throwBullet.enabled = false;
             _normal = new NormalState(this);
             _attack = new AttackState(this);
             _currentState = _normal;
-            _attackBehaviour.enabled = false;
-            _normalBehaviour.enabled = true;
         }
         
         void Start()

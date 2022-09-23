@@ -20,9 +20,8 @@ namespace Game.Gameplay.Enemies.FollowMelee
         public override void Update()
         {
             Vector3 position = _stateController.transform.position;
-            Vector3 playerPosition = _stateController.Player.transform.position;           
-            var _distanceFromPlayer = Vector3.Distance(position, playerPosition);
-            if (_distanceFromPlayer <= _stateController.RangeFollow)
+            Vector3 playerPosition = _stateController.Player.transform.position;
+            if (Utils.IsInRangeOfVision(position, playerPosition, _stateController.RangeFollow, _stateController.RangeOfVisionY))
             {
                 _stateController.SwitchState(_stateController.FollowState);
             }

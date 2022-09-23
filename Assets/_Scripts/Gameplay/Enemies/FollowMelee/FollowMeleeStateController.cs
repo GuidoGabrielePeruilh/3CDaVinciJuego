@@ -10,6 +10,7 @@ namespace Game.Gameplay.Enemies.FollowMelee
     {
         [SerializeField] RandomPatrol _randomPatrol;
         [SerializeField, Range(0, 15)] int _rangeFollow = 15;
+        [SerializeField, Range(.1f, 3f)] float _rangeOfVisionY = 1;
         [SerializeField] FollowPlayer _followPlayer;
         [SerializeField] MeleeAttack _meleeAttack;
         [SerializeField] Move _move;
@@ -32,6 +33,7 @@ namespace Game.Gameplay.Enemies.FollowMelee
         public PlayerController Player => _player;
         public Move Move => _move;
         public float RangeMelee => _rangeMelee;
+        public float RangeOfVisionY => _rangeOfVisionY;
 
         private void Awake()
         {
@@ -39,6 +41,7 @@ namespace Game.Gameplay.Enemies.FollowMelee
             _lookAtTarget.Target = _player.gameObject;
             _rangeMelee = _followPlayer.CloseRange;
             _randomPatrol.Speed = _followPlayer.Speed = _moveSpeed;
+            _followPlayer.RangeOfVisionY = _rangeOfVisionY;
             _randomPatrolState = new RandomPatrolState(this, _randomPatrol);
             _followState = new FollowState(this);
             _meleeState = new MeleeAttackState(this);

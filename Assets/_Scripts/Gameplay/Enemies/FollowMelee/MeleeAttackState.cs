@@ -26,12 +26,9 @@ namespace Game.Gameplay.Enemies.FollowMelee
         }
         public override void Update()
         {
-            var _distanceFromPlayer = Vector3.Distance(_stateController.transform.position, _stateController.Player.transform.position);
-            if (_distanceFromPlayer > _stateController.RangeFollow)
-            {
-                _stateController.SwitchState(_stateController.RandomPatrolState);
-            }
-            else if (_distanceFromPlayer < _stateController.RangeFollow && _distanceFromPlayer > _stateController.RangeMelee)
+            Vector3 position = _stateController.transform.position;
+            Vector3 playerPosition = _stateController.Player.transform.position;
+            if (!Utils.IsInRangeOfVision(position, playerPosition, _stateController.RangeMelee, _stateController.RangeOfVisionY))
             {
                 _stateController.SwitchState(_stateController.FollowState);
             }

@@ -16,9 +16,10 @@ namespace Game.Gameplay.Enemies
         {
             Vector3 target = positions[_indexRandom].position;
 
+            var targetDirection = target - transform.position;
             if (Vector3.Distance(transform.position, positions[_indexRandom].position) >= _distance)
             {
-                _move.Velocity = (target - transform.position).normalized * _speed;
+                _move.Velocity = targetDirection.normalized * _speed;
             }
             else
             {
@@ -28,7 +29,9 @@ namespace Game.Gameplay.Enemies
 
                 NextIndex();
             }
-            transform.forward = target - transform.position;
+
+            targetDirection.y = 0;
+            transform.forward = targetDirection;
         }
 
         public float Speed
