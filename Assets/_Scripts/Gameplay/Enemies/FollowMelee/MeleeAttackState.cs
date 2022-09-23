@@ -6,9 +6,9 @@ namespace Game.Gameplay.Enemies.FollowMelee
     public class MeleeAttackState : State
     {
         FollowMeleeStateController _stateController;
-        private MeleeAttack _meleeAttack;
-        private Move _move;
-        private LookAtTarget _lookAtTarget;
+        MeleeAttack _meleeAttack;
+        Move _move;
+        LookAtTarget _lookAtTarget;
 
         public MeleeAttackState(FollowMeleeStateController stateController)
         {

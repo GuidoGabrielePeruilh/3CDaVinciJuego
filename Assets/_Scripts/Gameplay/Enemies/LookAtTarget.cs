@@ -6,7 +6,6 @@ namespace Game.Gameplay.Enemies
     {
         [SerializeField] GameObject _target;
         [SerializeField, Range(0f, 10f)] float _speedRotation = 10f;
-
         void Update()
         {
             var targetDirection = _target.transform.position - transform.position;

@@ -9,11 +9,9 @@ namespace Game.Gameplay.Platforms
 
         [SerializeField] Transform _point1;
         [SerializeField] Transform _point2;
-
+        [SerializeField] AnimationCurve myCurve;
         float _timer;
         bool _go;
-
-        [SerializeField] AnimationCurve myCurve;
         float _last;
 
         void Start()
@@ -38,14 +36,14 @@ namespace Game.Gameplay.Platforms
             }                       
         }
 
-        private void OnCollisionEnter(Collision collision)
+        void OnCollisionEnter(Collision collision)
         {
             if (collision.gameObject.CompareTag("Player"))
             {
                 collision.gameObject.transform.SetParent(transform);
             }
         }
-        private void OnCollisionExit(Collision collision)
+        void OnCollisionExit(Collision collision)
         {
             if (collision.gameObject.CompareTag("Player"))
             {

@@ -7,7 +7,7 @@ namespace Game.Gameplay.Enemies.FollowMelee
     {
         FollowMeleeStateController _stateController;
         FollowPlayer _followPlayer;
-        private LookAtTarget _lookAtTarget;
+        LookAtTarget _lookAtTarget;
 
         public FollowState(FollowMeleeStateController stateController)
         {

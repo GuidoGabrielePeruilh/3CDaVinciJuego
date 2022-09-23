@@ -7,19 +7,19 @@ namespace Game.Gameplay.Enemies.FollowMelee
 {
     public class FollowMeleeStateController : MonoBehaviour
     {
-        State _currentState;
-        private Player _player;
-        RandomPatrolState _randomPatrolState;
-        FollowState _followState;
-        MeleeAttackState _meleeState;
         [SerializeField] RandomPatrol _randomPatrol;
-        [SerializeField, Range(0, 10)] int _rangeFollow = 9;
-        float _rangeMelee = 0.5f;
+        [SerializeField, Range(0, 15)] int _rangeFollow = 15;
         [SerializeField] FollowPlayer _followPlayer;
         [SerializeField] MeleeAttack _meleeAttack;
         [SerializeField] Move _move;
         [SerializeField] LookAtTarget _lookAtTarget;
         [SerializeField, Range(0f, 5f)] private float _moveSpeed = 5f;
+        State _currentState;
+        Player _player;
+        RandomPatrolState _randomPatrolState;
+        FollowState _followState;
+        MeleeAttackState _meleeState;
+        float _rangeMelee = 0.5f;
         
         public RandomPatrolState RandomPatrolState => _randomPatrolState;        
         public FollowState FollowState => _followState;

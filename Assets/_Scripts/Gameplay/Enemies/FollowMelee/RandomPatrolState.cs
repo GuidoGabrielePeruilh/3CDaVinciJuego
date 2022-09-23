@@ -5,8 +5,8 @@ namespace Game.Gameplay.Enemies.FollowMelee
 {
     public class RandomPatrolState : State
     {
-        private RandomPatrol _randomPatrol;   
-        private FollowMeleeStateController _stateController;
+        RandomPatrol _randomPatrol;   
+        FollowMeleeStateController _stateController;
 
         public RandomPatrolState(FollowMeleeStateController followMeleeStateController, RandomPatrol randomPatrol)
         {

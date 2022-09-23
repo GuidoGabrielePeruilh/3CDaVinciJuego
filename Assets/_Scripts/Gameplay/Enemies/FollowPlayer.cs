@@ -6,10 +6,11 @@ namespace Game.Gameplay.Enemies
 {
     public class FollowPlayer : MonoBehaviour
     {          
-        Player _player;        
         [SerializeField, Range(0,5)]  float _speed = 3;        
         [SerializeField] Move _move;
         [SerializeField, Range(0f, 5f)] float _closeRange = 2f;
+        Player _player;        
+        public float CloseRange => _closeRange;
         
 
         void Awake()
@@ -28,7 +29,6 @@ namespace Game.Gameplay.Enemies
             }
         }
 
-        public float CloseRange => _closeRange;
         public float Speed
         {
             set => _speed = value;
