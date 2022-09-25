@@ -54,10 +54,9 @@
   <ItemGroup>
      <Compile Include="Assets\_Scripts\Utils.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\State.cs" />
-     <Compile Include="Assets\_Scripts\Player.cs" />
+     <Compile Include="Assets\_Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\PatrolFireAnimatorController.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\BreakPlatformBrain.cs" />
-     <Compile Include="Assets\_Scripts\Gameplay\Jump.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\SandAnimatorEvent.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\LookAtTarget.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\NormalState.cs" />
@@ -68,10 +67,15 @@
      <Compile Include="Assets\_Scripts\Gameplay\ThrowBullet.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\PatrolFireStateController.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\VisualField.cs" />
+     <Compile Include="Assets\_Scripts\ParciclesController.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Platforms\BreakPlatformAC.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolBehaviour.cs" />
      <Compile Include="Assets\_Scripts\ActionRepeater.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\AttackState.cs" />
+     <Compile Include="Assets\_Scripts\SO\IntSO.cs" />
+     <Compile Include="Assets\_Scripts\Player\PlayerDamageable.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\IDamageable.cs" />
+     <Compile Include="Assets\DummyBorrar.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.25f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
