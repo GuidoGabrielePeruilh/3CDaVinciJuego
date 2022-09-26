@@ -11,6 +11,7 @@ namespace Game.Gameplay
         [SerializeField] GameObject _target;
         [SerializeField] float _visualAngle = 45f;
         [SerializeField] float _visualDistance = 10f;
+        [SerializeField, Range(.1f, 3f)] float _rangeOfVisionY = 1.5f;
         bool _isTargetInView = false;
 
         void Update()
@@ -38,7 +39,12 @@ namespace Game.Gameplay
         
         bool CanSeeTarget()
         {
-            if (Vector3.Distance(_target.transform.position, transform.position) > _visualDistance) return false;
+            if (
+                !Utils.IsInRangeOfVision(
+                    transform.position, _target.transform.position, _visualDistance, _rangeOfVisionY
+                    )
+                )
+                return false;
             var direction = (_target.transform.position - transform.position).normalized;
             var angle = Vector3.Angle(transform.forward, direction);
 
