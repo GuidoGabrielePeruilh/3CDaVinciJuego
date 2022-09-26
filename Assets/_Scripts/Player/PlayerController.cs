@@ -10,6 +10,7 @@ namespace Game.Player
 
         [SerializeField] Move _move;
         [SerializeField] Jump _jump;
+        [SerializeField] AttackPjMelee _melee;
         [SerializeField, Range(0,10)] private float _speed = 2;
 
         public void Move(InputAction.CallbackContext context)
@@ -26,6 +27,10 @@ namespace Game.Player
             }
         }
         
+        public void AttackMelee(InputAction.CallbackContext contexto)
+        {
+            _melee.AttackMelee();
+        }
         
     }
 }
