@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Game
+namespace Game.Gameplay.Enemies.FollowMelee
 {
     public class EventAnimation : MonoBehaviour
     {
 
         [SerializeField] GameObject _damage;
 
-        private void Awake()
+        void Awake()
         {
             _damage.SetActive(false);
         }
