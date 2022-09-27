@@ -22,10 +22,16 @@ namespace Game.Player
         float _targetPitch;
         float _rotationVelocity;
         private Vector2 _lookInput;
+        private Vector2 _moveVelocityInput;
         const float _threshold = 0.01f;
 
         bool IsCurrentDeviceMouse
             => _playerInput.currentControlScheme == "KeyboardMouse";
+
+        void Update()
+        {
+            _move.Velocity = (_moveVelocityInput.x * transform.right + transform.forward * _moveVelocityInput.y).normalized * _speed;
+        }
 
         void LateUpdate()
         {
@@ -41,8 +47,12 @@ namespace Game.Player
 
         public void Move(InputAction.CallbackContext context)
         {
-           var input = context.ReadValue<Vector2>();
-            _move.Velocity = (input.x * transform.right + transform.forward).normalized * _speed;
+            _moveVelocityInput = context.ReadValue<Vector2>();
+            if (context.canceled)
+            {
+                Debug.Log("canceled");
+                _moveVelocityInput = Vector2.zero;
+            }
         }
 
        public void Jump(InputAction.CallbackContext context)
