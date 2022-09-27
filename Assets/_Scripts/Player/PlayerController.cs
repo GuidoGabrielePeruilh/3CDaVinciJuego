@@ -27,10 +27,7 @@ namespace Game.Player
             }
         }
         
-        public void AttackMelee(InputAction.CallbackContext contexto)
-        {
-            _melee.AttackMelee();
-        }
+        
         
     }
 }

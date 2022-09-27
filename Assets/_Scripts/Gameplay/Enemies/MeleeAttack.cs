@@ -10,7 +10,7 @@ namespace Game.Gameplay.Enemies
         [SerializeField] MetalEnemyAC _aniController;             
         private void Update()
         {           
-           _aniController.Attack();         
+          _aniController.Attack();         
         }
     }
 }
