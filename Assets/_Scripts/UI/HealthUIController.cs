@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Game.SO;
-using Game.Player;
 
 namespace Game.UI
 {
@@ -17,12 +14,12 @@ namespace Game.UI
         [SerializeField] IntSO _maxPlayerLife;
         [SerializeField] IntSO _actualPlayerLife;
 
-        private void Start()
+        void Start()
         {
             SetSliderValue();
         }
 
-        private void Update()
+        void Update()
         {
             SetSliderValue();
         }
@@ -36,7 +33,5 @@ namespace Game.UI
             _slider.value = value;
             _sliderFillImage.color = _colorVariention.Evaluate(value);
         }
-
-
     }
 }
