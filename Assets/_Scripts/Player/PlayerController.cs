@@ -29,14 +29,8 @@ namespace Game.Player
 
         void LateUpdate()
         {
-            if (_lookInput.sqrMagnitude < _threshold) return;
-           
-            float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
-            _targetPitch += _lookInput.y * _rotationSpeed * deltaTimeMultiplier * (_invertedYAxis? 1 : -1);
-            _rotationVelocity = _lookInput.x * _rotationSpeed * deltaTimeMultiplier * (_invertedXAxis? -1 : 1);
-            _targetPitch = Utils.ClampAngle(_targetPitch, _bottomClamp, _topClamp);
-            _camera.transform.localRotation = Quaternion.Euler(_targetPitch, 0.0f, 0.0f);
-            transform.Rotate(Vector3.up * _rotationVelocity);
+            UpdateCameraLook();
+            // Physics.Raycast(_camera.transform.forward, );
         }
 
         public void Move(InputAction.CallbackContext context)
@@ -56,6 +50,18 @@ namespace Game.Player
        public void Look(InputAction.CallbackContext context)
        {
            _lookInput = context.ReadValue<Vector2>();
+       }
+
+       void UpdateCameraLook()
+       {
+           if (_lookInput.sqrMagnitude < _threshold) return;
+
+           float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
+           _targetPitch += _lookInput.y * _rotationSpeed * deltaTimeMultiplier * (_invertedYAxis ? 1 : -1);
+           _rotationVelocity = _lookInput.x * _rotationSpeed * deltaTimeMultiplier * (_invertedXAxis ? -1 : 1);
+           _targetPitch = Utils.ClampAngle(_targetPitch, _bottomClamp, _topClamp);
+           _camera.transform.localRotation = Quaternion.Euler(_targetPitch, 0.0f, 0.0f);
+           transform.Rotate(Vector3.up * _rotationVelocity);
        }
     }
 }
