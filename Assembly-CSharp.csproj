@@ -88,7 +88,12 @@
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowMelee\FollowState.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\AttackState.cs" />
      <Compile Include="Assets\_Scripts\UI\SliderController.cs" />
-     <Compile Include="Assets\WeaponsController.cs" />
+     <Compile Include="Assets\WeaponInventory.cs" />
+     <Compile Include="Assets\_Scripts\SO\WeaponSO.cs" />
+     <Compile Include="Assets\_Scripts\Player\WeaponController.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\Weapon\Weapon.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\Weapon\ShooterWeapon.cs" />
+     <Compile Include="Assets\Damaging.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.25f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
