@@ -43,7 +43,7 @@ namespace Game.Player
 
         public void ChangeToWeapon(int slot)
         {
-            if (slot < 0 && slot >= _weapons.Count) return;
+            if (slot < 0 || slot >= _weapons.Count) return;
 
             _current.SetActive(false);
             _current = _weapons[slot];

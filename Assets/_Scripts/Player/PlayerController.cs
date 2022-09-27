@@ -27,6 +27,11 @@ namespace Game.Player
         bool IsCurrentDeviceMouse
             => _playerInput.currentControlScheme == "KeyboardMouse";
 
+        void Start()
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
         void Update()
         {
             _move.Velocity = (_moveVelocityInput.x * transform.right + transform.forward * _moveVelocityInput.y).normalized * _speed;
