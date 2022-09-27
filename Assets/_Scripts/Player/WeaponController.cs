@@ -11,6 +11,11 @@ namespace Game.Player
         {
             _inventory.CurrentWeapon.GetComponent<Weapon>()?.ShootBullet();
         }
+        
+        public void StopShootingWeapon()
+        {
+            _inventory.CurrentWeapon.GetComponent<Weapon>()?.StopShooting();
+        }
 
         public void ReloadWeapon()
         {

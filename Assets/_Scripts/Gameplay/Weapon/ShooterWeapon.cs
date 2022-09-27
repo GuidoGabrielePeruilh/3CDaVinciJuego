@@ -10,13 +10,20 @@ namespace Game.Gameplay.Weapon
         [SerializeField] Transform _firePoint;
         int _bullets = 0;
 
-        [ContextMenu("ShootBullet")]
+        void Awake()
+        {
+            _bullets = _weaponData.MaxBullets;
+        }
+        
         public override void ShootBullet()
         {
+            if (_bullets <= 0) return;
+
             var bulletObject = _bulletPooler.GetPooledObject();
             bulletObject.SetActive(true);
             bulletObject.transform.position = _firePoint.position;
             bulletObject.GetComponent<Bullet>()?.Shoot(_firePoint.forward);
+            _bullets--;
         }
 
         public override void ReloadWeapon()
@@ -24,5 +31,4 @@ namespace Game.Gameplay.Weapon
             _bullets = _weaponData.MaxBullets;
         }
     }
-    // public class 
 }

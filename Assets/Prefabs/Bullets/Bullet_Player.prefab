@@ -264,8 +264,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _move: {fileID: 8776756453097479586}
-  _speed: 2
-  _timeToDisable: 3
+  _speed: 10
+  _timeToDisable: 2
 --- !u!114 &8776756453097479586
 MonoBehaviour:
   m_ObjectHideFlags: 0

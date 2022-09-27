@@ -84,101 +84,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108109585}
   m_Enabled: 1
---- !u!1 &2746170393044945650
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5113913832432085388}
-  m_Layer: 0
-  m_Name: FirePoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5113913832432085388
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2746170393044945650}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.11193, z: 0.3746}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4208722871622689376}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3888562889198726771
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4208722871622689376}
-  - component: {fileID: 9112684468212110112}
-  - component: {fileID: 5692728909649176648}
-  m_Layer: 0
-  m_Name: NailsPiston_Weapon (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4208722871622689376
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3888562889198726771}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 13556100852665252}
-  - {fileID: 5113913832432085388}
-  m_Father: {fileID: 8219668240861932369}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9112684468212110112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3888562889198726771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 521219c045af4d17a96fc76235f9ae1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _weaponData: {fileID: 11400000, guid: 5cb8a3494f6dcbe4f90dc1c9e89125f5, type: 2}
-  _bulletPooler: {fileID: 5692728909649176648}
-  _firePoint: {fileID: 5113913832432085388}
---- !u!114 &5692728909649176648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3888562889198726771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86e3613be9a542bca23fdc5646be0244, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pooledObject: {fileID: 1569349650795147576, guid: 269de5f634060374f949bb6ca1639d5d, type: 3}
-  _pooledAmount: 1
-  _willGrow: 1
-  _pooledObjects: []
 --- !u!1 &8219668240563186164
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,6 +334,7 @@ MonoBehaviour:
   _jump: {fileID: 8219668241822508869}
   _speed: 5.06
   _playerInput: {fileID: 8219668241822508866}
+  _weaponController: {fileID: 8219668241822508986}
   _topClamp: 90
   _bottomClamp: -90
   _camera: {fileID: 1108109587}
@@ -511,10 +417,10 @@ MonoBehaviour:
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8219668241822508986}
-        m_TargetAssemblyTypeName: Game.Player.WeaponController, Assembly-CSharp
-        m_MethodName: ShootWeapon
-        m_Mode: 1
+      - m_Target: {fileID: 8219668241822508868}
+        m_TargetAssemblyTypeName: Game.Player.PlayerController, Assembly-CSharp
+        m_MethodName: Fire
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -629,6 +535,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 4c9f2986-8f1f-4c38-81c4-8f760c129023
     m_ActionName: Player/Change Weapon 3[/Keyboard/3,/XInputControllerWindows/dpad/down]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8219668241822508868}
+        m_TargetAssemblyTypeName: Game.Player.PlayerController, Assembly-CSharp
+        m_MethodName: Reload
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f9e4a709-14d9-4d95-9446-b941f8540a2f
+    m_ActionName: Player/Reload[/XInputControllerWindows/buttonWest,/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -674,6 +596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weapons:
   - {fileID: 3315748194258262737}
+  - {fileID: 3888562889198726771}
 --- !u!1 &8219668242174349543
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,67 +628,72 @@ Transform:
   m_Father: {fileID: 8219668241822508871}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2014538614280987337
+--- !u!1001 &3396207267186069313
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 4208722871622689376}
+    m_TransformParent: {fileID: 8219668240861932369}
     m_Modifications:
-    - target: {fileID: 2001072686446045549, guid: c5f906f031acf3341b6e452af405258c, type: 3}
+    - target: {fileID: 1533937069260811553, guid: 7cd12200bd3156040955aebf80ad1489, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2001072686446045549, guid: c5f906f031acf3341b6e452af405258c, type: 3}
+    - target: {fileID: 1533937069260811553, guid: 7cd12200bd3156040955aebf80ad1489, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2001072686446045549, guid: c5f906f031acf3341b6e452af405258c, type: 3}
+    - target: {fileID: 1533937069260811553, guid: 7cd12200bd3156040955aebf80ad1489, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2001072686446045549, guid: c5f906f031acf3341b6e452af405258c, type: 3}
+    - target: {fileID: 1533937069260811553, guid: 7cd12200bd3156040955aebf80ad1489, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2001072686446045549, guid: c5f906f031acf3341b6e452af405258c, type: 3}
+    - target: {fileID: 1533937069260811553, guid: 7cd12200bd3156040955aebf80ad1489, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2001072686446045549, guid: c5f906f031acf3341b6e452af405258c, type: 3}
+    - target: {fileID: 1533937069260811553, guid: 7cd12200bd3156040955aebf80ad1489, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2001072686446045549, guid: c5f906f031acf3341b6e452af405258c, type: 3}
+    - target: {fileID: 1533937069260811553, guid: 7cd12200bd3156040955aebf80ad1489, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2001072686446045549, guid: c5f906f031acf3341b6e452af405258c, type: 3}
+    - target: {fileID: 1533937069260811553, guid: 7cd12200bd3156040955aebf80ad1489, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2001072686446045549, guid: c5f906f031acf3341b6e452af405258c, type: 3}
+    - target: {fileID: 1533937069260811553, guid: 7cd12200bd3156040955aebf80ad1489, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2001072686446045549, guid: c5f906f031acf3341b6e452af405258c, type: 3}
+    - target: {fileID: 1533937069260811553, guid: 7cd12200bd3156040955aebf80ad1489, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2001072686446045549, guid: c5f906f031acf3341b6e452af405258c, type: 3}
+    - target: {fileID: 1533937069260811553, guid: 7cd12200bd3156040955aebf80ad1489, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5141914122065644119, guid: c5f906f031acf3341b6e452af405258c, type: 3}
+    - target: {fileID: 1934071586597183794, guid: 7cd12200bd3156040955aebf80ad1489, type: 3}
       propertyPath: m_Name
-      value: NailsPistol
+      value: Flamethrower_Weapon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c5f906f031acf3341b6e452af405258c, type: 3}
---- !u!4 &13556100852665252 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 7cd12200bd3156040955aebf80ad1489, type: 3}
+--- !u!1 &3888562889198726771 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1934071586597183794, guid: 7cd12200bd3156040955aebf80ad1489, type: 3}
+  m_PrefabInstance: {fileID: 3396207267186069313}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4208722871622689376 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2001072686446045549, guid: c5f906f031acf3341b6e452af405258c, type: 3}
-  m_PrefabInstance: {fileID: 2014538614280987337}
+  m_CorrespondingSourceObject: {fileID: 1533937069260811553, guid: 7cd12200bd3156040955aebf80ad1489, type: 3}
+  m_PrefabInstance: {fileID: 3396207267186069313}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8574873681560020643
 PrefabInstance:
@@ -825,6 +753,10 @@ PrefabInstance:
     - target: {fileID: 6414239970006088818, guid: 2995e5e25acebc3479602f2226558c20, type: 3}
       propertyPath: m_Name
       value: NailsPiston_Weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414239970006088818, guid: 2995e5e25acebc3479602f2226558c20, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2995e5e25acebc3479602f2226558c20, type: 3}

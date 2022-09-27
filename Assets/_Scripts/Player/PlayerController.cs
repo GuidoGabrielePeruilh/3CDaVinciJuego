@@ -5,14 +5,13 @@ using UnityEngine.InputSystem;
 
 namespace Game.Player
 {
-    
     public class PlayerController : MonoBehaviour
     {
-
         [SerializeField] Move _move;
         [SerializeField] Jump _jump;
         [SerializeField, Range(0,10)] private float _speed = 2;
         [SerializeField] PlayerInput _playerInput;
+        [SerializeField] WeaponController _weaponController;
         [SerializeField] float _topClamp = 90.0f;
         [SerializeField] float _bottomClamp = -90.0f;
         [SerializeField] Camera _camera;
@@ -60,6 +59,20 @@ namespace Game.Player
        public void Look(InputAction.CallbackContext context)
        {
            _lookInput = context.ReadValue<Vector2>();
+       }
+
+       public void Fire(InputAction.CallbackContext context)
+       {
+           if (context.started)
+               _weaponController.ShootWeapon();
+           if (context.canceled)
+               _weaponController.StopShootingWeapon();
+       }
+
+       public void Reload(InputAction.CallbackContext context)
+       {
+           if (context.performed)
+               _weaponController.ReloadWeapon();
        }
 
        void UpdateCameraLook()
