@@ -278,9 +278,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d96d5bdcbb85a2643b30b3e4c89774c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 2644555778844839946}
-  sliderFillImage: {fileID: 2644555778297054383}
-  colorVariention:
+  _slider: {fileID: 2644555778844839946}
+  _sliderFillImage: {fileID: 2644555778297054383}
+  _colorVariention:
     serializedVersion: 2
     key0: {r: 0.9019608, g: 0.20392157, b: 0.14901961, a: 1}
     key1: {r: 1, g: 0.5372549, b: 0.003921569, a: 1}
@@ -288,7 +288,7 @@ MonoBehaviour:
     key3: {r: 1, g: 0.8, b: 0.12941177, a: 0}
     key4: {r: 1, g: 0.8, b: 0.12941177, a: 0}
     key5: {r: 0.10980392, g: 0.7529412, b: 0.17254902, a: 0}
-    key6: {r: 0.9019608, g: 0.20392157, b: 0.14901961, a: 0}
+    key6: {r: 0.10980392, g: 0.7529412, b: 0.17254902, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 13107
     ctime1: 19661
@@ -309,6 +309,8 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 6
     m_NumAlphaKeys: 2
+  _maxPlayerLife: {fileID: 11400000, guid: 9129bf96da3b7fd4fb166a0a20b1577f, type: 2}
+  _actualPlayerLife: {fileID: 11400000, guid: c6ad2e414c74f3847861491152a1474f, type: 2}
 --- !u!1 &2644555778941868152
 GameObject:
   m_ObjectHideFlags: 0

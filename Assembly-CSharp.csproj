@@ -80,6 +80,7 @@
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\PatrolFireStateController.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\VisualField.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowMelee\MetalEnemyAC.cs" />
+     <Compile Include="Assets\_Scripts\UI\HealthUIController.cs" />
      <Compile Include="Assets\_Scripts\Player\PlayerDamageable.cs" />
      <Compile Include="Assets\_Scripts\ParciclesController.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Platforms\BreakPlatformAC.cs" />
