@@ -1,14 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Game.Player;
 
-namespace Game.Player
+namespace Game.Gameplay.Weapon
 {
-    public class AttackPjMelee : MonoBehaviour
+    public class MeleeWeapon : Weapon
     {
         [SerializeField] GameObject _damaging;
-
+        [SerializeField] Animator _ani;
+              
         void Awake()
         {
             _damaging.SetActive(false);
@@ -23,6 +21,16 @@ namespace Game.Player
         {
             _damaging.SetActive(false);
         }
-      
+
+        public override void ShootBullet()
+        {
+            //TODO activar animacion de melee.
+            
+        }
+
+        public override void ReloadWeapon()
+        {
+           
+        }
     }
 }
