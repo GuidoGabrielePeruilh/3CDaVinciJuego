@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game
@@ -9,7 +7,7 @@ namespace Game
         [SerializeField] ParticleSystem _particle;
         [Range(1, 10)][SerializeField] float _delayOff;
 
-        private void Start()
+        void Start()
         {
             TurnOff();
         }
@@ -27,7 +25,7 @@ namespace Game
             Invoke("GameObjectOff", _delayOff);
         }
 
-        private void GameObjectOff()
+        void GameObjectOff()
         {
             gameObject.SetActive(false);
         }

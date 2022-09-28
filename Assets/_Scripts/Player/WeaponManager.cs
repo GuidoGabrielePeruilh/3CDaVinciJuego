@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Game.Gameplay.Weapon;
 using Game.Managers;
@@ -14,6 +13,7 @@ namespace Game.Player
         int _currentIndex = 0;
 
         public List<GameObject> Inventory => new List<GameObject>(_weapons);
+        public GameObject CurrentWeapon => _current;
         void Awake()
         {
             foreach (var weapon in _weapons)
@@ -29,12 +29,10 @@ namespace Game.Player
             }
         }
 
-        private void Start()
+        void Start()
         {
             GameManager.instance.UpdateBulletCounter(_current.GetComponent<Weapon>());
         }
-
-        public GameObject CurrentWeapon => _current;
 
         public void ChangeToNextWeapon()
         {

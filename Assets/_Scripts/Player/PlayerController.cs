@@ -1,4 +1,3 @@
-using System;
 using Game.Gameplay;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -41,7 +40,6 @@ namespace Game.Player
         void LateUpdate()
         {
             UpdateCameraLook();
-            // Physics.Raycast(_camera.transform.forward, );
         }
 
         public void Move(InputAction.CallbackContext context)
@@ -49,7 +47,6 @@ namespace Game.Player
             _moveVelocityInput = context.ReadValue<Vector2>();
             if (context.canceled)
             {
-                
                 _moveVelocityInput = Vector2.zero;
             }
         }

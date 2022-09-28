@@ -1,6 +1,4 @@
 using System;
-using Game.Gameplay;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

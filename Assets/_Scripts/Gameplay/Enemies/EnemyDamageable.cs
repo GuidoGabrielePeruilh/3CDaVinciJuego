@@ -1,12 +1,10 @@
 using System;
 using UnityEngine;
-using System.Collections;
 
 namespace Game.Gameplay.Enemies
 {
     public class EnemyDamageable : MonoBehaviour, IDamageable
     {
-
         [SerializeField]int _enemyLife = 10;
         [SerializeField] int _secondsToDestroy = 3;
         public event Action<int> OnTakeDamage;

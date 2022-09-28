@@ -2,7 +2,7 @@
 
 namespace Game.Gameplay.Enemies.FollowMelee
 {
-    public class MetalEnemyAC : MonoBehaviour
+    public class MetalEnemyAnimatorController : MonoBehaviour
     {
         [SerializeField] Animator _animator;
         [SerializeField] EnemyDamageable _enemyDamagable;

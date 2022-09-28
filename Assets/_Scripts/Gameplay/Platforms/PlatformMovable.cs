@@ -1,12 +1,9 @@
- using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game.Gameplay.Platforms
 {
     public class PlatformMovable : MonoBehaviour
     {
-
         [SerializeField] Transform _point1;
         [SerializeField] Transform _point2;
         [SerializeField] AnimationCurve myCurve;
