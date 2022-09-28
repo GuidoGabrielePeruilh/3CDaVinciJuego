@@ -19,6 +19,7 @@ namespace Game.Gameplay.Weapon
 
         void Awake()
         {
+            type = Type.PARTICLE;
             _time = shootinRateInSeconds;
             _bullets = _weaponData.MaxBullets;
             _particleBullet.SetActive(false);
@@ -41,14 +42,14 @@ namespace Game.Gameplay.Weapon
             }
         }
 
-        public override void ShootBullet()
+        public override void Attack()
         {
             if (_bullets <= 0) return;
             _particleBullet.SetActive(true);
             _isShooting = true;
         }
 
-        public override void StopShooting()
+        public override void StopAttacking()
         {
             _particleBullet.SetActive(false);
             _isShooting = false;
