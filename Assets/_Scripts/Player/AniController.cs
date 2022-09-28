@@ -16,9 +16,10 @@ namespace Game.Player
             _myAni.SetFloat("Vertical", _move.Velocity.z);
         }
 
-        public void attackmelee()
+        public void AttackMelee()
         {
-
+            _myAni.SetBool("Melee", true);
+            _myAni.SetTrigger("Attack");
         }
     }
 }

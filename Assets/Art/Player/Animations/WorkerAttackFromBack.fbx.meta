@@ -59,16 +59,23 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.33014587
-        functionName: ANIM_EVENT
-        data: melee_attack_start
+      - time: 0.33615187
+        functionName: ANIM_EVENT_MELEE
+        data: start_heatbox
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.41664404
-        functionName: ANIM_EVENT
-        data: melee_attack_end
+        functionName: ANIM_EVENT_MELEE
+        data: end_heatbox
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.99099106
+        functionName: ANIM_EVENT_MELEE
+        data: finish_ani
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0

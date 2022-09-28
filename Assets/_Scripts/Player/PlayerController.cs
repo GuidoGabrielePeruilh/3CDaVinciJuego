@@ -48,7 +48,7 @@ namespace Game.Player
             _moveVelocityInput = context.ReadValue<Vector2>();
             if (context.canceled)
             {
-                Debug.Log("canceled");
+                
                 _moveVelocityInput = Vector2.zero;
             }
         }

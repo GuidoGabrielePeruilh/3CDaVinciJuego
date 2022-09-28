@@ -19,6 +19,7 @@ namespace Game.Gameplay.Weapon
 
         void Awake()
         {
+            type = Type.PARTICLE;
             _time = shootinRateInSeconds;
             _bullets = _weaponData.MaxBullets;
             _particleBullet.SetActive(false);

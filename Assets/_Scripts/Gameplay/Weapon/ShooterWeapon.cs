@@ -12,6 +12,7 @@ namespace Game.Gameplay.Weapon
 
         void Awake()
         {
+            type = Type.SHOOTER;
             _bullets = _weaponData.MaxBullets;
         }
         

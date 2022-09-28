@@ -6,10 +6,27 @@ namespace Game.Player
     public class WeaponController : MonoBehaviour
     {
         [SerializeField] WeaponInventory _inventory;
+        [SerializeField] AniController _ani;
 
         public void ShootWeapon()
         {
-            _inventory.CurrentWeapon.GetComponent<Weapon>()?.ShootBullet();
+
+            var weapon = _inventory.CurrentWeapon.GetComponent<Weapon>();
+            if(!weapon.CanAttack()) return;
+            switch (weapon.type)
+            {
+                case Weapon.Type.MELEE:
+                    _ani.AttackMelee();
+                    break;
+                case Weapon.Type.SHOOTER:
+                    break;
+                case Weapon.Type.PARTICLE:
+                    break;
+                default:
+                    break;
+            }
+            //weapon?.ShootBullet();
+
         }
         
         public void StopShootingWeapon()
