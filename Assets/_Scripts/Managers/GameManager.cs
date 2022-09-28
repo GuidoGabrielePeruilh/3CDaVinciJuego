@@ -15,6 +15,9 @@ namespace Game.Managers
         void Awake()
         {
             instance = this;
+
+            if(_pauseMenu != null)
+                _pauseMenu.SetActive(false);
         }
 
         public static GameObject Player => instance._player;
@@ -46,13 +49,17 @@ namespace Game.Managers
 
         public void Pause()
         {
+            _isPaused = true;
             _pauseMenu.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
         }
 
         public void Resume()
         {
+            _isPaused = false;
             _pauseMenu.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
             Time.timeScale = 1;
         }
         public void RestartLevel()
