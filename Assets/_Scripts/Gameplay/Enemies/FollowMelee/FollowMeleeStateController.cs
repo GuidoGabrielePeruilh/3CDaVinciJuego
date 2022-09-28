@@ -58,11 +58,15 @@ namespace Game.Gameplay.Enemies.FollowMelee
         }
         private void Update()
         {
-            if (_enemyDamagable.Life != 0)
+            if (_enemyDamagable.Life > 0)
             {
-
                 _currentState.Update();
-
+            }
+            else
+            {
+                _lookAtTarget.enabled = false;
+                _followPlayer.enabled = false;
+                _move.Velocity = Vector3.zero;
             }
 
 

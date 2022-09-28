@@ -96,6 +96,7 @@ MonoBehaviour:
   _move: {fileID: 8877865011683415}
   _speed: 2
   _timeToDisable: 3
+  _trail: {fileID: 0}
 --- !u!114 &5328054697789129866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,4 +109,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce7d1e32fad2a9e4fa02fd9e363bfcd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 10
+  _damage: 1

@@ -34,6 +34,10 @@ namespace Game.Gameplay.Weapon
                     ShootTriggerBullet();
                     _time = shootinRateInSeconds;
                     _bullets--;
+                    if(_bullets <= 0)
+                    {
+                        StopAttacking();
+                    }
                 }
                 else
                 {

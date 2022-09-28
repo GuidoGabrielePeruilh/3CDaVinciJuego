@@ -272,7 +272,7 @@ MonoBehaviour:
           m_StringArgument: Attack
           m_BoolArgument: 0
         m_CallState: 2
-  _waitForShootInSeconds: 2
+  _waitForShootInSeconds: 1
 --- !u!114 &2302987543489821036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,7 +286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyLife: 10
-  _secondsToDestroy: 3
+  _secondsToDestroy: 5
 --- !u!1 &3324573506319657963
 GameObject:
   m_ObjectHideFlags: 0
