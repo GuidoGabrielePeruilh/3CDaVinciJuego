@@ -22,6 +22,7 @@ namespace Game.Player
         float _rotationVelocity;
         private Vector2 _lookInput;
         private Vector2 _moveVelocityInput;
+        private PlayerAnimationManager _playerAnimationManager;
         const float _threshold = 0.01f;
 
         bool IsCurrentDeviceMouse

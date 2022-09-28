@@ -1,3 +1,4 @@
+using Game.Player;
 using UnityEngine;
 
 namespace Game.Gameplay.Weapon
@@ -8,8 +9,9 @@ namespace Game.Gameplay.Weapon
         public Type type;
         public virtual bool CanAttack() => true;
         
-        public abstract void ShootBullet();
-        public virtual void StopShooting() {}
-        public abstract void ReloadWeapon();
+        public abstract void Attack();
+        public virtual void StopAttacking() {}
+        public virtual void ReloadWeapon() {}
+        public virtual void SubscribeToAnimationEvents(PlayerAnimationManager playerAnimationManager) {}
     }
 }

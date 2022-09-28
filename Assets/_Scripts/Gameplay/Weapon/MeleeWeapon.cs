@@ -1,67 +1,49 @@
-using Game.Gameplay.Weapon;
-using System.Diagnostics;
+using Game.Player;
 using UnityEngine;
 
-
-public class MeleeWeapon : Weapon
+namespace Game.Gameplay.Weapon
 {
-    [SerializeField] GameObject _damaging;
-    [SerializeField] Animator _ani;
-    bool _canAttack = true;
-
-    void Awake()
+    public class MeleeWeapon : Weapon
     {
-        type = Type.MELEE;
-        _damaging.SetActive(false);
-
-    }
-
-    public void ANIM_EVENT_MELEE(string context)
-    {
-        switch (context)
+        [SerializeField] GameObject _damaging;
+        bool _canAttack = true;
+    
+        void Awake()
         {
-            case "start_heatbox":
-                StartHeatbox();
-                break;
-            case "end_heatbox":
-                EndHeatbox();
-                break;
-            case "finish_ani":
-                FinishAni();
-                break;
-            default:
-                break;
+            type = Type.MELEE;
+            _damaging.SetActive(false);
+        }
+        
+        public override bool CanAttack() => _canAttack;
+
+        public override void Attack()
+        {
+            _canAttack = false;
         }
 
-    }
-    public override bool CanAttack()
-    {
-        return _canAttack;
-    }
-    private void FinishAni()
-    {
-        _canAttack = true;
-    }
+        public override void SubscribeToAnimationEvents(PlayerAnimationManager animationManager)
+        {
+            animationManager.ADD_ANI_EVENT("start_melee_heatbox", EVENT_START_HEATBOX);
+            animationManager.ADD_ANI_EVENT("end_melee_heatbox", EVENT_END_HEATBOX);
+            animationManager.ADD_ANI_EVENT("end_melee_ani", EVENT_FINISH_ANI);
+        }
 
-    private void EndHeatbox()
-    {
-        _damaging.SetActive(false);
-    }
+        #region Anim Callbacks
 
-    private void StartHeatbox()
-    {
-        _damaging.SetActive(true);
-    }
-
-    public override void ShootBullet()
-    {
-        _canAttack = false;
-
-    }
-
-    public override void ReloadWeapon()
-    {
-
-    }
+        void EVENT_FINISH_ANI()
+        {
+            _canAttack = true;
+        }
+    
+        void EVENT_END_HEATBOX()
+        {
+            _damaging.SetActive(false);
+        }
+    
+        void EVENT_START_HEATBOX()
+        {
+            _damaging.SetActive(true);
+        }
+        #endregion
+    }   
 }
-

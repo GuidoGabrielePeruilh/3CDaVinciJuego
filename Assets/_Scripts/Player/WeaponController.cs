@@ -5,38 +5,37 @@ namespace Game.Player
 {
     public class WeaponController : MonoBehaviour
     {
-        [SerializeField] WeaponInventory _inventory;
-        [SerializeField] AniController _ani;
+        [SerializeField] WeaponManager manager;
+        [SerializeField] PlayerAnimationManager _animationManager;
 
         public void ShootWeapon()
         {
-
-            var weapon = _inventory.CurrentWeapon.GetComponent<Weapon>();
+            var weapon = manager.CurrentWeapon.GetComponent<Weapon>();
             if(!weapon.CanAttack()) return;
             switch (weapon.type)
             {
                 case Weapon.Type.MELEE:
-                    _ani.AttackMelee();
+                    _animationManager.AttackMelee();
                     break;
                 case Weapon.Type.SHOOTER:
+                    _animationManager.AttackShooter();
                     break;
                 case Weapon.Type.PARTICLE:
+                    weapon.Attack();
                     break;
                 default:
                     break;
             }
-            //weapon?.ShootBullet();
-
         }
         
         public void StopShootingWeapon()
         {
-            _inventory.CurrentWeapon.GetComponent<Weapon>()?.StopShooting();
+            manager.CurrentWeapon.GetComponent<Weapon>()?.StopAttacking();
         }
 
         public void ReloadWeapon()
         {
-            _inventory.CurrentWeapon.GetComponent<Weapon>()?.ReloadWeapon();
+            manager.CurrentWeapon.GetComponent<Weapon>()?.ReloadWeapon();
         }
     }
 }
