@@ -149,6 +149,7 @@ MonoBehaviour:
   _target: {fileID: 0}
   _visualAngle: 80
   _visualDistance: 10
+  _rangeOfVisionY: 1.5
 --- !u!114 &564365771632663803
 MonoBehaviour:
   m_ObjectHideFlags: 0
