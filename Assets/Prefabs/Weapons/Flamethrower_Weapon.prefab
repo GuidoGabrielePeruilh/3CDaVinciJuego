@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2044f204f20b1e64e89037256a9c373d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 2
   _weaponData: {fileID: 11400000, guid: b764a1e102716434eb76f054bfc5bf16, type: 2}
   _particleBullet: {fileID: 3781322346412742812}
   _firePoint: {fileID: 7627273735651452621}
