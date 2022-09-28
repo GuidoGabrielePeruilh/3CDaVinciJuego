@@ -100,6 +100,7 @@
     <Compile Include="Assets\_Scripts\ActionRepeater.cs" />
     <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowMelee\FollowState.cs" />
     <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\AttackState.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Food.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
