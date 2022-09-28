@@ -1,6 +1,7 @@
 using System;
 using Game.Gameplay;
 using Game.SO;
+using Game.Managers;
 using UnityEngine;
 
 namespace Game.Player
@@ -14,6 +15,9 @@ namespace Game.Player
         {
             _playerLive.value -= damage;
             OnTakeDamage?.Invoke(damage);
+
+            if (_playerLive.value <= 0)
+                GameManager.instance.DeathScreen();
         }
     }
 }

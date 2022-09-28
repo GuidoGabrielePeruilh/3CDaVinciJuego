@@ -7,10 +7,14 @@ namespace Game.Managers
     public class GameManager : MonoBehaviour
     {
         public static GameManager instance;
+
         [SerializeField] GameObject _player;
+
         [SerializeField] GameObject _pauseMenu;
+        [SerializeField] GameObject _deathMessege;
 
         bool _isPaused = false;
+        bool _isDeath = false;
 
         void Awake()
         {
@@ -18,9 +22,20 @@ namespace Game.Managers
 
             if(_pauseMenu != null)
                 _pauseMenu.SetActive(false);
+
+            if (_deathMessege != null)
+                _deathMessege.SetActive(false);
         }
 
         public static GameObject Player => instance._player;
+
+        public void DeathScreen()
+        {
+            _isDeath = true; 
+            Cursor.lockState = CursorLockMode.None;
+            _deathMessege.SetActive(true);
+            Time.timeScale = 0;
+        }
 
         public void NewGame()
         {
@@ -41,6 +56,8 @@ namespace Game.Managers
 
         public void PauseKeybord()
         {
+            if (_isDeath) return;
+
             if (_isPaused)
                 Resume();
             else
