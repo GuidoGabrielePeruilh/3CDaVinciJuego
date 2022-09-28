@@ -1,21 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace Game
 {
     public class TiltablePlatform : MonoBehaviour
-    {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
+    {     
+        private void FixedUpdate()
+        {           
+            transform.Rotate(new Vector3(0, 60f, 0) * Time.deltaTime);
+            
         }
 
-        // Update is called once per frame
-        void Update()
+        void OnCollisionEnter(Collision collision)
         {
-        
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                collision.gameObject.transform.SetParent(transform);
+            }
+        }
+        void OnCollisionExit(Collision collision)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                collision.gameObject.transform.SetParent(null);
+            }
         }
     }
 }

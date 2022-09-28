@@ -51,6 +51,65 @@
     <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <UnityProjectGenerator>Package</UnityProjectGenerator>
+    <UnityProjectGeneratorVersion>2.0.12</UnityProjectGeneratorVersion>
+    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
+    <UnityVersion>2020.3.25f1</UnityVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Assets\_Scripts\Utils.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\State.cs" />
+    <Compile Include="Assets\_Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\PatrolFireAnimatorController.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\BreakPlatformBrain.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Enemies\MeleeAttack.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Jump.cs" />
+    <Compile Include="Assets\_Scripts\Managers\GameManager.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowMelee\FollowMeleeStateController.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowMelee\MeleeAttackState.cs" />
+    <Compile Include="Assets\_Scripts\Player\WeaponController.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\SandAnimatorEvent.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Enemies\LookAtTarget.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\NormalState.cs" />
+    <Compile Include="Assets\_Scripts\Player\AniController.cs" />
+    <Compile Include="Assets\_Scripts\SO\WeaponSO.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowMelee\EventAnimation.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\ObjectPooler.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Platforms\TiltablePlatform.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowMelee\RandomPatrolState.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\OnPlayerOver.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowPlayer.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Weapon\Weapon.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Weapon\ShooterWeapon.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Move.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Enemies\RandomPatrol.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowMelee\State.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Platforms\PlatformMovable.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Bullet.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\IDamageable.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Weapon\MeleeWeapon.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\ThrowBullet.cs" />
+    <Compile Include="Assets\_Scripts\SO\IntSO.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\PatrolFireStateController.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\VisualField.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowMelee\MetalEnemyAC.cs" />
+    <Compile Include="Assets\_Scripts\UI\HealthUIController.cs" />
+    <Compile Include="Assets\_Scripts\Player\WeaponInventory.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Weapon\ParticleWeapon.cs" />
+    <Compile Include="Assets\_Scripts\Player\PlayerDamageable.cs" />
+    <Compile Include="Assets\_Scripts\ParciclesController.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Platforms\BreakPlatformAC.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolBehaviour.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Damaging.cs" />
+    <Compile Include="Assets\_Scripts\ActionRepeater.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowMelee\FollowState.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\AttackState.cs" />
+    <Compile Include="Assets\_Scripts\Gameplay\Food.cs" />
+  </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\_Scripts\Utils.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\State.cs" />
