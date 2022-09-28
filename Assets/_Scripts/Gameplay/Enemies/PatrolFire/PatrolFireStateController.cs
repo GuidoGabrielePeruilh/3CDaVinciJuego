@@ -41,10 +41,18 @@ namespace Game.Gameplay.Enemies.PatrolFire
 
         void Update()
         {
+            
             if (_damageable.Life > 0)
             {
                 _currentState.Update();
             }
+            else
+            {
+                _lookAtTarget.enabled = false;
+                
+                _move.Velocity = Vector3.zero;
+            }
+
         }
 
         public void ChangeState(State nextState)

@@ -74,6 +74,8 @@ namespace Game.Gameplay.Enemies
                 _target += _direction;
                 StartCoroutine(CO_StartWaiting(_waitForSeconds));
             }
+           
+
         }
 
         IEnumerator CO_StartWaiting(WaitForSeconds waitForSeconds)
