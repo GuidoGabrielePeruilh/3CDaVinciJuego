@@ -593,6 +593,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1329252413}
+  _maxHealth: {fileID: 11400000, guid: 9129bf96da3b7fd4fb166a0a20b1577f, type: 2}
+  _health: {fileID: 11400000, guid: c6ad2e414c74f3847861491152a1474f, type: 2}
   _pauseMenu: {fileID: 701766277}
   _deathMessege: {fileID: 701766278}
 --- !u!4 &1211708233
