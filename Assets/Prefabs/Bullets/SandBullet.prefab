@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 5098188331791427718}
   - component: {fileID: 21826603409495266}
   - component: {fileID: 4433657527251420589}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SandBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

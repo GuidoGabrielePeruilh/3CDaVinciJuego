@@ -25,8 +25,8 @@ namespace Game.Gameplay.Weapon
         public override void Attack()
         {
             var bulletObject = _bulletPooler.GetPooledObject();
-            bulletObject.SetActive(true);
             bulletObject.transform.position = _firePoint.position;
+            bulletObject.SetActive(true);
             bulletObject.GetComponent<Bullet>()?.Shoot(_firePoint.forward);
             _bullets--;
         }
