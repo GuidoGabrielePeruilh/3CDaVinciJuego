@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1360242013417973677}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 1360242013892548703}
   - component: {fileID: 1360242013892548696}
   - component: {fileID: 1360242013892548697}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 1360242015143116522}
   - component: {fileID: 1360242015143116532}
   - component: {fileID: 3486319866869162616}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform_Breaks
   m_TagString: Untagged
   m_Icon: {fileID: 0}

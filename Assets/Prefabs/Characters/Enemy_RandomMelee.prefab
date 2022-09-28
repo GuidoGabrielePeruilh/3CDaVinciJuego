@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 6394532928326410465}
   - component: {fileID: 6779529177335636181}
   - component: {fileID: 8054064421387174308}
-  - component: {fileID: 474636426231381521}
   - component: {fileID: 8415224544075344654}
   m_Layer: 0
   m_Name: Enemy_RandomMelee
@@ -156,18 +155,6 @@ MonoBehaviour:
   _ignoreX: 0
   _ignoreY: 0
   _ignoreZ: 0
---- !u!114 &474636426231381521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1871783242920672996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc660ccbbe8a4ad4ea828415e3d77778, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8415224544075344654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4861305713962480776}
   - component: {fileID: 8095859981732571640}
+  - component: {fileID: 1604624653537840850}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
@@ -227,6 +215,19 @@ CapsuleCollider:
   m_Height: 1.9953742
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &1604624653537840850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3410269104207759678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc660ccbbe8a4ad4ea828415e3d77778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyLife: 10
 --- !u!1001 &5425753226825585282
 PrefabInstance:
   m_ObjectHideFlags: 0
