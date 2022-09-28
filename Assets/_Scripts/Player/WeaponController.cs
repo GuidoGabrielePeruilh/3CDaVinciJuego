@@ -20,7 +20,6 @@ namespace Game.Player
                     break;
                 case Weapon.Type.SHOOTER:
                     _animationManager.AttackShooter();
-                    GameManager.instance.UpdateBulletCounter(weapon);
                     break;
                 case Weapon.Type.PARTICLE:
                     weapon.Attack();

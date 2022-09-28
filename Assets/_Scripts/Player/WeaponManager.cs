@@ -25,7 +25,13 @@ namespace Game.Player
                 _current = _weapons[0];
                 _current.SetActive(true);
                 SubscribeCurrentAnimations();
+                
             }
+        }
+
+        private void Start()
+        {
+            GameManager.instance.UpdateBulletCounter(_current.GetComponent<Weapon>());
         }
 
         public GameObject CurrentWeapon => _current;

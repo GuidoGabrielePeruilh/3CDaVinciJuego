@@ -1,5 +1,6 @@
 using Game.Player;
 using Game.SO;
+using Game.Managers;
 using UnityEngine;
 
 namespace Game.Gameplay.Weapon
@@ -30,6 +31,7 @@ namespace Game.Gameplay.Weapon
             bulletObject.SetActive(true);
             bulletObject.GetComponent<Bullet>()?.Shoot(_firePoint.forward);
             _bullets--;
+            GameManager.instance.UpdateBulletCounter(this);
         }
 
         public override void ReloadWeapon()
