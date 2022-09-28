@@ -53,7 +53,8 @@ namespace Game.Gameplay.Enemies
             if (_isWaiting) return;
 
             var targetPosition = _patrol[_target];
-            transform.LookAt(targetPosition);
+            var targetLookAt = new Vector3(targetPosition.x, transform.position.y, targetPosition.z);
+            transform.LookAt(targetLookAt);
             var transformPosition = new Vector3(transform.position.x, 0, transform.position.z);
             _move.Velocity = (targetPosition - transformPosition).normalized * _speed;
             if (Vector3.Distance(transformPosition, targetPosition) <= _minimumDistanceNearPoint)
