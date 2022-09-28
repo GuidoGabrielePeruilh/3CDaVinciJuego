@@ -1217,6 +1217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3958282056448977535}
   - component: {fileID: 6921619599356882949}
+  - component: {fileID: 1181284335657081928}
   m_Layer: 0
   m_Name: MetalEnemy
   m_TagString: Untagged
@@ -1259,6 +1260,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1181284335657081928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4442084298689999045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc074d1f718a57c4abcb4c7d6e25f9f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: {fileID: 6744234970106270236}
 --- !u!1 &4494906266503615390
 GameObject:
   m_ObjectHideFlags: 0

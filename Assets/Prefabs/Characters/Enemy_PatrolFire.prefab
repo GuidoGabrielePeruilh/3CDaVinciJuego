@@ -65,6 +65,7 @@ GameObject:
   - component: {fileID: 4140093129540077214}
   - component: {fileID: 7170227535695364372}
   - component: {fileID: 2071058080219038129}
+  - component: {fileID: 2302987543489821036}
   m_Layer: 0
   m_Name: Enemy_PatrolFire
   m_TagString: Untagged
@@ -149,6 +150,7 @@ MonoBehaviour:
   _target: {fileID: 0}
   _visualAngle: 80
   _visualDistance: 10
+  _rangeOfVisionY: 1.5
 --- !u!114 &564365771632663803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,6 +271,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _waitForShootInSeconds: 2
+--- !u!114 &2302987543489821036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564365771632663800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc660ccbbe8a4ad4ea828415e3d77778, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3324573506319657963
 GameObject:
   m_ObjectHideFlags: 0
