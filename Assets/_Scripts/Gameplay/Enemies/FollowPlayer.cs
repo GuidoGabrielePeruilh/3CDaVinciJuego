@@ -1,4 +1,3 @@
-using System;
 using Game.Player;
 using UnityEngine;
 
@@ -15,6 +14,11 @@ namespace Game.Gameplay.Enemies
         public float RangeOfVisionY
         {
             set => _rangeOfVisionY = value;
+        }
+        
+        public float Speed
+        {
+            set => _speed = value;
         }
 
         void Awake()
@@ -33,11 +37,6 @@ namespace Game.Gameplay.Enemies
             {
                 _move.Velocity = (playerPosition - currentPosition).normalized * _speed;
             }
-        }
-
-        public float Speed
-        {
-            set => _speed = value;
         }
     }
 }

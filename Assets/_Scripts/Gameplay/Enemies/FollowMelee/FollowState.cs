@@ -1,5 +1,4 @@
-﻿using Game.Gameplay.Enemies;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Game.Gameplay.Enemies.FollowMelee
 {

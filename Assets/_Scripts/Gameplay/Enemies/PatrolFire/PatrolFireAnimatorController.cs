@@ -8,7 +8,7 @@ namespace Game.Gameplay.Enemies.PatrolFire
         [SerializeField] Animator _animator;
         [SerializeField] EnemyDamageable _enemyDamagable;
 
-        private void Awake()
+        void Awake()
         {
             _enemyDamagable.OnDeath += Death;
         }

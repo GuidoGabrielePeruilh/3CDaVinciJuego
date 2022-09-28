@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace Game
 {
@@ -10,7 +7,6 @@ namespace Game
         private void FixedUpdate()
         {           
             transform.Rotate(new Vector3(0, 60f, 0) * Time.deltaTime);
-            
         }
 
         void OnCollisionEnter(Collision collision)
