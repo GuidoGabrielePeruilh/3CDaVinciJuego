@@ -6,6 +6,12 @@ namespace Game.Gameplay.Enemies.PatrolFire
     {
         [SerializeField] Move _move;
         [SerializeField] Animator _animator;
+        [SerializeField] EnemyDamageable _enemyDamagable;
+
+        private void Awake()
+        {
+            _enemyDamagable.OnDeath += Death;
+        }
 
         void LateUpdate()
         {
@@ -14,5 +20,9 @@ namespace Game.Gameplay.Enemies.PatrolFire
 
         public void ShootAnimation()
             => _animator.SetTrigger("Attack");
+        public void Death()
+        {
+            _animator.SetTrigger("Death");
+        }
     }
 }
