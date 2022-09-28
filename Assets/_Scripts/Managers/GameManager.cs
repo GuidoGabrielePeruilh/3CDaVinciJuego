@@ -1,6 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Game.SO;
 
 namespace Game.Managers
 {
@@ -8,8 +9,12 @@ namespace Game.Managers
     {
         public static GameManager instance;
 
+        [Header("Player Info")]
         [SerializeField] GameObject _player;
+        [SerializeField] IntSO _maxHealth;
+        [SerializeField] IntSO _health;
 
+        [Header("HUD Objets")]
         [SerializeField] GameObject _pauseMenu;
         [SerializeField] GameObject _deathMessege;
 
@@ -39,6 +44,7 @@ namespace Game.Managers
 
         public void NewGame()
         {
+            _health.value = _maxHealth.value;
             SceneManager.LoadScene("Level0");
         }
         public void ControlsMenu()
@@ -82,6 +88,7 @@ namespace Game.Managers
         public void RestartLevel()
         {
             Time.timeScale = 1;
+            _health.value = _maxHealth.value;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         public void BackToMainMenu()
