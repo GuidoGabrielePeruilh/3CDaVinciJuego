@@ -59,6 +59,7 @@ MonoBehaviour:
   _move: {fileID: 2227387254386213678}
   _lookAtTarget: {fileID: 8054064421387174308}
   _moveSpeed: 5
+  _enemyDamagable: {fileID: 1604624653537840850}
 --- !u!54 &8901121125137834358
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -88,6 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 3117244702086275719}
+  _enemyDamagable: {fileID: 1604624653537840850}
   _move: {fileID: 2227387254386213678}
 --- !u!114 &2227387254386213678
 MonoBehaviour:
@@ -228,6 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyLife: 10
+  _secondsToDestroy: 3
 --- !u!1001 &5425753226825585282
 PrefabInstance:
   m_ObjectHideFlags: 0

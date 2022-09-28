@@ -22,8 +22,9 @@ namespace Game.Gameplay.Enemies.FollowMelee
         FollowState _followState;
         MeleeAttackState _meleeState;
         float _rangeMelee = 0.5f;
-        
-        public RandomPatrolState RandomPatrolState => _randomPatrolState;        
+        [SerializeField] EnemyDamageable _enemyDamagable;
+
+        public RandomPatrolState RandomPatrolState => _randomPatrolState;
         public FollowState FollowState => _followState;
         public MeleeAttackState MeleeState => _meleeState;
         public FollowPlayer FollowPlayer => _followPlayer;
@@ -49,7 +50,7 @@ namespace Game.Gameplay.Enemies.FollowMelee
             _followPlayer.enabled = false;
             _meleeAttack.enabled = false;
             _currentState = _randomPatrolState;
-            
+
         }
         private void Start()
         {
@@ -57,7 +58,14 @@ namespace Game.Gameplay.Enemies.FollowMelee
         }
         private void Update()
         {
-            _currentState.Update();
+            if (_enemyDamagable.Life != 0)
+            {
+
+                _currentState.Update();
+
+            }
+
+
         }
         public void SwitchState(State state)
         {
@@ -66,5 +74,5 @@ namespace Game.Gameplay.Enemies.FollowMelee
             _currentState.Enter();
         }
     }
-  
+
 }
