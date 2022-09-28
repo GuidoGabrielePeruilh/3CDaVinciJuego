@@ -11,6 +11,7 @@ namespace Game.Gameplay.Weapon
         [SerializeField] Transform _firePoint;
         int _bullets = 0;
 
+        public override int CurrentAmmunition => _bullets;
         void Awake()
         {
             type = Type.SHOOTER;

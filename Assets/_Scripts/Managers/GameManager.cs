@@ -1,7 +1,9 @@
+using Game.Gameplay.Weapon;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Game.SO;
+using UnityEngine.UI;
 
 namespace Game.Managers
 {
@@ -17,6 +19,7 @@ namespace Game.Managers
         [Header("HUD Objets")]
         [SerializeField] GameObject _pauseMenu;
         [SerializeField] GameObject _deathMessege;
+        [SerializeField] Text _bulletCounterText;
 
         bool _isPaused = false;
         bool _isDeath = false;
@@ -95,6 +98,15 @@ namespace Game.Managers
         {
             Time.timeScale = 1;
             SceneManager.LoadScene("MainMenu");
+        }
+
+        public void UpdateBulletCounter(Weapon weapon)
+        {
+            if (_bulletCounterText == null) return;
+            if (weapon.type == Weapon.Type.MELEE)
+                _bulletCounterText.text = "";
+            else
+                _bulletCounterText.text = weapon.CurrentAmmunition.ToString();
         }
     }
 }

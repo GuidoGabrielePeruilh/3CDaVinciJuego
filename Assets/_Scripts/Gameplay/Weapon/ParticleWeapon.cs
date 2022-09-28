@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Game.Managers;
 using Game.SO;
 using UnityEngine;
 
@@ -17,6 +18,7 @@ namespace Game.Gameplay.Weapon
         bool _isShooting = false;
         float _time;
 
+        public override int CurrentAmmunition => _bullets;
         void Awake()
         {
             type = Type.PARTICLE;
@@ -34,6 +36,7 @@ namespace Game.Gameplay.Weapon
                     ShootTriggerBullet();
                     _time = shootinRateInSeconds;
                     _bullets--;
+                    GameManager.instance.UpdateBulletCounter(this);
                     if(_bullets <= 0)
                     {
                         StopAttacking();

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Game.Gameplay.Weapon;
+using Game.Managers;
 using UnityEngine;
 
 namespace Game.Player
@@ -54,6 +55,7 @@ namespace Game.Player
             _current.SetActive(true);
             _currentIndex = slot;
             SubscribeCurrentAnimations();
+            GameManager.instance.UpdateBulletCounter(_current.GetComponent<Weapon>());
         }
 
         void SubscribeCurrentAnimations()
