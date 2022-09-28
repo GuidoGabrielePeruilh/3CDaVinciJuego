@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 21826603409495266}
   - component: {fileID: 4433657527251420589}
   - component: {fileID: 1549074241406726064}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SandBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,6 +192,7 @@ MonoBehaviour:
   _move: {fileID: 4433657527251420589}
   _speed: 10
   _timeToDisable: 3
+  _trail: {fileID: 0}
 --- !u!114 &4433657527251420589
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,21 +15,15 @@ namespace Game.Gameplay.Enemies
 
         public void TakeTamage(int damage)
         {
+            if (Life <= 0) return;
+
             _enemyLife -= damage;
             OnTakeDamage?.Invoke(damage);
             if (Life <= 0)
             {
                 OnDeath?.Invoke();
-                StartCoroutine(CO_Destroy());
+                Destroy(gameObject, _secondsToDestroy);
             }
         }
-        IEnumerator CO_Destroy()
-        {
-            yield return new WaitForSeconds(_secondsToDestroy);
-            Destroy(transform.parent.gameObject);
-        }
-
-        
-
     }
 }
