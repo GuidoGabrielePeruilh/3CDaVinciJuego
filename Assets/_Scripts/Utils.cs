@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Game
@@ -9,6 +10,24 @@ namespace Game
             angleInDegrees += eulerY;
         
             return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
+        }
+
+        public static bool IsInRangeOfVision(
+            Vector3 positionA, Vector3 positionB, float maxDistanceXZ, float maxDistanceY
+            )
+        {
+            var distanceY = Math.Abs(positionB.y - positionA.y);
+            positionB.y = positionA.y = 0;
+            var distanceXZ = Vector3.Distance(positionB, positionA);
+
+            return distanceXZ <= maxDistanceXZ && distanceY <= maxDistanceY;
+        }
+        
+        public static float ClampAngle(float lfAngle, float lfMin, float lfMax)
+        {
+            if (lfAngle < -360f) lfAngle += 360f;
+            if (lfAngle > 360f) lfAngle -= 360f;
+            return Mathf.Clamp(lfAngle, lfMin, lfMax);
         }
     }
 }

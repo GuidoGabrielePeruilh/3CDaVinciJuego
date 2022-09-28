@@ -207,6 +207,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
   _speedRotation: 10
+  _ignoreX: 0
+  _ignoreY: 1
+  _ignoreZ: 0
 --- !u!114 &4140093129540077214
 MonoBehaviour:
   m_ObjectHideFlags: 0
