@@ -1,15 +1,18 @@
 using System;
 using System.Collections.Generic;
+using Game.Gameplay.Weapon;
 using UnityEngine;
 
 namespace Game.Player
 {
-    public class WeaponInventory : MonoBehaviour
+    public class WeaponManager : MonoBehaviour
     {
         [SerializeField] List<GameObject> _weapons;
+        [SerializeField] PlayerAnimationManager _animationManager;
         GameObject _current;
         int _currentIndex = 0;
 
+        public List<GameObject> Inventory => new List<GameObject>(_weapons);
         void Awake()
         {
             foreach (var weapon in _weapons)
@@ -20,6 +23,7 @@ namespace Game.Player
                 _currentIndex = 0;
                 _current = _weapons[0];
                 _current.SetActive(true);
+                SubscribeCurrentAnimations();
             }
         }
 
@@ -49,6 +53,30 @@ namespace Game.Player
             _current = _weapons[slot];
             _current.SetActive(true);
             _currentIndex = slot;
+            SubscribeCurrentAnimations();
+        }
+
+        void SubscribeCurrentAnimations()
+        {
+            var weapon = _current.GetComponent<Weapon>();
+            if (weapon ==  null) return;
+            
+            weapon.SubscribeToAnimationEvents(_animationManager);
+            switch (weapon.type)
+            {
+                case Weapon.Type.MELEE:
+                    _animationManager.HasPistol(false);
+                    _animationManager.HasRifle(false);
+                    break;
+                case Weapon.Type.SHOOTER:
+                    _animationManager.HasPistol(true);
+                    _animationManager.HasRifle(false);
+                    break;
+                case Weapon.Type.PARTICLE:
+                    break;
+                default:
+                    break;
+            }
         }
     }
     
