@@ -659,6 +659,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Resume
       objectReference: {fileID: 0}
+    - target: {fileID: 3096482168357229631, guid: de9188e459a77494f8c234f0945e6e1a, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4416560815553128799, guid: de9188e459a77494f8c234f0945e6e1a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -674,6 +678,30 @@ PrefabInstance:
     - target: {fileID: 5103676080342528752, guid: de9188e459a77494f8c234f0945e6e1a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: BackToMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901534404552409406, guid: de9188e459a77494f8c234f0945e6e1a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3a6f708ea3e7b94b8a8b2764bcb136c, type: 3}
+    - target: {fileID: 5901534404552409406, guid: de9188e459a77494f8c234f0945e6e1a, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901534404552409406, guid: de9188e459a77494f8c234f0945e6e1a, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901534404552409406, guid: de9188e459a77494f8c234f0945e6e1a, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901534404552409406, guid: de9188e459a77494f8c234f0945e6e1a, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6672522364753832040, guid: de9188e459a77494f8c234f0945e6e1a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -12.76
       objectReference: {fileID: 0}
     - target: {fileID: 8099864276728719454, guid: de9188e459a77494f8c234f0945e6e1a, type: 3}
       propertyPath: m_IsActive
@@ -783,7 +811,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2140
+  m_Name: pb_Mesh-1554
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1705,7 +1733,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2152
+  m_Name: pb_Mesh-1566
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2001,7 +2029,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-2128
+  m_Name: pb_Mesh-1542
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
