@@ -1,4 +1,5 @@
 using Game.Gameplay.Weapon;
+using Game.Managers;
 using UnityEngine;
 
 namespace Game.Player
@@ -35,7 +36,11 @@ namespace Game.Player
 
         public void ReloadWeapon()
         {
-            manager.CurrentWeapon.GetComponent<Weapon>()?.ReloadWeapon();
+            var weapon = manager.CurrentWeapon.GetComponent<Weapon>();
+            if (weapon == null) return;
+
+            weapon.ReloadWeapon();
+            GameManager.instance.UpdateBulletCounter(weapon);
         }
     }
 }

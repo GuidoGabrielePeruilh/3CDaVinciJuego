@@ -1,7 +1,4 @@
-using Game.Gameplay.Enemies;
 using Game.Player;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game.Gameplay.Enemies.FollowMelee
@@ -15,15 +12,16 @@ namespace Game.Gameplay.Enemies.FollowMelee
         [SerializeField] MeleeAttack _meleeAttack;
         [SerializeField] Move _move;
         [SerializeField] LookAtTarget _lookAtTarget;
-        [SerializeField, Range(0f, 5f)] private float _moveSpeed = 5f;
+        [SerializeField, Range(0f, 5f)] float _moveSpeed = 5f;
         State _currentState;
         PlayerController _player;
         RandomPatrolState _randomPatrolState;
         FollowState _followState;
         MeleeAttackState _meleeState;
         float _rangeMelee = 0.5f;
-        
-        public RandomPatrolState RandomPatrolState => _randomPatrolState;        
+        [SerializeField] EnemyDamageable _enemyDamagable;
+
+        public RandomPatrolState RandomPatrolState => _randomPatrolState;
         public FollowState FollowState => _followState;
         public MeleeAttackState MeleeState => _meleeState;
         public FollowPlayer FollowPlayer => _followPlayer;
@@ -35,7 +33,7 @@ namespace Game.Gameplay.Enemies.FollowMelee
         public float RangeMelee => _rangeMelee;
         public float RangeOfVisionY => _rangeOfVisionY;
 
-        private void Awake()
+        void Awake()
         {
             _player = FindObjectOfType<PlayerController>();
             _lookAtTarget.Target = _player.gameObject;
@@ -49,15 +47,26 @@ namespace Game.Gameplay.Enemies.FollowMelee
             _followPlayer.enabled = false;
             _meleeAttack.enabled = false;
             _currentState = _randomPatrolState;
-            
+
         }
-        private void Start()
+        void Start()
         {
             _currentState.Enter();
         }
-        private void Update()
+        void Update()
         {
-            _currentState.Update();
+            if (_enemyDamagable.Life > 0)
+            {
+                _currentState.Update();
+            }
+            else
+            {
+                _lookAtTarget.enabled = false;
+                _followPlayer.enabled = false;
+                _move.Velocity = Vector3.zero;
+            }
+
+
         }
         public void SwitchState(State state)
         {
@@ -66,5 +75,5 @@ namespace Game.Gameplay.Enemies.FollowMelee
             _currentState.Enter();
         }
     }
-  
+
 }

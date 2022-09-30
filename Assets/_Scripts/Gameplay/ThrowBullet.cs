@@ -25,7 +25,7 @@ namespace Game.Gameplay
             var component = _currentBullet.GetComponent<Bullet>();
             var transformPosition = _target.transform.position;
             if (_addHighToTarget > 0)
-                transformPosition.y = _addHighToTarget;
+                transformPosition.y += _addHighToTarget;
             var forwardNormalized = (transformPosition - _firePoint.transform.position).normalized;
             component.Shoot(forwardNormalized);
             _currentBullet = null;

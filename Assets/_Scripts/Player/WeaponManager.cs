@@ -1,6 +1,6 @@
-using System;
 using System.Collections.Generic;
 using Game.Gameplay.Weapon;
+using Game.Managers;
 using UnityEngine;
 
 namespace Game.Player
@@ -13,6 +13,7 @@ namespace Game.Player
         int _currentIndex = 0;
 
         public List<GameObject> Inventory => new List<GameObject>(_weapons);
+        public GameObject CurrentWeapon => _current;
         void Awake()
         {
             foreach (var weapon in _weapons)
@@ -24,10 +25,14 @@ namespace Game.Player
                 _current = _weapons[0];
                 _current.SetActive(true);
                 SubscribeCurrentAnimations();
+                
             }
         }
 
-        public GameObject CurrentWeapon => _current;
+        void Start()
+        {
+            GameManager.instance.UpdateBulletCounter(_current.GetComponent<Weapon>());
+        }
 
         public void ChangeToNextWeapon()
         {
@@ -54,6 +59,7 @@ namespace Game.Player
             _current.SetActive(true);
             _currentIndex = slot;
             SubscribeCurrentAnimations();
+            GameManager.instance.UpdateBulletCounter(_current.GetComponent<Weapon>());
         }
 
         void SubscribeCurrentAnimations()

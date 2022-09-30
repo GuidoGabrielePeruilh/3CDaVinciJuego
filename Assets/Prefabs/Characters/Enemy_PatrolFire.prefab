@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 564365771028659387}
-  - component: {fileID: 6827899079125212974}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
@@ -32,20 +31,6 @@ Transform:
   m_Father: {fileID: 564365771632663814}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &6827899079125212974
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 564365771028659384}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.9016353
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.92855567, z: 0}
 --- !u!1 &564365771632663800
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 564365771632663814}
   - component: {fileID: 5174428835015603740}
+  - component: {fileID: 8236037511062715165}
   - component: {fileID: 564365771632663815}
   - component: {fileID: 564365771632663812}
   - component: {fileID: 564365771632663813}
@@ -66,7 +52,7 @@ GameObject:
   - component: {fileID: 7170227535695364372}
   - component: {fileID: 2071058080219038129}
   - component: {fileID: 2302987543489821036}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy_PatrolFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,6 +88,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _move: {fileID: 564365771632663812}
   _animator: {fileID: 6083880829189906263}
+  _enemyDamagable: {fileID: 2302987543489821036}
+--- !u!136 &8236037511062715165
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564365771632663800}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.9016353
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.92855567, z: 0}
 --- !u!54 &564365771632663815
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -195,6 +196,7 @@ MonoBehaviour:
   _shooterRepeater: {fileID: 2071058080219038129}
   _lookAtTarget: {fileID: 564365771632663809}
   _throwBullet: {fileID: 4140093129540077214}
+  _damageable: {fileID: 2302987543489821036}
 --- !u!114 &564365771632663809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,7 +272,7 @@ MonoBehaviour:
           m_StringArgument: Attack
           m_BoolArgument: 0
         m_CallState: 2
-  _waitForShootInSeconds: 2
+  _waitForShootInSeconds: 1
 --- !u!114 &2302987543489821036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,6 +285,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc660ccbbe8a4ad4ea828415e3d77778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyLife: 10
+  _secondsToDestroy: 5
 --- !u!1 &3324573506319657963
 GameObject:
   m_ObjectHideFlags: 0

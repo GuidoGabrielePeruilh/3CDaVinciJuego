@@ -12,6 +12,7 @@ namespace Game.Gameplay.Enemies.PatrolFire
         [SerializeField] ActionRepeater _shooterRepeater;
         [SerializeField] LookAtTarget _lookAtTarget;
         [SerializeField] ThrowBullet _throwBullet;
+        [SerializeField] EnemyDamageable _damageable;
 
         NormalState _normal;
         AttackState _attack;
@@ -40,7 +41,18 @@ namespace Game.Gameplay.Enemies.PatrolFire
 
         void Update()
         {
-            _currentState.Update();
+            
+            if (_damageable.Life > 0)
+            {
+                _currentState.Update();
+            }
+            else
+            {
+                _lookAtTarget.enabled = false;
+                
+                _move.Velocity = Vector3.zero;
+            }
+
         }
 
         public void ChangeState(State nextState)

@@ -15,6 +15,9 @@ namespace Game.Gameplay
         float _time = 0;
         int _currentLayer = 3;
 
+        public int MaxLayers => _maxLayers;
+        public int CurrentLayer => _currentLayer;
+
         void Awake()
         {
             _currentLayer = _maxLayers;
@@ -51,8 +54,5 @@ namespace Game.Gameplay
                 }
             }
         }
-
-        public int MaxLayers => _maxLayers;
-        public int CurrentLayer => _currentLayer;
     }
 }

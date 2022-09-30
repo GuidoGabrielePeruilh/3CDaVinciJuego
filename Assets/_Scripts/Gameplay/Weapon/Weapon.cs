@@ -7,6 +7,7 @@ namespace Game.Gameplay.Weapon
     {
         public enum Type { MELEE, SHOOTER, PARTICLE}
         public Type type;
+        public virtual int CurrentAmmunition => 0;
         public virtual bool CanAttack() => true;
         
         public abstract void Attack();

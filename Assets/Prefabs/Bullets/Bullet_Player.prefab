@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 7273938612496142550}
   - component: {fileID: 8776756453097479586}
   - component: {fileID: 6898423281972504173}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bullet_Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce7d1e32fad2a9e4fa02fd9e363bfcd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 0
+  _damage: 1
 --- !u!114 &7273938612496142550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,6 +266,7 @@ MonoBehaviour:
   _move: {fileID: 8776756453097479586}
   _speed: 10
   _timeToDisable: 2
+  _trail: {fileID: 1569349650795147577}
 --- !u!114 &8776756453097479586
 MonoBehaviour:
   m_ObjectHideFlags: 0

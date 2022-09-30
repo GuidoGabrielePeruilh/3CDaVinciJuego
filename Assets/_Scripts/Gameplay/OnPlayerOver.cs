@@ -11,6 +11,8 @@ namespace Game.Gameplay
         [SerializeField] bool _isStaticObject = true;
         float _localScaleX, _localScaleZ, _borderX1, _borderX2, _borderZ1, _borderZ2;
 
+        public bool IsPlayerOver { get; private set; } = false;
+
         void Awake()
         {
             SetBorders();
@@ -36,8 +38,7 @@ namespace Game.Gameplay
             IsPlayerOver = false;
             OnPlayerOverExit?.Invoke(other.gameObject);
         }
-
-        public bool IsPlayerOver { get; private set; } = false;
+        
         public void Reset() => IsPlayerOver = false;
 
         bool IsInAreaXZ(Transform other)

@@ -1,6 +1,4 @@
 using System;
-using Game.Gameplay;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +7,7 @@ namespace Game.Player
     public class PlayerAnimationManager : MonoBehaviour
     {
         [SerializeField] Animator _myAni;
-        [SerializeField] Move _move;
+        // [SerializeField] Move _move;
         Dictionary<string, Action> _events = new Dictionary<string, Action>();
 
         public void ADD_ANI_EVENT(string eventName, Action callback)
@@ -30,18 +28,18 @@ namespace Game.Player
 
         void Update()
         {
-            _myAni.SetFloat("Horizontal", _move.Velocity.x);
-            _myAni.SetFloat("Vertical", _move.Velocity.z);
+            // _myAni.SetFloat("Horizontal", _move.Velocity.x);
+            // _myAni.SetFloat("Vertical", _move.Velocity.z);
         }
 
         public void HasPistol(bool value)
         {
-            _myAni.SetBool("HasPistol", value);
+            // _myAni.SetBool("HasPistol", value);
         }
         
         public void HasRifle(bool value)
         {
-            _myAni.SetBool("HasRifle", value);
+            // _myAni.SetBool("HasRifle", value);
         }
         
         public void AttackMelee()

@@ -1,5 +1,6 @@
 using Game.Player;
 using Game.SO;
+using Game.Managers;
 using UnityEngine;
 
 namespace Game.Gameplay.Weapon
@@ -11,6 +12,7 @@ namespace Game.Gameplay.Weapon
         [SerializeField] Transform _firePoint;
         int _bullets = 0;
 
+        public override int CurrentAmmunition => _bullets;
         void Awake()
         {
             type = Type.SHOOTER;
@@ -25,10 +27,11 @@ namespace Game.Gameplay.Weapon
         public override void Attack()
         {
             var bulletObject = _bulletPooler.GetPooledObject();
-            bulletObject.SetActive(true);
             bulletObject.transform.position = _firePoint.position;
+            bulletObject.SetActive(true);
             bulletObject.GetComponent<Bullet>()?.Shoot(_firePoint.forward);
             _bullets--;
+            GameManager.instance.UpdateBulletCounter(this);
         }
 
         public override void ReloadWeapon()
