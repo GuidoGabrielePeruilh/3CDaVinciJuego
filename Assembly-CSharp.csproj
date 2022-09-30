@@ -84,7 +84,7 @@
      <Compile Include="Assets\_Scripts\Gameplay\Bullet.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\IDamageable.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Weapon\MeleeWeapon.cs" />
-     <Compile Include="Assets\_Scripts\Gameplay\Food.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\PowerUps\PlayerHealerPowerUp.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\ThrowBullet.cs" />
      <Compile Include="Assets\_Scripts\SO\IntSO.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\PatrolFireStateController.cs" />
