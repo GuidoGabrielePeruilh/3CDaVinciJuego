@@ -14,6 +14,7 @@ namespace Game.Gameplay.Weapon
         int _bullets = 0;
         bool _isShooting = false;
         float _time;
+        int _reserveBullets = 0;
 
         public override int CurrentAmmunition => _bullets;
         void Awake()
@@ -21,6 +22,7 @@ namespace Game.Gameplay.Weapon
             type = Type.PARTICLE;
             _time = shootinRateInSeconds;
             _bullets = _weaponData.MaxBullets;
+            _reserveBullets = _weaponData.MaxReserveBullets;
             _particleBullet.SetActive(false);
         }
 
@@ -61,7 +63,17 @@ namespace Game.Gameplay.Weapon
 
         public override void ReloadWeapon()
         {
-            _bullets = _weaponData.MaxBullets;
+            if (_reserveBullets <= 0) return;
+            if (_reserveBullets >= _weaponData.MaxBullets)
+            {
+                _reserveBullets -= _weaponData.MaxBullets;
+                _bullets += _weaponData.MaxBullets;
+            }
+            else if (_reserveBullets > 0)
+            {
+                _bullets = _reserveBullets;
+                _reserveBullets = 0;
+            }
         }
         
         void ShootTriggerBullet()
