@@ -61,6 +61,7 @@ MonoBehaviour:
   _move: {fileID: 2227387254386213678}
   _lookAtTarget: {fileID: 8054064421387174308}
   _moveSpeed: 5
+  _eventAnimation: {fileID: 6568752979330764490}
   _enemyDamagable: {fileID: 8846074023536706980}
 --- !u!54 &8901121125137834358
 Rigidbody:
@@ -172,6 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _aniController: {fileID: 3845487164276731176}
+  _move: {fileID: 0}
 --- !u!136 &2887304925957310152
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -306,6 +308,17 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 6921619599356882949, guid: a0b28aafe03c9c54bad899a0dc95d999, type: 3}
   m_PrefabInstance: {fileID: 5425753226825585282}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6568752979330764490 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1181284335657081928, guid: a0b28aafe03c9c54bad899a0dc95d999, type: 3}
+  m_PrefabInstance: {fileID: 5425753226825585282}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc074d1f718a57c4abcb4c7d6e25f9f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1645063085581254814 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6744234970106270236, guid: a0b28aafe03c9c54bad899a0dc95d999, type: 3}

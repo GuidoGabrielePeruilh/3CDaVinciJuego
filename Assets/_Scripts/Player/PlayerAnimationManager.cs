@@ -22,7 +22,6 @@ namespace Game.Player
         }
         public void PLAYER_EVENT(string eventName)
         {
-            Debug.Log(eventName);
             _events[eventName]?.Invoke();
         }
 

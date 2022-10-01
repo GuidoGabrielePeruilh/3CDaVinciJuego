@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 
 namespace Game.Gameplay.Enemies.FollowMelee
 {
@@ -8,14 +9,13 @@ namespace Game.Gameplay.Enemies.FollowMelee
         [SerializeField] EnemyDamageable _enemyDamagable;
         [SerializeField] Move _move;
 
-        private void Awake()
+        void Awake()
         {
             _enemyDamagable.OnDeath += Death;
         }
-        private void Update()
+        void Update()
         {
             _animator.SetFloat("Speed", _move.Velocity.magnitude);
-
         }
         public void Attack()
         {

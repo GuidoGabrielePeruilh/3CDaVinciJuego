@@ -6,8 +6,7 @@ namespace Game.Gameplay.Enemies
     public class MeleeAttack : MonoBehaviour
     {           
         [SerializeField] MetalEnemyAnimatorController _aniController;
-        [SerializeField] Move _move;
-        private void Update()
+        public void Attack()
         {            
             _aniController.Attack();
         }             
