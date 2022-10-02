@@ -42,5 +42,14 @@ namespace Game.Player
             weapon.ReloadWeapon();
             GameManager.instance.UpdateBulletCounter(weapon);
         }
+
+        public void ReloadReserve()
+        {
+            var weapon = manager.CurrentWeapon.GetComponent<Weapon>();
+            if (weapon == null) return;
+
+            weapon.ReloadReserve();
+            GameManager.instance.UpdateBulletCounter(weapon);
+        }
     }
 }

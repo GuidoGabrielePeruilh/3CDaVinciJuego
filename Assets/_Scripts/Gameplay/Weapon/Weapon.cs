@@ -12,7 +12,8 @@ namespace Game.Gameplay.Weapon
         
         public abstract void Attack();
         public virtual void StopAttacking() {}
-        public virtual void ReloadWeapon() {}
+        public virtual bool ReloadWeapon() => false;
+        public virtual bool ReloadReserve() => false;
         public virtual void SubscribeToAnimationEvents(PlayerAnimationManager playerAnimationManager) {}
     }
 }

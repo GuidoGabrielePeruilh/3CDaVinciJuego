@@ -36,21 +36,31 @@ namespace Game.Gameplay.Weapon
             GameManager.instance.UpdateBulletCounter(this);
         }
 
-        public override void ReloadWeapon()
+        public override bool ReloadWeapon()
         {
-            if (_reserveBullets <= 0) return;
+            if (_reserveBullets <= 0) return false;
             if (_reserveBullets >= _weaponData.MaxBullets)
             {
                 _reserveBullets -= _weaponData.MaxBullets;
                 _bullets += _weaponData.MaxBullets;
             }
-            else if (_reserveBullets > 0)
+            else
             {
                 _bullets = _reserveBullets;
                 _reserveBullets = 0;
             }
+            return true;
         }
-        
+
+        public override bool ReloadReserve()
+        {
+            if (_reserveBullets >= _weaponData.MaxReserveBullets)
+                return false;
+
+            _reserveBullets = _weaponData.MaxReserveBullets;
+            return true;
+        }
+
         public override void SubscribeToAnimationEvents(PlayerAnimationManager animationManager)
         {
             animationManager.ADD_ANI_EVENT("pistol_shooting_event", EVENT_PISTOL_SHOOTING);
