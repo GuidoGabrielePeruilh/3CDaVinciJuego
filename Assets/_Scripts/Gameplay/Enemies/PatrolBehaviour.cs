@@ -38,6 +38,7 @@ namespace Game.Gameplay.Enemies
                 _patrol[i] = new Vector3(transformPosition.x, 0, transformPosition.z);
             }
             transform.position = _patrol[0];
+            Debug.Log(_patrol[0]);
             _target = 1;
             _waitForSeconds = new WaitForSeconds(_waitBetweenPointInSeconds);
             _waitForSecondsOnEnable = new WaitForSeconds(_waitOnEnable);
