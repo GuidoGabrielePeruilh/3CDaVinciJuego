@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 namespace Game.Gameplay.Enemies
@@ -8,25 +7,25 @@ namespace Game.Gameplay.Enemies
         [SerializeField] GameObject _drop1;
         [SerializeField] GameObject _drop2;
         [SerializeField] EnemyDamageable _lifeEnemy;
-        int _randomDrop = Random.Range(0, 2);
+        [SerializeField, Range(0f, 1f)] float _chancePercentage = 0;
+        float _chance = Random.Range(0f, 1f);
 
-        private void OnEnable()
+        void OnEnable()
         {
             _lifeEnemy.OnDeath += Drop;
         }
-        private void OnDisable()
+        void OnDisable()
         {
             _lifeEnemy.OnDeath -= Drop;
         }
-        private void Drop()
+        void Drop()
         {
-
-            if (_randomDrop == 0)
+            if (_chance <= _chancePercentage)
             {
-                Instantiate(_drop1, _lifeEnemy.transform);
+                Instantiate(_drop1, transform.position, Quaternion.identity);
             }
-            //else
-                //Instantiate(_drop2, _lifeEnemy.transform);
+            else
+                Instantiate(_drop1, transform.position, Quaternion.identity);
         }
     }
 }
