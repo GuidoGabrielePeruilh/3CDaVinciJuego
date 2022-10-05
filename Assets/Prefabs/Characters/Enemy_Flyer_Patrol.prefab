@@ -124,7 +124,7 @@ MonoBehaviour:
   _firePoint: {fileID: 3122981133229139321}
   _layerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
 --- !u!114 &7120076050924849061
 MonoBehaviour:
   m_ObjectHideFlags: 0
