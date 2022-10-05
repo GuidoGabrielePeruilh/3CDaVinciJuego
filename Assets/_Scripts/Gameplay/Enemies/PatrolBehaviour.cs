@@ -37,7 +37,7 @@ namespace Game.Gameplay.Enemies
                 var transformPosition = _waypoints[i].transform.position;
                 _patrol[i] = new Vector3(transformPosition.x, 0, transformPosition.z);
             }
-            transform.position = _patrol[0];
+            transform.position = _waypoints[0].transform.position;
             _target = 1;
             _waitForSeconds = new WaitForSeconds(_waitBetweenPointInSeconds);
             _waitForSecondsOnEnable = new WaitForSeconds(_waitOnEnable);
