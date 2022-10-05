@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 763075930358308920}
   - component: {fileID: 7608482221649557534}
   - component: {fileID: 5745978130405426769}
+  - component: {fileID: 4885114125338213701}
+  - component: {fileID: 7120076050924849061}
   m_Layer: 0
   m_Name: Enemy_Flyer_Patrol
   m_TagString: Untagged
@@ -106,6 +108,40 @@ MonoBehaviour:
   _visualAngle: 45
   _visualDistance: 10
   _rangeOfVisionY: 1.5
+--- !u!114 &4885114125338213701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212517995951844142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14311b764fb238e4db18c3483d8eba3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 1
+  _firePoint: {fileID: 3122981133229139321}
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!114 &7120076050924849061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212517995951844142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f29a70731e7174482548298252b2ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attack: {fileID: 4885114125338213701}
+  _patrolBehaviour: {fileID: 5184913850856923581}
+  _lookAtTarget: {fileID: 4961100342860561888}
+  _move: {fileID: 763075930358308920}
+  _visualField: {fileID: 5745978130405426769}
 --- !u!1 &1433009204434460350
 GameObject:
   m_ObjectHideFlags: 0

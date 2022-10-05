@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &200254112 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8219668241822508879, guid: 8848ba22db2628d4bb7ef3d0c02bad5c, type: 3}
-  m_PrefabInstance: {fileID: 905417217}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &699813547
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,17 +584,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Flyer_Patrol
       objectReference: {fileID: 0}
-    - target: {fileID: 4961100342860561888, guid: 1a8d4ce0b8fefce4d9cda66399c7bfd2, type: 3}
-      propertyPath: _target
-      value: 
-      objectReference: {fileID: 200254112}
-    - target: {fileID: 4961100342860561888, guid: 1a8d4ce0b8fefce4d9cda66399c7bfd2, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5184913850856923581, guid: 1a8d4ce0b8fefce4d9cda66399c7bfd2, type: 3}
-      propertyPath: _cycle
-      value: 1
+    - target: {fileID: 4885114125338213701, guid: 1a8d4ce0b8fefce4d9cda66399c7bfd2, type: 3}
+      propertyPath: _layerMask.m_Bits
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5184913850856923581, guid: 1a8d4ce0b8fefce4d9cda66399c7bfd2, type: 3}
       propertyPath: _waypoints.Array.size
@@ -621,14 +608,6 @@ PrefabInstance:
       propertyPath: _waypoints.Array.data[3]
       value: 
       objectReference: {fileID: 1415776149}
-    - target: {fileID: 5745978130405426769, guid: 1a8d4ce0b8fefce4d9cda66399c7bfd2, type: 3}
-      propertyPath: _target
-      value: 
-      objectReference: {fileID: 200254112}
-    - target: {fileID: 5745978130405426769, guid: 1a8d4ce0b8fefce4d9cda66399c7bfd2, type: 3}
-      propertyPath: _rangeOfVisionY
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 8767201343238056812, guid: 1a8d4ce0b8fefce4d9cda66399c7bfd2, type: 3}
       propertyPath: m_RootOrder
       value: 3
