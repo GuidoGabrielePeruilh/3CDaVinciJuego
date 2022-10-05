@@ -21,15 +21,20 @@ namespace Game.Gameplay.Enemies.FollowMelee
             _move.Velocity = Vector3.zero;
             _meleeAttack.enabled = true;
             _lookAtTarget.enabled = true;
-
+            _meleeAttack.Attack();
         }
         public override void Update()
         {
+            if (_stateController.IsAttacking) return;
             Vector3 position = _stateController.transform.position;
             Vector3 playerPosition = _stateController.Player.transform.position;
             if (!Utils.IsInRangeOfVision(position, playerPosition, _stateController.RangeMelee, _stateController.RangeOfVisionY))
             {
                 _stateController.SwitchState(_stateController.FollowState);
+            }
+            else
+            {
+                _meleeAttack.Attack();
             }
         }
         public override void Exit()

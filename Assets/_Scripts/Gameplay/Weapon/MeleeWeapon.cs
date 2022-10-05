@@ -24,8 +24,8 @@ namespace Game.Gameplay.Weapon
 
         public override void SubscribeToAnimationEvents(PlayerAnimationManager animationManager)
         {
-            animationManager.ADD_ANI_EVENT("start_melee_heatbox", EVENT_START_HEATBOX);
-            animationManager.ADD_ANI_EVENT("end_melee_heatbox", EVENT_END_HEATBOX);
+            animationManager.ADD_ANI_EVENT("start_melee_heatbox", EVENT_START_HITBOX);
+            animationManager.ADD_ANI_EVENT("end_melee_heatbox", EVENT_END_HITBOX);
             animationManager.ADD_ANI_EVENT("end_melee_ani", EVENT_FINISH_ANI);
             _TriggerAttackAnimation = animationManager.AttackMelee;
         }
@@ -37,12 +37,12 @@ namespace Game.Gameplay.Weapon
             canAttack = true;
         }
     
-        void EVENT_END_HEATBOX()
+        void EVENT_END_HITBOX()
         {
             _damaging.SetActive(false);
         }
     
-        void EVENT_START_HEATBOX()
+        void EVENT_START_HITBOX()
         {
             _damaging.SetActive(true);
         }
