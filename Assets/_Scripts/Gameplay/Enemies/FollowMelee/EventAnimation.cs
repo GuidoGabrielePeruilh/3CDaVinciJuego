@@ -23,16 +23,16 @@ namespace Game.Gameplay.Enemies.FollowMelee
             Debug.Log("Event_EndAnimation");
         }
 
-        public void Event_StartHeatbox()
+        public void Event_StartHitbox()
         {
             _damage.SetActive(true);
-            Debug.Log("Event_StartHeatbox");
+            Debug.Log("Event_StartHitbox");
         }
         
-        public void Event_EndHeatbox()
+        public void Event_EndHitbox()
         {
             _damage.SetActive(false);
-            Debug.Log("Event_EndHeatbox");
+            Debug.Log("Event_EndHitbox");
         }
     }
 }
