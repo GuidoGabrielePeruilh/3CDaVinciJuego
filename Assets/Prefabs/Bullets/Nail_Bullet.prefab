@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 8776756453097479586}
   - component: {fileID: 6898423281972504173}
   m_Layer: 8
-  m_Name: Bullet_Player
+  m_Name: Nail_Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

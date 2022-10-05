@@ -64,18 +64,9 @@ namespace Game.Player
            _lookInput = context.ReadValue<Vector2>();
        }
 
-       public void Fire(InputAction.CallbackContext context)
-       {
-           if (context.started)
-               _weaponController.ShootWeapon();
-           if (context.canceled)
-               _weaponController.StopShootingWeapon();
-       }
-
        public void Reload(InputAction.CallbackContext context)
        {
-           if (context.performed)
-               _weaponController.ReloadWeapon();
+           
        }
 
        void UpdateCameraLook()

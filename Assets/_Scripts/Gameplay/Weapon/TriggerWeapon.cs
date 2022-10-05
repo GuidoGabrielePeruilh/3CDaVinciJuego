@@ -1,56 +1,44 @@
+using System;
+using System.Collections;
+using Game.Player;
 using Game.Managers;
 using UnityEngine;
 
 namespace Game.Gameplay.Weapon
 {
-    public class ParticleWeapon : ShooterWeapon
+    public class TriggerWeapon : ShooterWeapon
     {
-        [SerializeField] GameObject _particle;
-        bool _isShooting = false;
-        float _time;
-        
+        Action _TriggerAttackAnimation;
+        WaitForSeconds _waitAttackRate;
         void Awake()
         {
-            _time = attackRateInSeconds;
+            _waitAttackRate = new WaitForSeconds(attackRateInSeconds);
             Ammunition = _weaponData.MaxAmunicion;
-            _particle.SetActive(false);
+            ReserveAmmunition = _weaponData.MaxReserveAmunicion;
         }
 
-        void Update()
-        {
-            if (_isShooting)
-            {
-                if (_time <= 0)
-                {
-                    Shoot();
-                    _time = attackRateInSeconds;
-                    Ammunition--;
-                    GameManager.instance.UpdateBulletCounter(Ammunition);
-                    if(Ammunition <= 0)
-                    {
-                        CancelAttack();
-                    }
-                }
-                else
-                {
-                    _time -= Time.deltaTime;
-                }
-            }
-        }
         #region public
-        public override void StartAttack()
+        public override void StartAttack(){ }
+        public override void PerformedAttack()
         {
-            if (Ammunition <= 0) return;
-            _particle.SetActive(true);
-            _isShooting = true;
+            if (!canAttack || Ammunition <= 0) return;
+            canAttack = false;
+            _TriggerAttackAnimation.Invoke();
+            StartCoroutine(CO_AttackRate());
         }
 
-        public override void PerformedAttack(){ }
-
-        public override void CancelAttack()
+        IEnumerator CO_AttackRate()
         {
-            _particle.SetActive(false);
-            _isShooting = false;
+            yield return _waitAttackRate;
+            canAttack = true;
+        }
+
+        public override void CancelAttack(){ }
+
+        public override void SubscribeToAnimationEvents(PlayerAnimationManager animationManager)
+        {
+            animationManager.ADD_ANI_EVENT("pistol_shooting_event", EVENT_PISTOL_SHOOTING);
+            _TriggerAttackAnimation = animationManager.AttackShooter;
         }
 
         public override bool ReloadAmmunition()
@@ -69,7 +57,7 @@ namespace Game.Gameplay.Weapon
 
             return true;
         }
-        
+
         public override bool ReloadReserveAmmunition()
         {
             if (ReserveAmmunition >= _weaponData.MaxReserveAmunicion) return false;
@@ -80,12 +68,20 @@ namespace Game.Gameplay.Weapon
         }
 
         #endregion
+
         protected override void Shoot()
         {
             var bulletObject = _bulletPooler.GetPooledObject();
-            bulletObject.SetActive(true);
             bulletObject.transform.position = _firePoint.position;
+            bulletObject.SetActive(true);
             bulletObject.GetComponent<Bullet>()?.Shoot(_firePoint.forward);
+            Ammunition--;
+            GameManager.instance.UpdateBulletCounter(Ammunition);
+        }
+
+        void EVENT_PISTOL_SHOOTING()
+        {
+            Shoot();
         }
     }
 }
