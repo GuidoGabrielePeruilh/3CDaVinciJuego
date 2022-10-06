@@ -100,13 +100,12 @@ namespace Game.Managers
             SceneManager.LoadScene("MainMenu");
         }
 
-        public void UpdateBulletCounter(Weapon weapon)
+        public void UpdateBulletCounter(int amunicion)
         {
-            if (_bulletCounterText == null) return;
-            if (weapon.type == Weapon.Type.MELEE)
+            if (amunicion < 0)
                 _bulletCounterText.text = "";
             else
-                _bulletCounterText.text = weapon.CurrentAmmunition.ToString();
+                _bulletCounterText.text = amunicion.ToString();
         }
     }
 }

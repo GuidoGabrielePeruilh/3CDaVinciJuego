@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1425224902}
   - component: {fileID: 1425224901}
   - component: {fileID: 1425224900}
-  - component: {fileID: 1425224899}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: Untagged
@@ -85,19 +84,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425224898}
   m_Enabled: 1
---- !u!114 &1425224899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1425224898}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ab3203d1575bdd4f938bda6840eb48f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 0}
 --- !u!1 &940501456197976227
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,6 +328,7 @@ GameObject:
   - component: {fileID: 8219668241822508865}
   - component: {fileID: 8219668241822508986}
   - component: {fileID: 8219668241822508985}
+  - component: {fileID: 7520371172983455578}
   m_Layer: 3
   m_Name: PlayerDummy
   m_TagString: Player
@@ -513,9 +500,9 @@ MonoBehaviour:
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8219668241822508868}
-        m_TargetAssemblyTypeName: Game.Player.PlayerController, Assembly-CSharp
-        m_MethodName: Fire
+      - m_Target: {fileID: 8219668241822508986}
+        m_TargetAssemblyTypeName: Game.Player.WeaponController, Assembly-CSharp
+        m_MethodName: Attack
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -585,9 +572,9 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8219668241822508985}
-        m_TargetAssemblyTypeName: Game.Player.WeaponInventory, Assembly-CSharp
-        m_MethodName: ChangeToWeapon
+      - m_Target: {fileID: 8219668241822508986}
+        m_TargetAssemblyTypeName: Game.Player.WeaponController, Assembly-CSharp
+        m_MethodName: SwitchWeapon
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -601,9 +588,9 @@ MonoBehaviour:
     m_ActionName: Player/Change Weapon 1[/Keyboard/1,/XInputControllerWindows/dpad/up]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8219668241822508985}
-        m_TargetAssemblyTypeName: Game.Player.WeaponInventory, Assembly-CSharp
-        m_MethodName: ChangeToWeapon
+      - m_Target: {fileID: 8219668241822508986}
+        m_TargetAssemblyTypeName: Game.Player.WeaponController, Assembly-CSharp
+        m_MethodName: SwitchWeapon
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -617,9 +604,9 @@ MonoBehaviour:
     m_ActionName: Player/Change Weapon 2[/Keyboard/2,/XInputControllerWindows/dpad/left]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8219668241822508985}
-        m_TargetAssemblyTypeName: Game.Player.WeaponInventory, Assembly-CSharp
-        m_MethodName: ChangeToWeapon
+      - m_Target: {fileID: 8219668241822508986}
+        m_TargetAssemblyTypeName: Game.Player.WeaponController, Assembly-CSharp
+        m_MethodName: SwitchWeapon
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -633,9 +620,9 @@ MonoBehaviour:
     m_ActionName: Player/Change Weapon 3[/Keyboard/3,/XInputControllerWindows/dpad/down]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8219668241822508868}
-        m_TargetAssemblyTypeName: Game.Player.PlayerController, Assembly-CSharp
-        m_MethodName: Reload
+      - m_Target: {fileID: 8219668241822508986}
+        m_TargetAssemblyTypeName: Game.Player.WeaponController, Assembly-CSharp
+        m_MethodName: ReloadWeapon
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -647,6 +634,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f9e4a709-14d9-4d95-9446-b941f8540a2f
     m_ActionName: Player/Reload[/XInputControllerWindows/buttonWest,/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a8160e77-a967-4884-adf8-b4b858588aac
+    m_ActionName: Player/PauseMenu[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -678,7 +669,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 8219668241822508985}
-  _animationManager: {fileID: 1160910595356904043}
 --- !u!114 &8219668241822508985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,11 +681,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba476c4583a2b6e43b8f5335333fb70f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weapons:
-  - {fileID: 5652454157372921973}
-  - {fileID: 4101817450373822065}
-  - {fileID: 1664332531140596095}
+  _inventory: {fileID: 7520371172983455578}
   _animationManager: {fileID: 1160910595356904043}
+--- !u!114 &7520371172983455578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8219668241822508879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bb575eb161f495e92d0f12bc4258f14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Weapons>k__BackingField:
+  - {fileID: 921895296802912248}
+  - {fileID: 8317203324079426338}
+  - {fileID: 5510054347609544550}
 --- !u!1 &8219668242174349543
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,16 +885,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93342a27f451b744eb05c5ce576f0bad, type: 3}
---- !u!1 &5652454157372921973 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5695359141768821030, guid: 93342a27f451b744eb05c5ce576f0bad, type: 3}
-  m_PrefabInstance: {fileID: 105966453148344659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5652454157372921972 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5695359141768821031, guid: 93342a27f451b744eb05c5ce576f0bad, type: 3}
   m_PrefabInstance: {fileID: 105966453148344659}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &921895296802912248 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 987217466520868523, guid: 93342a27f451b744eb05c5ce576f0bad, type: 3}
+  m_PrefabInstance: {fileID: 105966453148344659}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d0424f99c6e7245863923685bcfc29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &995249622090657869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -989,16 +998,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cd12200bd3156040955aebf80ad1489, type: 3}
---- !u!1 &1664332531140596095 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1934071586597183794, guid: 7cd12200bd3156040955aebf80ad1489, type: 3}
-  m_PrefabInstance: {fileID: 995249622090657869}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1767229513866288492 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1533937069260811553, guid: 7cd12200bd3156040955aebf80ad1489, type: 3}
   m_PrefabInstance: {fileID: 995249622090657869}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5510054347609544550 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4735661994421724971, guid: 7cd12200bd3156040955aebf80ad1489, type: 3}
+  m_PrefabInstance: {fileID: 995249622090657869}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2044f204f20b1e64e89037256a9c373d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7056965217599916547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1088,13 +1103,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2995e5e25acebc3479602f2226558c20, type: 3}
---- !u!1 &4101817450373822065 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6414239970006088818, guid: 2995e5e25acebc3479602f2226558c20, type: 3}
-  m_PrefabInstance: {fileID: 7056965217599916547}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3995261601922071138 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6241255965032067169, guid: 2995e5e25acebc3479602f2226558c20, type: 3}
   m_PrefabInstance: {fileID: 7056965217599916547}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8317203324079426338 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1334125567140118817, guid: 2995e5e25acebc3479602f2226558c20, type: 3}
+  m_PrefabInstance: {fileID: 7056965217599916547}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 521219c045af4d17a96fc76235f9ae1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

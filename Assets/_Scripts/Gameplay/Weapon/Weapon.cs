@@ -5,15 +5,18 @@ namespace Game.Gameplay.Weapon
 {
     public abstract class Weapon : MonoBehaviour
     {
-        public enum Type { MELEE, SHOOTER, PARTICLE}
-        public Type type;
-        public virtual int CurrentAmmunition => 0;
-        public virtual bool CanAttack() => true;
-        
-        public abstract void Attack();
-        public virtual void StopAttacking() {}
-        public virtual bool ReloadWeapon() => false;
-        public virtual bool ReloadReserve() => false;
+        [SerializeField] 
+        protected float attackRateInSeconds = 0f;
+        protected bool canAttack = true;
+
+        public int Ammunition { get; protected set; } = -1;
+        public int ReserveAmmunition { get; protected set; } = -1;
+        public Vector3 Direction { set; protected get; }
+        public virtual bool ReloadAmmunition() => false;
+        public virtual bool ReloadReserveAmmunition() => false;
+        public abstract void StartAttack();
+        public abstract void PerformedAttack();
+        public abstract void CancelAttack();
         public virtual void SubscribeToAnimationEvents(PlayerAnimationManager playerAnimationManager) {}
     }
 }

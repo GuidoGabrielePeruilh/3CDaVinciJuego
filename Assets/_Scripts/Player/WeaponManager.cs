@@ -7,84 +7,56 @@ namespace Game.Player
 {
     public class WeaponManager : MonoBehaviour
     {
-        [SerializeField] List<GameObject> _weapons;
+        [SerializeField] WeaponInventory _inventory;
         [SerializeField] PlayerAnimationManager _animationManager;
-        GameObject _current;
-        int _currentIndex = 0;
 
-        public List<GameObject> Inventory => new List<GameObject>(_weapons);
-        public GameObject CurrentWeapon => _current;
+        public Weapon CurrentWeapon { get; private set; }
         void Awake()
         {
-            foreach (var weapon in _weapons)
-                weapon?.SetActive(false);
-
-            if (_weapons[0] != null)
+            var weapon = _inventory.GetWeapon(0);
+            if (weapon != null)
             {
-                _currentIndex = 0;
-                _current = _weapons[0];
-                _current.SetActive(true);
-                SubscribeCurrentAnimations();
-                
+                CurrentWeapon = weapon;
+                CurrentWeapon.gameObject.SetActive(true);
+                SubscribeWeaponsAnimations();
             }
         }
 
         void Start()
         {
-            GameManager.instance.UpdateBulletCounter(_current.GetComponent<Weapon>());
+            GameManager.instance.UpdateBulletCounter(CurrentWeapon.Ammunition);
         }
 
-        public void ChangeToNextWeapon()
+        public void SwitchWeapon(int slot)
         {
-            var nextIndex = _currentIndex + 1;
-            if (nextIndex >= _weapons.Count)
-                nextIndex = 0;
-            ChangeToWeapon(nextIndex);
+            var weapon = _inventory.GetWeapon(slot);
+            if (weapon == null) return;
+
+            CurrentWeapon.gameObject.SetActive(false);
+            CurrentWeapon = weapon;
+            CurrentWeapon.gameObject.SetActive(true);
+            GameManager.instance.UpdateBulletCounter(CurrentWeapon.Ammunition);
         }
 
-        public void ChangeToPreviousWeapon()
+        public bool ReloadReserveWeapons()
         {
-            var previousIndex = _currentIndex - 1;
-            if (previousIndex < 0)
-                previousIndex = _weapons.Count - 1;
-            ChangeToWeapon(previousIndex);
-        }
-
-        public void ChangeToWeapon(int slot)
-        {
-            if (slot < 0 || slot >= _weapons.Count) return;
-
-            _current.SetActive(false);
-            _current = _weapons[slot];
-            _current.SetActive(true);
-            _currentIndex = slot;
-            SubscribeCurrentAnimations();
-            GameManager.instance.UpdateBulletCounter(_current.GetComponent<Weapon>());
-        }
-
-        void SubscribeCurrentAnimations()
-        {
-            var weapon = _current.GetComponent<Weapon>();
-            if (weapon ==  null) return;
-            
-            weapon.SubscribeToAnimationEvents(_animationManager);
-            switch (weapon.type)
+            var itReloadSomeWeapon = false;
+            foreach (var weapon in _inventory.Weapons)
             {
-                case Weapon.Type.MELEE:
-                    _animationManager.HasPistol(false);
-                    _animationManager.HasRifle(false);
-                    break;
-                case Weapon.Type.SHOOTER:
-                    _animationManager.HasPistol(true);
-                    _animationManager.HasRifle(false);
-                    break;
-                case Weapon.Type.PARTICLE:
-                    break;
-                default:
-                    break;
+                var itReload = weapon.ReloadReserveAmmunition();
+                if (!itReloadSomeWeapon)
+                    itReloadSomeWeapon = itReload;
+            }
+
+            return itReloadSomeWeapon;
+        }
+
+        void SubscribeWeaponsAnimations()
+        {
+            foreach (var weapon in _inventory.Weapons)
+            {
+                weapon.SubscribeToAnimationEvents(_animationManager);
             }
         }
     }
-    
-    
 }

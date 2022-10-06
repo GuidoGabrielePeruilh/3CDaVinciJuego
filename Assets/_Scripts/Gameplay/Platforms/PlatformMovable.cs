@@ -14,7 +14,6 @@ namespace Game.Gameplay.Platforms
         void Start()
         {
             _last = myCurve.keys[myCurve.keys.Length - 1].time;
-            Debug.Log(_last);
         }
 
         void Update()

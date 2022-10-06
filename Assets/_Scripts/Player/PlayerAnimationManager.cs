@@ -7,7 +7,6 @@ namespace Game.Player
     public class PlayerAnimationManager : MonoBehaviour
     {
         [SerializeField] Animator _myAni;
-        // [SerializeField] Move _move;
         Dictionary<string, Action> _events = new Dictionary<string, Action>();
 
         public void ADD_ANI_EVENT(string eventName, Action callback)
@@ -16,7 +15,7 @@ namespace Game.Player
             _events.Add(eventName, callback);
         }
 
-        public void REMOVE_ANI_EVENT(string eventName, Action callback)
+        public void REMOVE_ANI_EVENT(string eventName)
         {
             _events.Remove(eventName);
         }
@@ -24,34 +23,14 @@ namespace Game.Player
         {
             _events[eventName]?.Invoke();
         }
-
-        void Update()
-        {
-            // _myAni.SetFloat("Horizontal", _move.Velocity.x);
-            // _myAni.SetFloat("Vertical", _move.Velocity.z);
-        }
-
-        public void HasPistol(bool value)
-        {
-            // _myAni.SetBool("HasPistol", value);
-        }
-        
-        public void HasRifle(bool value)
-        {
-            // _myAni.SetBool("HasRifle", value);
-        }
         
         public void AttackMelee()
         {
-            HasPistol(false);
-            HasRifle(false);
             _myAni.SetTrigger("MeleeTrigger");
         }
 
         public void AttackShooter()
         {
-            HasPistol(true);
-            HasRifle(false);
             _myAni.SetTrigger("PistolTrigger");
         }
     }

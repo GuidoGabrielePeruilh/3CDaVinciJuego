@@ -52,6 +52,7 @@ GameObject:
   - component: {fileID: 7170227535695364372}
   - component: {fileID: 2071058080219038129}
   - component: {fileID: 2302987543489821036}
+  - component: {fileID: 769976857856629510}
   m_Layer: 7
   m_Name: Enemy_PatrolFire
   m_TagString: Untagged
@@ -287,6 +288,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyLife: 10
   _secondsToDestroy: 5
+--- !u!114 &769976857856629510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564365771632663800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f803ebcfe9e7ca4a88efd0646c12d9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _drop1: {fileID: 3247428901600231908, guid: 8f8834a19a7529948bd46c775dcc0296, type: 3}
+  _drop2: {fileID: 8026061991337280964, guid: cf8bc611d69f2974ca930ab0af4672c2, type: 3}
+  _lifeEnemy: {fileID: 2302987543489821036}
+  _chancePercentage: 0.5
 --- !u!1 &3324573506319657963
 GameObject:
   m_ObjectHideFlags: 0
