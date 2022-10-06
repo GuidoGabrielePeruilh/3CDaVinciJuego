@@ -9,8 +9,8 @@ namespace Game.Gameplay.PowerUps
         {
             var weaponController = other.GetComponent<WeaponController>();
             if (weaponController == null) return;
+            if (!weaponController.ReloadReserveWeapons()) return;
 
-            weaponController.ReloadReserveWeapons();
             Destroy(gameObject);
         }
     }
