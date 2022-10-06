@@ -11,7 +11,7 @@ namespace Game.Gameplay.Weapon
 
         public int Ammunition { get; protected set; } = -1;
         public int ReserveAmmunition { get; protected set; } = -1;
-        public Vector3 Direction { set; protected get; }
+        public Vector3 Target { set; protected get; } = Vector3.zero;
         public virtual bool ReloadAmmunition() => false;
         public virtual bool ReloadReserveAmmunition() => false;
         public abstract void StartAttack();

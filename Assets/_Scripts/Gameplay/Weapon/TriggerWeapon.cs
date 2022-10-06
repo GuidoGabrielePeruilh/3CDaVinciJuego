@@ -74,7 +74,7 @@ namespace Game.Gameplay.Weapon
             var bulletObject = _bulletPooler.GetPooledObject();
             bulletObject.transform.position = _firePoint.position;
             bulletObject.SetActive(true);
-            bulletObject.GetComponent<Bullet>()?.Shoot(_firePoint.forward);
+            bulletObject.GetComponent<Bullet>()?.Shoot(ShootDirection);
             Ammunition--;
             GameManager.instance.UpdateBulletCounter(Ammunition);
         }

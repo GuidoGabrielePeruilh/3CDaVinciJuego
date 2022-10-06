@@ -1,4 +1,3 @@
-using Game.Gameplay.Weapon;
 using Game.Managers;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,15 +7,18 @@ namespace Game.Player
     public class WeaponController : MonoBehaviour
     {
         [SerializeField] WeaponManager manager;
+        [SerializeField] PointerTarget _pointerTarget;
 
         public void Attack(InputAction.CallbackContext context)
         {
+            var currentWeapon = manager.CurrentWeapon;
+            currentWeapon.Target = _pointerTarget.transform.position;
             if (context.started)
-                manager.CurrentWeapon.StartAttack();
+                currentWeapon.StartAttack();
             if (context.performed)
-                manager.CurrentWeapon.PerformedAttack();
+                currentWeapon.PerformedAttack();
             if (context.canceled)
-                manager.CurrentWeapon.CancelAttack();
+                currentWeapon.CancelAttack();
         }
 
         public void ReloadWeapon(InputAction.CallbackContext context)

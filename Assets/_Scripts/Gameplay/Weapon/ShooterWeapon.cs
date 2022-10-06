@@ -13,6 +13,9 @@ namespace Game.Gameplay.Weapon
 
         [SerializeField]
         protected Transform _firePoint;
+
+        protected Vector3 ShootDirection
+            => (Target - _firePoint.transform.position).normalized;
         protected abstract void Shoot();
     }
 }
