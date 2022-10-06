@@ -8,7 +8,6 @@ namespace Game.Gameplay.Enemies
         [SerializeField] GameObject _drop2;
         [SerializeField] EnemyDamageable _lifeEnemy;
         [SerializeField, Range(0f, 1f)] float _chancePercentage = 0;
-        float _chance = Random.Range(0f, 1f);
 
         void OnEnable()
         {
@@ -20,12 +19,12 @@ namespace Game.Gameplay.Enemies
         }
         void Drop()
         {
-            if (_chance <= _chancePercentage)
+            if (Random.Range(0f, 1f) <= _chancePercentage)
             {
                 Instantiate(_drop1, transform.position, Quaternion.identity);
             }
             else
-                Instantiate(_drop1, transform.position, Quaternion.identity);
+                Instantiate(_drop2, transform.position, Quaternion.identity);
         }
     }
 }

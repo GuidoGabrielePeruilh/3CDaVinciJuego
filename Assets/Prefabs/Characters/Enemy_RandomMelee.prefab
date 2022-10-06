@@ -201,8 +201,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _drop1: {fileID: 3247428901600231908, guid: 8f8834a19a7529948bd46c775dcc0296, type: 3}
-  _drop2: {fileID: 0}
-  _lifeEnemy: {fileID: 0}
+  _drop2: {fileID: 8026061991337280964, guid: cf8bc611d69f2974ca930ab0af4672c2, type: 3}
+  _lifeEnemy: {fileID: 8846074023536706980}
+  _chancePercentage: 0.505
 --- !u!114 &8846074023536706980
 MonoBehaviour:
   m_ObjectHideFlags: 0
