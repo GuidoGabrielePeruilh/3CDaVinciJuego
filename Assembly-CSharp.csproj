@@ -78,6 +78,7 @@
      <Compile Include="Assets\_Scripts\Gameplay\Platforms\TiltablePlatform.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowMelee\RandomPatrolState.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\OnPlayerOver.cs" />
+     <Compile Include="Assets\_Scripts\Player\PointerTarget.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowPlayer.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Weapon\Weapon.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Weapon\TriggerWeapon.cs" />
@@ -112,7 +113,6 @@
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowMelee\FollowState.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\CameraFollowTarget.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\AttackState.cs" />
-     <Compile Include="Assets\_Scripts\Player\PointerTarget.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.25f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
