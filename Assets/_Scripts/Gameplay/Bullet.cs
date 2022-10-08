@@ -33,6 +33,7 @@ namespace Game.Gameplay
         {
             if (_trail == null) return;
             _trail.enabled = enable;
+            _trail.emitting = enable;
         }
     }
 }
