@@ -12,24 +12,28 @@ namespace Game.Gameplay.Enemies.FlyerPatrol
         RaycastAttack _attack;
         Move _move;
         GameObject _target;
+        float _maxDistance = 20;
 
-        public AttackState(FlyerPatrolStateController stateController, LookAtTarget lookAtTarget, RaycastAttack attack, Move move, GameObject target)
+        public AttackState(FlyerPatrolStateController stateController, LookAtTarget lookAtTarget, RaycastAttack attack, Move move, GameObject target, float maxDistance)
         {
             _stateController = stateController;
             _lookAtTarget = lookAtTarget;
             _attack = attack;
             _move = move;
             _target = target;
+            _maxDistance = maxDistance;
+            _attack.MaxDistance = _maxDistance;
         }
 
         public override void Enter()
         {
             _attack.enabled = true;
             _lookAtTarget.enabled = true;
+            _move.Velocity = Vector3.zero;
         }
         public override void Update()
         {
-            if (Vector3.Distance(_target.transform.position, _stateController.transform.position) > 20)
+            if (Vector3.Distance(_target.transform.position, _stateController.transform.position) > _maxDistance)
             {
                 ChangeToNormal();
             }
@@ -47,6 +51,6 @@ namespace Game.Gameplay.Enemies.FlyerPatrol
         void StopMove()
         {
             _move.Velocity = Vector3.zero;
-        }       
+        }    
     }
 }
