@@ -125,6 +125,8 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 8
+  _rateInSeconds: 0.2
+  _maxDistance: 5
 --- !u!114 &7120076050924849061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +144,7 @@ MonoBehaviour:
   _lookAtTarget: {fileID: 4961100342860561888}
   _move: {fileID: 763075930358308920}
   _visualField: {fileID: 5745978130405426769}
+  _maxDistance: 10
 --- !u!1 &1433009204434460350
 GameObject:
   m_ObjectHideFlags: 0
