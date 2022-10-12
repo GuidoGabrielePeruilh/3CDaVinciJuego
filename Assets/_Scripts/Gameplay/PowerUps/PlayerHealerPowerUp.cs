@@ -7,7 +7,7 @@ namespace Game.Gameplay.PowerUps
     {
         [SerializeField] IntSO _playerHealth;
         [SerializeField] IntSO _playerMaxHealth;
-        int _healingPower = 10;
+        int _healingPower = 15;
 
         void OnTriggerEnter(Collider other)
         {

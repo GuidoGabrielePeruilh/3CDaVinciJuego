@@ -130,7 +130,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   _move: {fileID: 2227387254386213678}
-  _speed: 1
+  _speed: 38
   _distance: 1
 --- !u!114 &6779529177335636181
 MonoBehaviour:
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cefdf2f6d06f147b0b3099e296051d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2
+  _speed: 4.5
   _move: {fileID: 2227387254386213678}
   _closeRange: 2
   _rangeOfVisionY: 1
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc660ccbbe8a4ad4ea828415e3d77778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyLife: 10
+  _enemyLife: 4
   _secondsToDestroy: 4
 --- !u!1 &3410269104207759678
 GameObject:
