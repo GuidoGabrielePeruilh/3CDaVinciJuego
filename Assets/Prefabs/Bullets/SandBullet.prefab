@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _move: {fileID: 4433657527251420589}
-  _speed: 10
+  _speed: 24
   _timeToDisable: 3
   _trail: {fileID: 0}
 --- !u!114 &4433657527251420589

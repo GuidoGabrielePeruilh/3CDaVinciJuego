@@ -56,7 +56,9 @@ namespace Game.Gameplay
             return true;
         }
 
-        void OnDrawGizmos()
+       #if UNITY_EDITOR
+
+       void OnDrawGizmos()
         {
             Handles.color = Color.white;
             var transformPosition = transform.position;
@@ -68,5 +70,6 @@ namespace Game.Gameplay
             Handles.DrawLine(transformPosition, transformPosition + viewAngleLeft * _visualDistance);
             Handles.DrawLine(transformPosition, transformPosition + viewAngleRight * _visualDistance);
         }
+#endif
     }
 }

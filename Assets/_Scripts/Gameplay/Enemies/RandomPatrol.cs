@@ -7,7 +7,7 @@ namespace Game.Gameplay.Enemies
     {
         [SerializeField] List<Transform> positions;
         [SerializeField] Move _move;
-        [SerializeField, Range(0, 5)] float _speed = 1;
+        [SerializeField, Range(0, 5)] float _speed = 3;
         [SerializeField] float _distance = 1;
         int _indexRandom = 0;
 

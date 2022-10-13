@@ -25,8 +25,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425224898}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.67, z: 0.31000042}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.6, z: 0.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3374871210961474756}
@@ -43,7 +43,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.449121, g: 0.39088646, b: 0.4528302, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -441,7 +441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _move: {fileID: 8219668241822508867}
   _jump: {fileID: 5810076752666076082}
-  _speed: 5
+  _speed: 8
   _playerInput: {fileID: 8219668241822508866}
   _weaponController: {fileID: 8219668241822508986}
   _topClamp: 90
@@ -610,6 +610,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Game.UI.InventoryUIController, Assembly-CSharp
+        m_MethodName: SetSlotColorActive
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: fecfa8ec-3815-4df3-8709-7b5aa76ed3a5
     m_ActionName: Player/Change Weapon 1[/Keyboard/1,/XInputControllerWindows/dpad/up]
   - m_PersistentCalls:
@@ -626,6 +638,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Game.UI.InventoryUIController, Assembly-CSharp
+        m_MethodName: SetSlotColorActive
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: c2c7921b-08fb-4d00-b493-89e299d16c8d
     m_ActionName: Player/Change Weapon 2[/Keyboard/2,/XInputControllerWindows/dpad/left]
   - m_PersistentCalls:
@@ -633,6 +657,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8219668241822508986}
         m_TargetAssemblyTypeName: Game.Player.WeaponController, Assembly-CSharp
         m_MethodName: SwitchWeapon
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Game.UI.InventoryUIController, Assembly-CSharp
+        m_MethodName: SetSlotColorActive
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -661,7 +697,19 @@ MonoBehaviour:
     m_ActionId: f9e4a709-14d9-4d95-9446-b941f8540a2f
     m_ActionName: Player/Reload[/XInputControllerWindows/buttonWest,/Keyboard/r]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Game.Managers.GameManager, Assembly-CSharp
+        m_MethodName: PauseKeybord
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: a8160e77-a967-4884-adf8-b4b858588aac
     m_ActionName: Player/PauseMenu[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
@@ -739,12 +787,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 8219668241822508870}
-  _jumpForce: 5
+  _jumpForce: 4
   _floorLayer:
     serializedVersion: 2
     m_Bits: 64
   _cheeckFloor: {fileID: 4719565878990220562}
   _floorRadius: 0.07
+  _maxExtraTime: 1
 --- !u!1 &8219668242174349543
 GameObject:
   m_ObjectHideFlags: 0
