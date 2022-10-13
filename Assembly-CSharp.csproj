@@ -53,65 +53,65 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\_Scripts\Utils.cs" />
-     <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\State.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\FlyerPatrol\NormalState.cs" />
-     <Compile Include="Assets\_Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\PatrolFireAnimatorController.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\PowerUps\ReserveWeaponTrigger.cs" />
-     <Compile Include="Assets\_Scripts\Gameplay\BreakPlatformBrain.cs" />
      <Compile Include="Assets\_Scripts\Player\WeaponInventory.cs" />
-     <Compile Include="Assets\_Scripts\Gameplay\Enemies\MeleeAttack.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Jump.cs" />
      <Compile Include="Assets\_Scripts\UI\InventoryUIController.cs" />
+     <Compile Include="Assets\_Scripts\Player\WeaponController.cs" />
+     <Compile Include="Assets\_Scripts\SO\WeaponSO.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowMelee\EventAnimation.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\OnPlayerOver.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowPlayer.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\Weapon\Weapon.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\Move.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\Enemies\FlyerPatrol\AttackState.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\Enemies\RandomPatrol.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\Bullet.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\IDamageable.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\Weapon\MeleeWeapon.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\Enemies\FlyerPatrol\FlyerPatrolStateController.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\PowerUps\PlayerHealerPowerUp.cs" />
+     <Compile Include="Assets\_Scripts\SO\IntSO.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\PatrolFireStateController.cs" />
+     <Compile Include="Assets\_Scripts\Player\WeaponManager.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\Enemies\EnemyDamageable.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\Weapon\ParticleWeapon.cs" />
+     <Compile Include="Assets\_Scripts\Player\PlayerDamageable.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\Enemies\FlyerPatrol\RaycastAttack.cs" />
+     <Compile Include="Assets\_Scripts\ActionRepeater.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\CameraFollowTarget.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\State.cs" />
+     <Compile Include="Assets\_Scripts\Player\PlayerController.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\BreakPlatformBrain.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\Enemies\MeleeAttack.cs" />
      <Compile Include="Assets\_Scripts\Managers\GameManager.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowMelee\FollowMeleeStateController.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowMelee\MeleeAttackState.cs" />
-     <Compile Include="Assets\_Scripts\Player\WeaponController.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\SandAnimatorEvent.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\LookAtTarget.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Weapon\ShooterWeapon.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\NormalState.cs" />
      <Compile Include="Assets\_Scripts\Player\PlayerAnimationManager.cs" />
-     <Compile Include="Assets\_Scripts\SO\WeaponSO.cs" />
-     <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowMelee\EventAnimation.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\ObjectPooler.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Platforms\TiltablePlatform.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowMelee\RandomPatrolState.cs" />
-     <Compile Include="Assets\_Scripts\Gameplay\OnPlayerOver.cs" />
      <Compile Include="Assets\_Scripts\Player\PointerTarget.cs" />
-     <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowPlayer.cs" />
-     <Compile Include="Assets\_Scripts\Gameplay\Weapon\Weapon.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Weapon\TriggerWeapon.cs" />
-     <Compile Include="Assets\_Scripts\Gameplay\Move.cs" />
-     <Compile Include="Assets\_Scripts\Gameplay\Enemies\FlyerPatrol\AttackState.cs" />
-     <Compile Include="Assets\_Scripts\Gameplay\Enemies\RandomPatrol.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowMelee\State.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Platforms\PlatformMovable.cs" />
-     <Compile Include="Assets\_Scripts\Gameplay\Bullet.cs" />
-     <Compile Include="Assets\_Scripts\Gameplay\IDamageable.cs" />
-     <Compile Include="Assets\_Scripts\Gameplay\Weapon\MeleeWeapon.cs" />
-     <Compile Include="Assets\_Scripts\Gameplay\PowerUps\PlayerHealerPowerUp.cs" />
-     <Compile Include="Assets\_Scripts\Gameplay\Enemies\FlyerPatrol\FlyerPatrolStateController.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\ThrowBullet.cs" />
-     <Compile Include="Assets\_Scripts\SO\IntSO.cs" />
-     <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\PatrolFireStateController.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\VisualField.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowMelee\MetalEnemyAnimatorController.cs" />
      <Compile Include="Assets\_Scripts\UI\HealthUIController.cs" />
-     <Compile Include="Assets\_Scripts\Player\WeaponManager.cs" />
-     <Compile Include="Assets\_Scripts\Gameplay\Enemies\EnemyDamageable.cs" />
-     <Compile Include="Assets\_Scripts\Gameplay\Weapon\ParticleWeapon.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\FlyerPatrol\State.cs" />
-     <Compile Include="Assets\_Scripts\Player\PlayerDamageable.cs" />
      <Compile Include="Assets\_Scripts\ParciclesController.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Platforms\BreakPlatformAC.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\SpawnDrops.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolBehaviour.cs" />
-     <Compile Include="Assets\_Scripts\Gameplay\Enemies\FlyerPatrol\RaycastAttack.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Damaging.cs" />
-     <Compile Include="Assets\_Scripts\ActionRepeater.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowMelee\FollowState.cs" />
-     <Compile Include="Assets\_Scripts\Gameplay\CameraFollowTarget.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\AttackState.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2020.3.25f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -692,9 +692,6 @@
  <Reference Include="Unity.VSCode.Editor">
  <HintPath>E:/workspace/Unity/Projects/3CDaVinciJuego/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
- <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
- <HintPath>E:/workspace/Unity/Projects/3CDaVinciJuego/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
- </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>E:/workspace/Unity/Projects/3CDaVinciJuego/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
@@ -703,9 +700,6 @@
  </Reference>
  <Reference Include="Unity.ProBuilder.AddOns.Editor">
  <HintPath>E:/workspace/Unity/Projects/3CDaVinciJuego/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Timeline.Editor">
- <HintPath>E:/workspace/Unity/Projects/3CDaVinciJuego/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
  <HintPath>E:/workspace/Unity/Projects/3CDaVinciJuego/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
@@ -733,6 +727,48 @@
  </Reference>
  <Reference Include="Unity.PlasticSCM.Editor">
  <HintPath>E:/workspace/Unity/Projects/3CDaVinciJuego/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+ <HintPath>E:/workspace/Unity/Projects/3CDaVinciJuego/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Timeline.Editor">
+ <HintPath>E:/workspace/Unity/Projects/3CDaVinciJuego/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+ <HintPath>E:/workspace/Unity/Projects/3CDaVinciJuego/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Core.Runtime">
+ <HintPath>E:/workspace/Unity/Projects/3CDaVinciJuego/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Searcher.Editor">
+ <HintPath>E:/workspace/Unity/Projects/3CDaVinciJuego/Library/ScriptAssemblies/Unity.Searcher.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Universal.Editor">
+ <HintPath>E:/workspace/Unity/Projects/3CDaVinciJuego/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Mathematics.Editor">
+ <HintPath>E:/workspace/Unity/Projects/3CDaVinciJuego/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+ <HintPath>E:/workspace/Unity/Projects/3CDaVinciJuego/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Core.Editor">
+ <HintPath>E:/workspace/Unity/Projects/3CDaVinciJuego/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+ <HintPath>E:/workspace/Unity/Projects/3CDaVinciJuego/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Mathematics">
+ <HintPath>E:/workspace/Unity/Projects/3CDaVinciJuego/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+ <HintPath>E:/workspace/Unity/Projects/3CDaVinciJuego/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ShaderGraph.Editor">
+ <HintPath>E:/workspace/Unity/Projects/3CDaVinciJuego/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+ <HintPath>E:/workspace/Unity/Projects/3CDaVinciJuego/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
