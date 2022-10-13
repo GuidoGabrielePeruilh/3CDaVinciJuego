@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 8054064421387174308}
   - component: {fileID: 8415224544075344654}
   - component: {fileID: 2887304925957310152}
+  - component: {fileID: 4976006481002420660}
   - component: {fileID: 8846074023536706980}
   m_Layer: 7
   m_Name: Enemy_RandomMelee
@@ -60,7 +61,8 @@ MonoBehaviour:
   _meleeAttack: {fileID: 8415224544075344654}
   _move: {fileID: 2227387254386213678}
   _lookAtTarget: {fileID: 8054064421387174308}
-  _moveSpeed: 5
+  _moveSpeed: 3
+  _eventAnimation: {fileID: 6568752979330764490}
   _enemyDamagable: {fileID: 8846074023536706980}
 --- !u!54 &8901121125137834358
 Rigidbody:
@@ -122,9 +124,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa85e07092a78b04e9b075f991f05516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positions: []
+  positions:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _move: {fileID: 2227387254386213678}
-  _speed: 1
+  _speed: 4.5
   _distance: 1
 --- !u!114 &6779529177335636181
 MonoBehaviour:
@@ -138,9 +144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cefdf2f6d06f147b0b3099e296051d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 3
+  _speed: 4.5
   _move: {fileID: 2227387254386213678}
-  _closeRange: 1.3
+  _closeRange: 2
   _rangeOfVisionY: 1
 --- !u!114 &8054064421387174308
 MonoBehaviour:
@@ -186,6 +192,22 @@ CapsuleCollider:
   m_Height: 1.9953742
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &4976006481002420660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871783242920672996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f803ebcfe9e7ca4a88efd0646c12d9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _drop1: {fileID: 3247428901600231908, guid: 8f8834a19a7529948bd46c775dcc0296, type: 3}
+  _drop2: {fileID: 8026061991337280964, guid: cf8bc611d69f2974ca930ab0af4672c2, type: 3}
+  _lifeEnemy: {fileID: 8846074023536706980}
+  _chancePercentage: 0.505
 --- !u!114 &8846074023536706980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,8 +220,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc660ccbbe8a4ad4ea828415e3d77778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyLife: 10
-  _secondsToDestroy: 3
+  _enemyLife: 4
+  _secondsToDestroy: 4
 --- !u!1 &3410269104207759678
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,6 +316,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8995214659107477640, guid: a0b28aafe03c9c54bad899a0dc95d999, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0b28aafe03c9c54bad899a0dc95d999, type: 3}
 --- !u!4 &9052940445665982717 stripped
@@ -306,6 +332,17 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 6921619599356882949, guid: a0b28aafe03c9c54bad899a0dc95d999, type: 3}
   m_PrefabInstance: {fileID: 5425753226825585282}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6568752979330764490 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1181284335657081928, guid: a0b28aafe03c9c54bad899a0dc95d999, type: 3}
+  m_PrefabInstance: {fileID: 5425753226825585282}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc074d1f718a57c4abcb4c7d6e25f9f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1645063085581254814 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6744234970106270236, guid: a0b28aafe03c9c54bad899a0dc95d999, type: 3}

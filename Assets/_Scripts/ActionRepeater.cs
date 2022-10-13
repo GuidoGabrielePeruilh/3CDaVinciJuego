@@ -6,7 +6,7 @@ namespace Game
     public class ActionRepeater : MonoBehaviour
     {
         [SerializeField] UnityEvent OnAction;
-        [SerializeField] int _waitForShootInSeconds = 2;
+        [SerializeField] int _waitForShootInSeconds = 1;
         float _time = 0;
         void Update()
         {

@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 521219c045af4d17a96fc76235f9ae1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  attackRateInSeconds: 0
   _weaponData: {fileID: 11400000, guid: 5cb8a3494f6dcbe4f90dc1c9e89125f5, type: 2}
   _bulletPooler: {fileID: 2591158393395460681}
   _firePoint: {fileID: 3030152434056297357}
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86e3613be9a542bca23fdc5646be0244, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pooledObject: {fileID: 0}
+  _pooledObject: {fileID: 1569349650795147576, guid: 269de5f634060374f949bb6ca1639d5d, type: 3}
   _pooledAmount: 1
   _willGrow: 1
   _pooledObjects: []

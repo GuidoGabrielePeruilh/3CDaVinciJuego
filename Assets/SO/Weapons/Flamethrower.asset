@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 630543c1515741d993190defe9009959, type: 3}
   m_Name: Flamethrower
   m_EditorClassIdentifier: 
-  _maxBullets: 20
+  _maxAmunicion: 30
+  _maxReserveAmunicion: 100

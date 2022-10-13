@@ -54,9 +54,12 @@
   <ItemGroup>
      <Compile Include="Assets\_Scripts\Utils.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\State.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\Enemies\FlyerPatrol\NormalState.cs" />
      <Compile Include="Assets\_Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\PatrolFireAnimatorController.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\PowerUps\ReserveWeaponTrigger.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\BreakPlatformBrain.cs" />
+     <Compile Include="Assets\_Scripts\Player\WeaponInventory.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\MeleeAttack.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Jump.cs" />
      <Compile Include="Assets\_Scripts\UI\InventoryUIController.cs" />
@@ -66,6 +69,7 @@
      <Compile Include="Assets\_Scripts\Player\WeaponController.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\SandAnimatorEvent.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\LookAtTarget.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\Weapon\ShooterWeapon.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\NormalState.cs" />
      <Compile Include="Assets\_Scripts\Player\PlayerAnimationManager.cs" />
      <Compile Include="Assets\_Scripts\SO\WeaponSO.cs" />
@@ -74,17 +78,20 @@
      <Compile Include="Assets\_Scripts\Gameplay\Platforms\TiltablePlatform.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowMelee\RandomPatrolState.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\OnPlayerOver.cs" />
+     <Compile Include="Assets\_Scripts\Player\PointerTarget.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowPlayer.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Weapon\Weapon.cs" />
-     <Compile Include="Assets\_Scripts\Gameplay\Weapon\ShooterWeapon.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\Weapon\TriggerWeapon.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Move.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\Enemies\FlyerPatrol\AttackState.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\RandomPatrol.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowMelee\State.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Platforms\PlatformMovable.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Bullet.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\IDamageable.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Weapon\MeleeWeapon.cs" />
-     <Compile Include="Assets\_Scripts\Gameplay\Food.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\PowerUps\PlayerHealerPowerUp.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\Enemies\FlyerPatrol\FlyerPatrolStateController.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\ThrowBullet.cs" />
      <Compile Include="Assets\_Scripts\SO\IntSO.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolFire\PatrolFireStateController.cs" />
@@ -94,10 +101,13 @@
      <Compile Include="Assets\_Scripts\Player\WeaponManager.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\EnemyDamageable.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Weapon\ParticleWeapon.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\Enemies\FlyerPatrol\State.cs" />
      <Compile Include="Assets\_Scripts\Player\PlayerDamageable.cs" />
      <Compile Include="Assets\_Scripts\ParciclesController.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Platforms\BreakPlatformAC.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\Enemies\SpawnDrops.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\PatrolBehaviour.cs" />
+     <Compile Include="Assets\_Scripts\Gameplay\Enemies\FlyerPatrol\RaycastAttack.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Damaging.cs" />
      <Compile Include="Assets\_Scripts\ActionRepeater.cs" />
      <Compile Include="Assets\_Scripts\Gameplay\Enemies\FollowMelee\FollowState.cs" />

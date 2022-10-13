@@ -1,27 +1,19 @@
 using Game.Managers;
-using Game.SO;
 using UnityEngine;
 
 namespace Game.Gameplay.Weapon
 {
-    public class ParticleWeapon : Weapon
+    public class ParticleWeapon : ShooterWeapon
     {
-        [SerializeField] WeaponSO _weaponData;
-        [SerializeField] GameObject _particleBullet;
-        [SerializeField] Transform _firePoint;
-        [SerializeField] ObjectPooler _bulletPooler;
-        [SerializeField] float shootinRateInSeconds = .5f; 
-        int _bullets = 0;
+        [SerializeField] GameObject _particle;
         bool _isShooting = false;
         float _time;
-
-        public override int CurrentAmmunition => _bullets;
+        
         void Awake()
         {
-            type = Type.PARTICLE;
-            _time = shootinRateInSeconds;
-            _bullets = _weaponData.MaxBullets;
-            _particleBullet.SetActive(false);
+            _time = attackRateInSeconds;
+            Ammunition = _weaponData.MaxAmunicion;
+            _particle.SetActive(false);
         }
 
         void Update()
@@ -30,13 +22,13 @@ namespace Game.Gameplay.Weapon
             {
                 if (_time <= 0)
                 {
-                    ShootTriggerBullet();
-                    _time = shootinRateInSeconds;
-                    _bullets--;
-                    GameManager.instance.UpdateBulletCounter(this);
-                    if(_bullets <= 0)
+                    Shoot();
+                    _time = attackRateInSeconds;
+                    Ammunition--;
+                    GameManager.instance.UpdateBulletCounter(Ammunition);
+                    if(Ammunition <= 0)
                     {
-                        StopAttacking();
+                        CancelAttack();
                     }
                 }
                 else
@@ -45,31 +37,55 @@ namespace Game.Gameplay.Weapon
                 }
             }
         }
-
-        public override void Attack()
+        #region public
+        public override void StartAttack()
         {
-            if (_bullets <= 0) return;
-            _particleBullet.SetActive(true);
+            if (Ammunition <= 0) return;
+            _particle.SetActive(true);
             _isShooting = true;
         }
 
-        public override void StopAttacking()
+        public override void PerformedAttack(){ }
+
+        public override void CancelAttack()
         {
-            _particleBullet.SetActive(false);
+            _particle.SetActive(false);
             _isShooting = false;
         }
 
-        public override void ReloadWeapon()
+        public override bool ReloadAmmunition()
         {
-            _bullets = _weaponData.MaxBullets;
+            if (ReserveAmmunition <= 0) return false;
+            if (ReserveAmmunition >= _weaponData.MaxAmunicion)
+            {
+                Ammunition = _weaponData.MaxAmunicion;
+                ReserveAmmunition -= _weaponData.MaxAmunicion;
+            }
+            else
+            {
+                Ammunition = ReserveAmmunition;
+                ReserveAmmunition = 0;
+            }
+
+            return true;
         }
         
-        void ShootTriggerBullet()
+        public override bool ReloadReserveAmmunition()
+        {
+            if (ReserveAmmunition >= _weaponData.MaxReserveAmunicion) return false;
+
+            ReserveAmmunition = _weaponData.MaxReserveAmunicion;
+
+            return true;
+        }
+
+        #endregion
+        protected override void Shoot()
         {
             var bulletObject = _bulletPooler.GetPooledObject();
             bulletObject.SetActive(true);
             bulletObject.transform.position = _firePoint.position;
-            bulletObject.GetComponent<Bullet>()?.Shoot(_firePoint.forward);
+            bulletObject.GetComponent<Bullet>()?.Shoot(ShootDirection);
         }
     }
 }
