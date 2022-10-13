@@ -178,10 +178,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_RandomMelee
       objectReference: {fileID: 0}
-    - target: {fileID: 2887304925957310152, guid: badc885cb0ccbd041be83d343ddcfae9, type: 3}
-      propertyPath: m_Radius
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 6394532928326410465, guid: badc885cb0ccbd041be83d343ddcfae9, type: 3}
       propertyPath: positions.Array.data[0]
       value: 

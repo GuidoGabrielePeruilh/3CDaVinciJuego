@@ -130,7 +130,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   _move: {fileID: 2227387254386213678}
-  _speed: 38
+  _speed: 4.5
   _distance: 1
 --- !u!114 &6779529177335636181
 MonoBehaviour:
