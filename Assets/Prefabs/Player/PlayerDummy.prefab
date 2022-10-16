@@ -647,6 +647,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: f9e4a709-14d9-4d95-9446-b941f8540a2f
     m_ActionName: Player/Reload[/XInputControllerWindows/buttonWest,/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a8160e77-a967-4884-adf8-b4b858588aac
+    m_ActionName: Player/PauseMenu[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
